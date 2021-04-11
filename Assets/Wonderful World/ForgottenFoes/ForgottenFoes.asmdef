@@ -1,0 +1,26 @@
+{
+    "name": "ForgottenFoes",
+    "references": [],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "Assembly-CSharp.dll",
+        "BepInEx.dll",
+        "EnigmaticThunder.dll",
+        "MMHOOK_Assembly-CSharp.dll",
+        "MMHook.dll",
+        "Mono.Cecil.dll",
+        "MonoMod.Utils.dll",
+        "R2API.dll",
+        "Rewired_Core.dll",
+        "Rewired_CSharp.dll",
+        "Unity.Postprocessing.Runtime.dll",
+        "Unity.TextMeshPro.dll",
+        "System.Diagnostics.StackTrace.dll"
+    ],
+    "autoReferenced": true,
+    "defineConstraints": []
+}

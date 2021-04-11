@@ -1,0 +1,9 @@
+﻿{
+  "name": "MMHOOK_Standalone",
+  "version_number": "1.0.1",
+  "website_url": "https://github.com/xoxfaby",
+  "description": "Standalone MMHOOK_Assembly-CSharp for other mods to depend on.",
+  "dependencies": [
+    "bbepis-BepInExPack-5.3.1"
+  ]
+}
