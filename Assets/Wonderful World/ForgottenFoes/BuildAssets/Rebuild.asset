@@ -16,7 +16,7 @@ MonoBehaviour:
   - {fileID: 114316524637315588}
   - {fileID: 114559832304535298}
   - {fileID: 114679819151059082}
-  manifest: {fileID: 0}
+  manifest: {fileID: 11400000, guid: b4ed41fa74b9695428344f1e0bb27dd4, type: 2}
 --- !u!114 &114316524637315588
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -65,6 +65,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Errored: 0
   ErrorMessage: 
-  Active: 0
+  Active: 1
   OverrideManifest: 1
   executePipeline: {fileID: 11400000, guid: bee6483f5bcf7054b86d13321eef27e5, type: 2}

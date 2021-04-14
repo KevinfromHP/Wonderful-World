@@ -59,15 +59,6 @@ namespace ForgottenFoes
             cfgFile = new ConfigFile(Path.Combine(Paths.ConfigPath, ModGuid + ".cfg"), true);
 
             LogCore.LogD("Adding Monsters...");
-            /*
-            masterMonsterList = T2Module.InitAll<MonsterBoilerplate>(new T2Module.ModInfo
-            {
-                displayName = "ForgottenFoes",
-                longIdentifier = "ForgottenFoes",
-                shortIdentifier = "FF",
-                mainConfigFile = cfgFile
-            });
-            T2Module.SetupAll_PluginAwake(masterMonsterList);*/
             var ItemTypes = Assembly.GetExecutingAssembly().GetTypes().Where(type => !type.IsAbstract && type.IsSubclassOf(typeof(EnemyBuilderNew)));
             foreach (var itemType in ItemTypes)
             {
@@ -84,7 +75,7 @@ namespace ForgottenFoes
 
         internal bool ValidateEnemy(EnemyBuilderNew item, List<EnemyBuilderNew> itemList)
         {
-            var enabled = Config.Bind<bool>("Item: " + item.MonsterName, "Enable Item?", true, "Should this item appear in runs?").Value;
+            var enabled = Config.Bind<bool>("Item: " + item.monsterName, "Enable Item?", true, "Should this item appear in runs?").Value;
             if (enabled)
             {
                 itemList.Add(item);
@@ -99,14 +90,12 @@ public static class Assets
     public static AssetBundle mainAssetBundle = null;
     public static AssetBundleResourcesProvider Provider;
 
-    public static IResourceProvider PopulateAssets()
+    public static void PopulateAssets()
     {
         using (var assetStream = Assembly.GetExecutingAssembly().GetManifestResourceStream("ForgottenFoes.forgottenfoes_assets"))
         {
             mainAssetBundle = AssetBundle.LoadFromStream(assetStream);
-            Provider = new AssetBundleResourcesProvider("@ForgottenFoes", mainAssetBundle);
         }
-        return Provider;
     }
 
     public static void ApplyShaders()
@@ -143,32 +132,3 @@ public static class Assets
         }
     }
 }
-
-public static class ComponentCopier
-{
-    public static T GetCopyOf<T>(this Component comp, T other) where T : Component
-    {
-        Type type = comp.GetType();
-        if (type != other.GetType()) return null; // type mis-match
-        BindingFlags flags = BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Default | BindingFlags.DeclaredOnly;
-        PropertyInfo[] pinfos = type.GetProperties(flags);
-        foreach (var pinfo in pinfos)
-        {
-            if (pinfo.CanWrite)
-            {
-                try
-                {
-                    pinfo.SetValue(comp, pinfo.GetValue(other, null), null);
-                }
-                catch { } // In case of NotImplementedException being thrown. For some reason specifying that exception didn't seem to catch it, so I didn't catch anything specific.
-            }
-        }
-        FieldInfo[] finfos = type.GetFields(flags);
-        foreach (var finfo in finfos)
-        {
-            finfo.SetValue(comp, finfo.GetValue(other));
-        }
-        return comp as T;
-    }
-}
-

@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a3dd8f40548b3d47ad605c9375d890c, type: 3}
+  m_Name: ImpSorcererDirectorCardHolder
+  m_EditorClassIdentifier: 
+  stagesToSpawnOn: 400000002000000080000000
+  category: 2
+  card:
+    spawnCard: {fileID: 11400000, guid: 2e11f35292cc7214c98e317eb9860af8, type: 2}
+    selectionWeight: 1
+    spawnDistance: 2
+    allowAmbushSpawn: 1
+    preventOverhead: 0
+    minimumStageCompletions: 0
+    requiredUnlockable: 
+    forbiddenUnlockable: 
+    requiredUnlockableDef: {fileID: 0}
+    forbiddenUnlockableDef: {fileID: 0}

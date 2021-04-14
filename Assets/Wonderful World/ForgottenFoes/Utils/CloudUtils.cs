@@ -221,7 +221,7 @@ public static class CloudUtils
         return result;
     }
 
-    public static void RefreshALLBuffStacks(CharacterBody body, BuffDef def, float duration)
+    /*public static void RefreshALLBuffStacks(CharacterBody body, BuffDef def, float duration)
     {
         int num6 = 0;
         for (int j = 0; j < body.timedBuffs.Count; j++)
@@ -235,7 +235,7 @@ public static class CloudUtils
                 }
             }
         }
-    }
+    }*/
 
 
     public static void AlterCurrentPostProcessing(PostProcessProfile profile, float weight = 0.85f)

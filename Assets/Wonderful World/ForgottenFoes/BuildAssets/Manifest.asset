@@ -16,7 +16,7 @@ MonoBehaviour:
   - {fileID: 114211852988908172}
   - {fileID: 114107831304456238}
   - {fileID: 114431642618062350}
-  identity: {fileID: 0}
+  identity: {fileID: 114211852988908172}
 --- !u!114 &114107831304456238
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -33,7 +33,8 @@ MonoBehaviour:
   ErrorMessage: 
   StagingPaths:
   - <ManifestPluginStaging>
-  definitions: []
+  definitions:
+  - {fileID: 5897886265953266890, guid: c97045ad8a1bf2b42afd98605c1e80f5, type: 3}
 --- !u!114 &114211852988908172
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -55,7 +56,10 @@ MonoBehaviour:
   Icon: {fileID: 0}
   Description: Forgotten Foes
   Version: 0.0.1
-  Dependencies: []
+  Dependencies:
+  - {fileID: 11400000, guid: 6893422731aa6d67012f5f4d8209c304, type: 2}
+  - {fileID: 11400000, guid: 78d29bec2ce60e146b632d711faec65a, type: 2}
+  - {fileID: 11400000, guid: 6015517d0bbd7db4986b342bb83bca83, type: 2}
 --- !u!114 &114431642618062350
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -72,4 +76,7 @@ MonoBehaviour:
   ErrorMessage: 
   StagingPaths:
   - <ManifestPluginStaging>
-  assetBundles: []
+  assetBundles:
+  - assetBundleName: forgottenfoes_assets
+    assets:
+    - {fileID: 102900000, guid: 7377856f0a6bac94193b5cb896377e13, type: 3}
