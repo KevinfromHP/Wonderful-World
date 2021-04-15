@@ -48,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Errored: 0
   ErrorMessage: 
-  Active: 1
+  Active: 0
   OverrideManifest: 1
   executePipeline: {fileID: 11400000, guid: f01cad00317fb4746937e42cc9e7f19a, type: 2}
 --- !u!114 &114679819151059082
@@ -65,6 +65,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Errored: 0
   ErrorMessage: 
-  Active: 1
+  Active: 0
   OverrideManifest: 1
   executePipeline: {fileID: 11400000, guid: bee6483f5bcf7054b86d13321eef27e5, type: 2}

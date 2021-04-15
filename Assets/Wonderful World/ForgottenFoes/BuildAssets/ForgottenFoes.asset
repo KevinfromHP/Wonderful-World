@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e563561e08b6a3642a487177f5cfbb37, type: 3}
-  m_Name: Manifest
+  m_Name: ForgottenFoes
   m_EditorClassIdentifier: 
   Data:
   - {fileID: 114211852988908172}
@@ -32,6 +32,7 @@ MonoBehaviour:
   Errored: 0
   ErrorMessage: 
   StagingPaths:
+  - <ForgottenFoesBuildPath>
   - <ManifestPluginStaging>
   definitions:
   - {fileID: 5897886265953266890, guid: c97045ad8a1bf2b42afd98605c1e80f5, type: 3}
@@ -51,15 +52,15 @@ MonoBehaviour:
   ErrorMessage: 
   StagingPaths:
   - <ManifestPluginStaging>
-  Author: WonderWorld
+  Author: WonderfulWorld
   Name: Forgotten Foes
   Icon: {fileID: 0}
   Description: Forgotten Foes
   Version: 0.0.1
   Dependencies:
   - {fileID: 11400000, guid: 6893422731aa6d67012f5f4d8209c304, type: 2}
-  - {fileID: 11400000, guid: 78d29bec2ce60e146b632d711faec65a, type: 2}
   - {fileID: 11400000, guid: 6015517d0bbd7db4986b342bb83bca83, type: 2}
+  - {fileID: 11400000, guid: 78d29bec2ce60e146b632d711faec65a, type: 2}
 --- !u!114 &114431642618062350
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -75,6 +76,7 @@ MonoBehaviour:
   Errored: 0
   ErrorMessage: 
   StagingPaths:
+  - <ForgottenFoesBuildPath>
   - <ManifestPluginStaging>
   assetBundles:
   - assetBundleName: forgottenfoes_assets

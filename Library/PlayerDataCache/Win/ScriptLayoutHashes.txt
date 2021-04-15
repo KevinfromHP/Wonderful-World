@@ -1,0 +1,12 @@
+Win
+PlayerPath?
+E:/All Coding Stuff/RoR2 Modding/Wonderful World/ThunderKit/AssetBundleStaging/brasstower.ros
+SceneListBegin?
+Assets/Wonderful World/UnchartedTerritories/Scenes/BrassTower.unity
+SceneListEnd?
+eafb77726b67b7571818a7210a3ce11e UnityEngine.Networking.dll:UnityEngine.Networking.NetworkIdentity
+91787fca1cf7efe744a8a14e747f31ed RainOfStages.Plugin.dll:PassivePicasso.RainOfStages.Proxy.CharacterSpawnCard
+3076035d801595c2a3237689eb6b70e5 RainOfStages.Plugin.dll:PassivePicasso.RainOfStages.Proxy.GlobalEventManager
+1ecbd3949793fadeb9f2895a8920db1f RainOfStages.Plugin.dll:PassivePicasso.RainOfStages.Proxy.InteractableSpawnCard
+a358b43ebdf6904c657183138d31279e RainOfStages.Plugin.dll:PassivePicasso.RainOfStages.Proxy.SceneInfo
+d5630f96bd5a6a6eed7e1754c3fb8703 Unity.Postprocessing.Runtime.dll:UnityEngine.Rendering.PostProcessing.PostProcessVolume
