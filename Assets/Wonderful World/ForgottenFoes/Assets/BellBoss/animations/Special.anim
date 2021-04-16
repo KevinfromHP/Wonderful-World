@@ -36,7 +36,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: TolingBell
+    path: BellBossArmature
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -61,7 +61,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: TolingBell/Root
+    path: BellBossArmature/Root
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -86,7 +86,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: TolingBell/Root/ArmController
+    path: BellBossArmature/Root/ArmController
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -633,7 +633,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: TolingBell/Root/ArmController/LowerArm.R
+    path: BellBossArmature/Root/ArmController/LowerArm.R
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -658,7 +658,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: TolingBell/Root/ArmController/LowerArm.R/ArmChain1
+    path: BellBossArmature/Root/ArmController/LowerArm.R/ArmChain1
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -683,7 +683,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: TolingBell/Root/ArmController/LowerArm.R/ArmChain1/ArmChain2
+    path: BellBossArmature/Root/ArmController/LowerArm.R/ArmChain1/ArmChain2
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -708,7 +708,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: TolingBell/Root/ArmController/LowerArm.R/ArmChain1/ArmChain2/ArmChain3
+    path: BellBossArmature/Root/ArmController/LowerArm.R/ArmChain1/ArmChain2/ArmChain3
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -733,7 +733,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: TolingBell/Root/ArmController/LowerArm.R/ArmChain1/ArmChain2/ArmChain3/ArmChain4
+    path: BellBossArmature/Root/ArmController/LowerArm.R/ArmChain1/ArmChain2/ArmChain3/ArmChain4
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -1253,7 +1253,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: TolingBell/Root/ArmController/LowerArm.L
+    path: BellBossArmature/Root/ArmController/LowerArm.L
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -1539,7 +1539,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: TolingBell/Root/ArmController/UpperArm.R
+    path: BellBossArmature/Root/ArmController/UpperArm.R
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -1825,7 +1825,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: TolingBell/Root/ArmController/UpperArm.L
+    path: BellBossArmature/Root/ArmController/UpperArm.L
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -1985,7 +1985,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: TolingBell/Root/Chain1
+    path: BellBossArmature/Root/Chain1
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -2145,7 +2145,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: TolingBell/Root/Chain1/Chain2
+    path: BellBossArmature/Root/Chain1/Chain2
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -2305,7 +2305,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: TolingBell/Root/Chain1/Chain2/Chain3
+    path: BellBossArmature/Root/Chain1/Chain2/Chain3
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -2465,7 +2465,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: TolingBell/Root/Chain1/Chain2/Chain3/Chain4
+    path: BellBossArmature/Root/Chain1/Chain2/Chain3/Chain4
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -2625,7 +2625,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: TolingBell/Root/Chain1/Chain2/Chain3/Chain4/Head
+    path: BellBossArmature/Root/Chain1/Chain2/Chain3/Chain4/Head
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -2785,7 +2785,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: TolingBell/Root/Chain1/Chain2/Chain3/Chain4/Head/Ding1
+    path: BellBossArmature/Root/Chain1/Chain2/Chain3/Chain4/Head/Ding1
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -2891,7 +2891,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: TolingBell/Root/Chain1/Chain2/Chain3/Chain4/Head/Ding1/Ding2
+    path: BellBossArmature/Root/Chain1/Chain2/Chain3/Chain4/Head/Ding1/Ding2
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -2997,7 +2997,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: TolingBell/Root/Chain1/Chain2/Chain3/Chain4/Head/Ding1/Ding2/Ding3
+    path: BellBossArmature/Root/Chain1/Chain2/Chain3/Chain4/Head/Ding1/Ding2/Ding3
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -3337,7 +3337,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: TolingBell/Root/Chain1/Chain2/Chain3/Chain4/Head/lower
+    path: BellBossArmature/Root/Chain1/Chain2/Chain3/Chain4/Head/lower
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -3497,7 +3497,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: TolingBell/Root/Chain1/Chain2/Chain3/Chain4/Head/lower/Dong1
+    path: BellBossArmature/Root/Chain1/Chain2/Chain3/Chain4/Head/lower/Dong1
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -3748,7 +3748,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: TolingBell/Root/Chain1/Chain2/Chain3/Chain4/Head/lower/Dong1/Dong2
+    path: BellBossArmature/Root/Chain1/Chain2/Chain3/Chain4/Head/lower/Dong1/Dong2
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -3800,7 +3800,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: TolingBell/Root/Chain1/Chain2/Chain3/Chain4/Head/lower/Dong1/Dong2/Dong3
+    path: BellBossArmature/Root/Chain1/Chain2/Chain3/Chain4/Head/lower/Dong1/Dong2/Dong3
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -3906,7 +3906,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: TolingBell/Ball
+    path: BellBossArmature/Ball
   m_CompressedRotationCurves: []
   m_EulerCurves: []
   m_PositionCurves:
@@ -3934,7 +3934,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: TolingBell
+    path: BellBossArmature
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -3959,7 +3959,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: TolingBell/Root
+    path: BellBossArmature/Root
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -4074,7 +4074,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: TolingBell/Root/ArmController
+    path: BellBossArmature/Root/ArmController
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -5197,7 +5197,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: TolingBell/Root/ArmController/LowerArm.R
+    path: BellBossArmature/Root/ArmController/LowerArm.R
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -5222,7 +5222,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: TolingBell/Root/ArmController/LowerArm.R/ArmChain1
+    path: BellBossArmature/Root/ArmController/LowerArm.R/ArmChain1
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -5247,7 +5247,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: TolingBell/Root/ArmController/LowerArm.R/ArmChain1/ArmChain2
+    path: BellBossArmature/Root/ArmController/LowerArm.R/ArmChain1/ArmChain2
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -5272,7 +5272,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: TolingBell/Root/ArmController/LowerArm.R/ArmChain1/ArmChain2/ArmChain3
+    path: BellBossArmature/Root/ArmController/LowerArm.R/ArmChain1/ArmChain2/ArmChain3
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -5297,7 +5297,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: TolingBell/Root/ArmController/LowerArm.R/ArmChain1/ArmChain2/ArmChain3/ArmChain4
+    path: BellBossArmature/Root/ArmController/LowerArm.R/ArmChain1/ArmChain2/ArmChain3/ArmChain4
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -6303,7 +6303,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: TolingBell/Root/ArmController/LowerArm.L
+    path: BellBossArmature/Root/ArmController/LowerArm.L
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -6913,7 +6913,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: TolingBell/Root/ArmController/UpperArm.R
+    path: BellBossArmature/Root/ArmController/UpperArm.R
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -7568,7 +7568,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: TolingBell/Root/ArmController/UpperArm.L
+    path: BellBossArmature/Root/ArmController/UpperArm.L
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -7593,7 +7593,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: TolingBell/Root/Chain1
+    path: BellBossArmature/Root/Chain1
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -7618,7 +7618,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: TolingBell/Root/Chain1/Chain2
+    path: BellBossArmature/Root/Chain1/Chain2
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -7643,7 +7643,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: TolingBell/Root/Chain1/Chain2/Chain3
+    path: BellBossArmature/Root/Chain1/Chain2/Chain3
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -7668,7 +7668,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: TolingBell/Root/Chain1/Chain2/Chain3/Chain4
+    path: BellBossArmature/Root/Chain1/Chain2/Chain3/Chain4
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -7693,7 +7693,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: TolingBell/Root/Chain1/Chain2/Chain3/Chain4/Head
+    path: BellBossArmature/Root/Chain1/Chain2/Chain3/Chain4/Head
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -7718,7 +7718,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: TolingBell/Root/Chain1/Chain2/Chain3/Chain4/Head/Ding1
+    path: BellBossArmature/Root/Chain1/Chain2/Chain3/Chain4/Head/Ding1
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -7743,7 +7743,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: TolingBell/Root/Chain1/Chain2/Chain3/Chain4/Head/Ding1/Ding2
+    path: BellBossArmature/Root/Chain1/Chain2/Chain3/Chain4/Head/Ding1/Ding2
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -7768,7 +7768,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: TolingBell/Root/Chain1/Chain2/Chain3/Chain4/Head/Ding1/Ding2/Ding3
+    path: BellBossArmature/Root/Chain1/Chain2/Chain3/Chain4/Head/Ding1/Ding2/Ding3
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -7793,7 +7793,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: TolingBell/Root/Chain1/Chain2/Chain3/Chain4/Head/lower
+    path: BellBossArmature/Root/Chain1/Chain2/Chain3/Chain4/Head/lower
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -7818,7 +7818,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: TolingBell/Root/Chain1/Chain2/Chain3/Chain4/Head/lower/Dong1
+    path: BellBossArmature/Root/Chain1/Chain2/Chain3/Chain4/Head/lower/Dong1
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -7843,7 +7843,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: TolingBell/Root/Chain1/Chain2/Chain3/Chain4/Head/lower/Dong1/Dong2
+    path: BellBossArmature/Root/Chain1/Chain2/Chain3/Chain4/Head/lower/Dong1/Dong2
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -7868,7 +7868,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: TolingBell/Root/Chain1/Chain2/Chain3/Chain4/Head/lower/Dong1/Dong2/Dong3
+    path: BellBossArmature/Root/Chain1/Chain2/Chain3/Chain4/Head/lower/Dong1/Dong2/Dong3
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -7920,7 +7920,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: TolingBell/Ball
+    path: BellBossArmature/Ball
   m_ScaleCurves:
   - curve:
       serializedVersion: 2
@@ -7946,7 +7946,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: TolingBell
+    path: BellBossArmature
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -7971,7 +7971,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: TolingBell/Root
+    path: BellBossArmature/Root
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -7996,7 +7996,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: TolingBell/Root/ArmController
+    path: BellBossArmature/Root/ArmController
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -8021,7 +8021,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: TolingBell/Root/ArmController/LowerArm.R
+    path: BellBossArmature/Root/ArmController/LowerArm.R
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -8046,7 +8046,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: TolingBell/Root/ArmController/LowerArm.R/ArmChain1
+    path: BellBossArmature/Root/ArmController/LowerArm.R/ArmChain1
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -8071,7 +8071,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: TolingBell/Root/ArmController/LowerArm.R/ArmChain1/ArmChain2
+    path: BellBossArmature/Root/ArmController/LowerArm.R/ArmChain1/ArmChain2
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -8096,7 +8096,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: TolingBell/Root/ArmController/LowerArm.R/ArmChain1/ArmChain2/ArmChain3
+    path: BellBossArmature/Root/ArmController/LowerArm.R/ArmChain1/ArmChain2/ArmChain3
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -8121,7 +8121,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: TolingBell/Root/ArmController/LowerArm.R/ArmChain1/ArmChain2/ArmChain3/ArmChain4
+    path: BellBossArmature/Root/ArmController/LowerArm.R/ArmChain1/ArmChain2/ArmChain3/ArmChain4
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -8146,7 +8146,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: TolingBell/Root/ArmController/LowerArm.L
+    path: BellBossArmature/Root/ArmController/LowerArm.L
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -8171,7 +8171,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: TolingBell/Root/ArmController/UpperArm.R
+    path: BellBossArmature/Root/ArmController/UpperArm.R
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -8196,7 +8196,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: TolingBell/Root/ArmController/UpperArm.L
+    path: BellBossArmature/Root/ArmController/UpperArm.L
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -8221,207 +8221,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: TolingBell/Root/Chain1
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: {x: 1, y: 0.99999994, z: 1}
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-      - serializedVersion: 3
-        time: 6.291667
-        value: {x: 1, y: 0.99999994, z: 1}
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    path: TolingBell/Root/Chain1/Chain2
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: {x: 1, y: 1, z: 1}
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-      - serializedVersion: 3
-        time: 6.291667
-        value: {x: 1, y: 1, z: 1}
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    path: TolingBell/Root/Chain1/Chain2/Chain3
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: {x: 1, y: 1, z: 1}
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-      - serializedVersion: 3
-        time: 6.291667
-        value: {x: 1, y: 1, z: 1}
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    path: TolingBell/Root/Chain1/Chain2/Chain3/Chain4
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: {x: 1, y: 1, z: 1}
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-      - serializedVersion: 3
-        time: 6.291667
-        value: {x: 1, y: 1, z: 1}
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    path: TolingBell/Root/Chain1/Chain2/Chain3/Chain4/Head
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: {x: 1, y: 1, z: 1}
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-      - serializedVersion: 3
-        time: 6.291667
-        value: {x: 1, y: 1, z: 1}
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    path: TolingBell/Root/Chain1/Chain2/Chain3/Chain4/Head/Ding1
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: {x: 1, y: 1, z: 1}
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-      - serializedVersion: 3
-        time: 6.291667
-        value: {x: 1, y: 1, z: 1}
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    path: TolingBell/Root/Chain1/Chain2/Chain3/Chain4/Head/Ding1/Ding2
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: {x: 1, y: 1, z: 1}
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-      - serializedVersion: 3
-        time: 6.291667
-        value: {x: 1, y: 1, z: 1}
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    path: TolingBell/Root/Chain1/Chain2/Chain3/Chain4/Head/Ding1/Ding2/Ding3
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: {x: 1, y: 1, z: 1}
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-      - serializedVersion: 3
-        time: 6.291667
-        value: {x: 1, y: 1, z: 1}
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    path: TolingBell/Root/Chain1/Chain2/Chain3/Chain4/Head/lower
+    path: BellBossArmature/Root/Chain1
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -8446,7 +8246,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: TolingBell/Root/Chain1/Chain2/Chain3/Chain4/Head/lower/Dong1
+    path: BellBossArmature/Root/Chain1/Chain2
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -8471,7 +8271,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: TolingBell/Root/Chain1/Chain2/Chain3/Chain4/Head/lower/Dong1/Dong2
+    path: BellBossArmature/Root/Chain1/Chain2/Chain3
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -8496,7 +8296,207 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: TolingBell/Root/Chain1/Chain2/Chain3/Chain4/Head/lower/Dong1/Dong2/Dong3
+    path: BellBossArmature/Root/Chain1/Chain2/Chain3/Chain4
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 6.291667
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: BellBossArmature/Root/Chain1/Chain2/Chain3/Chain4/Head
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 6.291667
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: BellBossArmature/Root/Chain1/Chain2/Chain3/Chain4/Head/Ding1
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 6.291667
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: BellBossArmature/Root/Chain1/Chain2/Chain3/Chain4/Head/Ding1/Ding2
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 6.291667
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: BellBossArmature/Root/Chain1/Chain2/Chain3/Chain4/Head/Ding1/Ding2/Ding3
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 6.291667
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: BellBossArmature/Root/Chain1/Chain2/Chain3/Chain4/Head/lower
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 0.99999994, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 6.291667
+        value: {x: 1, y: 0.99999994, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: BellBossArmature/Root/Chain1/Chain2/Chain3/Chain4/Head/lower/Dong1
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 6.291667
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: BellBossArmature/Root/Chain1/Chain2/Chain3/Chain4/Head/lower/Dong1/Dong2
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 6.291667
+        value: {x: 1, y: 1, z: 1}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: BellBossArmature/Root/Chain1/Chain2/Chain3/Chain4/Head/lower/Dong1/Dong2/Dong3
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -8557,7 +8557,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: TolingBell/Ball
+    path: BellBossArmature/Ball
   m_FloatCurves: []
   m_PPtrCurves: []
   m_SampleRate: 24
@@ -8568,504 +8568,504 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 1689260500
+      path: 4075139805
       attribute: 1
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 1101616125
+      path: 2845926885
       attribute: 1
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 3148246686
+      path: 1403934854
       attribute: 1
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 3819863398
+      path: 195447678
       attribute: 1
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 429998085
+      path: 4054414877
       attribute: 1
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 4107190816
+      path: 1271765663
       attribute: 1
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 1101616125
+      path: 2845926885
       attribute: 2
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 3148246686
+      path: 1403934854
       attribute: 2
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 3819863398
+      path: 195447678
       attribute: 2
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 429998085
+      path: 4054414877
       attribute: 2
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 8079317
+      path: 875222554
       attribute: 2
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 377905869
+      path: 2161361348
       attribute: 2
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 2802288856
+      path: 3318698120
       attribute: 2
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 2450662955
+      path: 132173132
       attribute: 2
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 3433805831
+      path: 1555106946
       attribute: 2
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 2854472061
+      path: 3283021257
       attribute: 2
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 966153817
+      path: 3568898231
       attribute: 2
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 1409493295
+      path: 4136960687
       attribute: 2
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 2968328243
+      path: 3646962823
       attribute: 2
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 2198919769
+      path: 1849662647
       attribute: 2
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 1921157591
+      path: 3491013207
       attribute: 2
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 4257433914
+      path: 397767809
       attribute: 2
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 4107190816
+      path: 1271765663
       attribute: 2
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 4107190816
+      path: 1271765663
       attribute: 3
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 2724522273
+      path: 3587688132
       attribute: 1
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 2517136160
+      path: 688597919
       attribute: 1
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 662701763
+      path: 2910358850
       attribute: 1
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 4264157545
+      path: 319203207
       attribute: 1
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 3797556724
+      path: 618196374
       attribute: 1
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 3121142601
+      path: 1195369608
       attribute: 1
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 8079317
+      path: 875222554
       attribute: 1
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 377905869
+      path: 2161361348
       attribute: 1
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 2802288856
+      path: 3318698120
       attribute: 1
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 2450662955
+      path: 132173132
       attribute: 1
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 3433805831
+      path: 1555106946
       attribute: 1
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 2854472061
+      path: 3283021257
       attribute: 1
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 966153817
+      path: 3568898231
       attribute: 1
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 1409493295
+      path: 4136960687
       attribute: 1
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 2968328243
+      path: 3646962823
       attribute: 1
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 2198919769
+      path: 1849662647
       attribute: 1
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 1921157591
+      path: 3491013207
       attribute: 1
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 4257433914
+      path: 397767809
       attribute: 1
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 2724522273
+      path: 3587688132
       attribute: 2
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 2517136160
+      path: 688597919
       attribute: 2
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 1689260500
+      path: 4075139805
       attribute: 2
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 662701763
+      path: 2910358850
       attribute: 2
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 4264157545
+      path: 319203207
       attribute: 2
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 3797556724
+      path: 618196374
       attribute: 2
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 3121142601
+      path: 1195369608
       attribute: 2
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 2724522273
+      path: 3587688132
       attribute: 3
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 2517136160
+      path: 688597919
       attribute: 3
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 1689260500
+      path: 4075139805
       attribute: 3
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 1101616125
+      path: 2845926885
       attribute: 3
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 662701763
+      path: 2910358850
       attribute: 3
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 4264157545
+      path: 319203207
       attribute: 3
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 3797556724
+      path: 618196374
       attribute: 3
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 3121142601
+      path: 1195369608
       attribute: 3
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 3148246686
+      path: 1403934854
       attribute: 3
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 3819863398
+      path: 195447678
       attribute: 3
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 429998085
+      path: 4054414877
       attribute: 3
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 8079317
+      path: 875222554
       attribute: 3
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 377905869
+      path: 2161361348
       attribute: 3
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 2802288856
+      path: 3318698120
       attribute: 3
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 2450662955
+      path: 132173132
       attribute: 3
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 3433805831
+      path: 1555106946
       attribute: 3
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 2854472061
+      path: 3283021257
       attribute: 3
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 966153817
+      path: 3568898231
       attribute: 3
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 1409493295
+      path: 4136960687
       attribute: 3
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 2968328243
+      path: 3646962823
       attribute: 3
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 2198919769
+      path: 1849662647
       attribute: 3
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 1921157591
+      path: 3491013207
       attribute: 3
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 4257433914
+      path: 397767809
       attribute: 3
       script: {fileID: 0}
       typeID: 4
