@@ -2,6 +2,7 @@
 using R2API;
 using RoR2;
 using RoR2.Skills;
+using System;
 using UnityEngine;
 
 namespace ForgottenFoes
@@ -45,8 +46,11 @@ namespace ForgottenFoes
             CreateDirectorCard();
         }
 
+
         public virtual void RegisterPrefabs()
         {
+            //PrefabAPI.RegisterNetworkPrefab(bodyPrefab);
+            //PrefabAPI.RegisterNetworkPrefab(masterPrefab);
             CloudUtils.RegisterNewBody(bodyPrefab);
             CloudUtils.RegisterNewMaster(masterPrefab);
         }

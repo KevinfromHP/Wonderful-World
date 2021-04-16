@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Wonderful World/ForgottenFoes/sample.unity
+- path: Assets/Wonderful World/ForgottenFoes/forgottenFoesTestScene.unity
   isLoaded: 1
   isActive: 1

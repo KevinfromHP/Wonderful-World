@@ -30,7 +30,7 @@ namespace ForgottenFoes.Enemies
 
         public override GameObject bodyPrefab => Assets.mainAssetBundle.LoadAsset<GameObject>("ImpSorcererBody");
         public override GameObject masterPrefab => Assets.mainAssetBundle.LoadAsset<GameObject>("ImpSorcererMaster");
-        public override ForgottenFoesDirectorCardHolder directorCardHolder => Assets.mainAssetBundle.LoadAsset<ForgottenFoesDirectorCardHolder>("ImpSorcererDirectorCard");
+        public override ForgottenFoesDirectorCardHolder directorCardHolder => Assets.mainAssetBundle.LoadAsset<ForgottenFoesDirectorCardHolder>("ImpSorcererDirectorCardHolder");
         public override string monsterName => "ImpSorcerer";
 
 
@@ -59,14 +59,15 @@ namespace ForgottenFoes.Enemies
             c.Index += 2;
 
             c.Emit(OpCodes.Ldarg_0);
-            c.Emit(OpCodes.Ldarg_1);
+            c.Emit(OpCodes.Ldloc_0);
             c.EmitDelegate<Func<ProjectileExplosion, Vector3, Vector3>>((self, vector) =>
             {
+                //Fix this shit once projectile is implemented
                 if (self.gameObject)
                     return new Vector3(vector.x, -1f, vector.z);
                 return vector;
             });
-            c.Emit(OpCodes.Starg, 0);
+            c.Emit(OpCodes.Stloc_0);
         }
 
         //I FUCKING HATE CHICAGO

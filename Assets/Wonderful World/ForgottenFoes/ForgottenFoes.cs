@@ -30,9 +30,8 @@ namespace ForgottenFoes
     [BepInPlugin(ModGuid, ModName, ModVer)]
     [BepInDependency(R2API.R2API.PluginGUID, BepInDependency.DependencyFlags.HardDependency)]
     [BepInDependency(EnigmaticThunderPlugin.guid, BepInDependency.DependencyFlags.HardDependency)]
-    [BepInDependency("com.funkfrog_sipondo.sharesuite", BepInDependency.DependencyFlags.SoftDependency)]
     [NetworkCompatibility(CompatibilityLevel.EveryoneMustHaveMod, VersionStrictness.EveryoneNeedSameModVersion)]
-    [R2APISubmoduleDependency(nameof(LanguageAPI), nameof(ResourcesAPI), nameof(DirectorAPI), nameof(EffectAPI), nameof(PrefabAPI))]
+    [R2APISubmoduleDependency(nameof(LanguageAPI), nameof(ResourcesAPI), nameof(DirectorAPI), nameof(EffectAPI), nameof(PrefabAPI), nameof(LoadoutAPI))]
 
     public class ForgottenFoes : BaseUnityPlugin
     {
@@ -59,10 +58,10 @@ namespace ForgottenFoes
             cfgFile = new ConfigFile(Path.Combine(Paths.ConfigPath, ModGuid + ".cfg"), true);
 
             LogCore.LogD("Adding Monsters...");
-            var ItemTypes = Assembly.GetExecutingAssembly().GetTypes().Where(type => !type.IsAbstract && type.IsSubclassOf(typeof(EnemyBuilderNew)));
-            foreach (var itemType in ItemTypes)
+            var EnemyTypes = Assembly.GetExecutingAssembly().GetTypes().Where(type => !type.IsAbstract && type.IsSubclassOf(typeof(EnemyBuilderNew)));
+            foreach (var enemyType in EnemyTypes)
             {
-                EnemyBuilderNew item = (EnemyBuilderNew)System.Activator.CreateInstance(itemType);
+                EnemyBuilderNew item = (EnemyBuilderNew)System.Activator.CreateInstance(enemyType);
 
                 LogCore.LogI(item);
                 if (ValidateEnemy(item, enemies))
@@ -70,6 +69,15 @@ namespace ForgottenFoes
                     item.Create(cfgFile);
                 }
             }
+
+            var skillFamilies = Assets.mainAssetBundle.LoadAllAssets<SkillFamily>();
+            foreach(SkillFamily skillFamily in skillFamilies)
+            {
+                LoadoutAPI.AddSkillFamily(skillFamily);
+                foreach (SkillFamily.Variant variant in skillFamily.variants)
+                    LoadoutAPI.AddSkillDef(variant.skillDef);
+            }
+
             LogCore.LogD("Adding Monsters Complete.");
         }
 
@@ -83,18 +91,28 @@ namespace ForgottenFoes
             return enabled;
         }
     }
+
 }
 
 public static class Assets
 {
+    static bool imTooGodDamnLazyToSetUpConfigurationForThisSoJustSetThisToTrueIfAssetBundleIsntEmbeddedOkay = true;
+
     public static AssetBundle mainAssetBundle = null;
-    public static AssetBundleResourcesProvider Provider;
 
     public static void PopulateAssets()
     {
-        using (var assetStream = Assembly.GetExecutingAssembly().GetManifestResourceStream("ForgottenFoes.forgottenfoes_assets"))
+        if (imTooGodDamnLazyToSetUpConfigurationForThisSoJustSetThisToTrueIfAssetBundleIsntEmbeddedOkay)
         {
-            mainAssetBundle = AssetBundle.LoadFromStream(assetStream);
+            var path = Assembly.GetExecutingAssembly().Location.Remove(Assembly.GetExecutingAssembly().Location.LastIndexOf('\\') + 1);
+            mainAssetBundle = AssetBundle.LoadFromFile(Path.Combine(path, "forgottenfoes_assets"));
+        }
+        else
+        {
+            using (var assetStream = Assembly.GetExecutingAssembly().GetManifestResourceStream("ForgottenFoes.forgottenfoes_assets"))
+            {
+                mainAssetBundle = AssetBundle.LoadFromStream(assetStream);
+            }
         }
     }
 

@@ -4,212 +4,6 @@
         <name>R2API</name>
     </assembly>
     <members>
-        <member name="T:R2API.IModdedUnlockableDataProvider">
-            <summary>
-            Interface used to provide the metadata needed to register an achievement
-            </summary>
-        </member>
-        <member name="P:R2API.IModdedUnlockableDataProvider.AchievementIdentifier">
-            <summary>
-            The identifier of the achievement being added
-            Should be unique
-            </summary>
-        </member>
-        <member name="P:R2API.IModdedUnlockableDataProvider.UnlockableIdentifier">
-            <summary>
-            The identifier of the unlockable granted when the achievement is completed
-            Should be unique
-            This is what is used when specifying an unlock condition for various things in the game
-            </summary>
-        </member>
-        <member name="P:R2API.IModdedUnlockableDataProvider.PrerequisiteUnlockableIdentifier">
-            <summary>
-            The unlockableIdentifier of a prerequisite
-            Should be used for skill unlocks for a custom character if the character has an unlock condition
-            Multiple prereqs are not supported (as far as I can tell)
-            </summary>
-        </member>
-        <member name="P:R2API.IModdedUnlockableDataProvider.AchievementNameToken">
-            <summary>
-            The language token for the name to be shown in logbook for this achievement
-            </summary>
-        </member>
-        <member name="P:R2API.IModdedUnlockableDataProvider.AchievementDescToken">
-            <summary>
-            The language token for the description to be shown in logbook for this achievement
-            Also used to create the 'How to unlock' text
-            </summary>
-        </member>
-        <member name="P:R2API.IModdedUnlockableDataProvider.UnlockableNameToken">
-            <summary>
-            The language token for the unlockable
-            Not 100% sure where this is shown in game
-            </summary>
-        </member>
-        <member name="P:R2API.IModdedUnlockableDataProvider.SpritePath">
-            <summary>
-            The path that is passed to Resources.Load when the sprite is loaded for this achievement
-            </summary>
-        </member>
-        <member name="T:R2API.IAchievementSpriteProvider">
-            <summary>
-            Interface for supplying alternative ways of loading sprites for achievements in the future
-            </summary>
-        </member>
-        <member name="P:R2API.IAchievementSpriteProvider.PathString">
-            <summary>
-            The path that will be passed to Resources.Load to get the sprite
-            </summary>
-        </member>
-        <member name="P:R2API.IAchievementSpriteProvider.Sprite">
-            <summary>
-            The sprite that is being provided
-            </summary>
-        </member>
-        <member name="T:R2API.VanillaSpriteProvider">
-            <summary>
-            An implementation of IAchievementSpriteProvider for using vanilla achievement icons
-            </summary>
-        </member>
-        <member name="M:R2API.VanillaSpriteProvider.#ctor(System.String)">
-            <summary>
-            Creates a VanillaSpriteProvider from the path to its target sprite.
-            The sprite is loaded and cached immediately upon creation
-            </summary>
-            <param name="path">A path suitable for Resources.Load that will return the desired sprite</param>
-        </member>
-        <member name="P:R2API.VanillaSpriteProvider.PathString">
-            <summary>
-            The path that will be passed to Resources.Load to get the sprite
-            </summary>
-        </member>
-        <member name="P:R2API.VanillaSpriteProvider.Sprite">
-            <summary>
-            Returns the cached sprite
-            </summary>
-        </member>
-        <member name="T:R2API.CustomSpriteProvider">
-            <summary>
-            An implementation of IAchievementSpriteProvider for use with AssetBundleResourcesProvider and ResourcesAPI
-            </summary>
-        </member>
-        <member name="M:R2API.CustomSpriteProvider.#ctor(System.String)">
-            <summary>
-            Creates a CustomSpriteProvider from the path used for a ResourcesProvider from ResourcesAPI
-            </summary>
-            <param name="modPrefixedPath">The path used to retreive the sprite from the provider</param>
-        </member>
-        <member name="P:R2API.CustomSpriteProvider.PathString">
-            <summary>
-            The path that will be passed to Resources.Load to get the sprite
-            </summary>
-        </member>
-        <member name="P:R2API.CustomSpriteProvider.Sprite">
-            <summary>
-            Loads the sprite
-            </summary>
-        </member>
-        <member name="T:R2API.ModdedUnlockableAndAchievement`1">
-            <summary>
-            A base class that can be used to conveinently supply all the required info for a modded achievement
-            </summary>
-            <typeparam name="TSpriteProvider">The type of sprite provider being used for this achievement</typeparam>
-        </member>
-        <member name="P:R2API.ModdedUnlockableAndAchievement`1.SpritePath">
-            <summary>
-            The path that will be passed to Resources.Load to get the sprite
-            </summary>
-        </member>
-        <member name="M:R2API.ModdedUnlockableAndAchievement`1.Revoke">
-            <summary>
-            Removes this achievement from the current profile.
-            </summary>
-        </member>
-        <member name="P:R2API.ModdedUnlockableAndAchievement`1.SpriteProvider">
-            <summary>
-            This should return the sprite provider for this achievement
-            </summary>
-        </member>
-        <member name="P:R2API.ModdedUnlockableAndAchievement`1.AchievementIdentifier">
-            <summary>
-            The identifier of the achievement being added
-            Should be unique
-            </summary>
-        </member>
-        <member name="P:R2API.ModdedUnlockableAndAchievement`1.UnlockableIdentifier">
-            <summary>
-            The identifier of the unlockable granted when the achievement is completed
-            Should be unique
-            This is what is used when specifying an unlock condition for various things in the game
-            </summary>
-        </member>
-        <member name="P:R2API.ModdedUnlockableAndAchievement`1.PrerequisiteUnlockableIdentifier">
-            <summary>
-            The unlockableIdentifier of a prerequisite
-            Should be used for skill unlocks for a custom character if the character has an unlock condition
-            Multiple prereqs are not supported (as far as I can tell)
-            </summary>
-        </member>
-        <member name="P:R2API.ModdedUnlockableAndAchievement`1.AchievementNameToken">
-            <summary>
-            The language token for the name to be shown in logbook for this achievement
-            </summary>
-        </member>
-        <member name="P:R2API.ModdedUnlockableAndAchievement`1.AchievementDescToken">
-            <summary>
-            The language token for the description to be shown in logbook for this achievement
-            Also used to create the 'How to unlock' text
-            </summary>
-        </member>
-        <member name="P:R2API.ModdedUnlockableAndAchievement`1.UnlockableNameToken">
-            <summary>
-            The language token for the unlockable
-            Not 100% sure where this is shown in game
-            </summary>
-        </member>
-        <member name="M:R2API.ModdedUnlockableAndAchievement`1.OnGranted">
-            <summary>
-            Called when this achievement is granted
-            </summary>
-        </member>
-        <member name="M:R2API.ModdedUnlockableAndAchievement`1.OnInstall">
-            <summary>
-            This should be used to register to an event or apply a hook in order to detect when the achievement conditions are met
-            When you detect that the conditions are met, call `base.Grant` inside the method
-            </summary>
-        </member>
-        <member name="M:R2API.ModdedUnlockableAndAchievement`1.OnUninstall">
-            <summary>
-            This should unregister whatever was registered in OnInstall
-            </summary>
-        </member>
-        <member name="M:R2API.ModdedUnlockableAndAchievement`1.ProgressForAchievement">
-            <summary>
-            TODO
-            </summary>
-            <returns>TODO</returns>
-        </member>
-        <member name="M:R2API.ModdedUnlockableAndAchievement`1.LookUpRequiredBodyIndex">
-            <summary>
-            Used to specify if this achievement is limited to a certain character
-            </summary>
-            <returns>The index of the character that is needed to unlock this achievement</returns>
-        </member>
-        <member name="M:R2API.ModdedUnlockableAndAchievement`1.OnBodyRequirementBroken">
-            <summary>
-            Called when the body changes to a body that does not meet the requirements for this achievement
-            </summary>
-        </member>
-        <member name="M:R2API.ModdedUnlockableAndAchievement`1.OnBodyRequirementMet">
-            <summary>
-            Called when the body changes to a body that meets the requirements for this acheivement
-            </summary>
-        </member>
-        <member name="P:R2API.ModdedUnlockableAndAchievement`1.wantsBodyCallbacks">
-            <summary>
-            This actually does nothing in vanilla, it is here in case that changes in future updates.
-            </summary>
-        </member>
         <member name="T:R2API.ArtifactAPI">
             <summary>
             API for adding custom artifact to the game.
@@ -632,6 +426,11 @@
             These can be used for matching names.
             </summary>
         </member>
+        <member name="M:R2API.DirectorAPI.Helpers.TryApplyChangesNow">
+            <summary>
+            Try applying changes for the current stage (hot swap) for monster and family changes,
+            </summary>
+        </member>
         <member name="M:R2API.DirectorAPI.Helpers.PreventElites(System.String,System.Boolean)">
             <summary>
             Enables or disables elite spawns for a specific monster.
@@ -1001,47 +800,6 @@
             <param name="itemTier">The drop table to remove the items from.</param>
             <param name="items">The item indices to remove from the given drop table.</param>
         </member>
-        <member name="M:R2API.ItemDropAPI.AddEquipmentByDropType(R2API.ItemDrop.EquipmentDropType,RoR2.EquipmentIndex[])">
-            <summary>
-            Add the given equipments to the given drop table.
-            </summary>
-            <param name="equipmentDropType">The drop table to add the items to.</param>
-            <param name="equipments">The equipments indices to add to the given drop table.</param>
-        </member>
-        <member name="M:R2API.ItemDropAPI.RemoveEquipmentByDropType(R2API.ItemDrop.EquipmentDropType,RoR2.EquipmentIndex[])">
-            <summary>
-            Remove the given equipments from the given drop table.
-            </summary>
-            <param name="equipmentDropType">The drop table to remove the items from.</param>
-            <param name="equipments">The equipments indices to remove from the given drop table.</param>
-        </member>
-        <member name="M:R2API.ItemDropAPI.AddEquipmentByDropType(System.Collections.Generic.IEnumerable{R2API.ItemDrop.EquipmentDropType},RoR2.EquipmentIndex[])">
-            <summary>
-            Add the given equipments to the given drop tables.
-            </summary>
-            <param name="equipmentDropTypes">The drop tables to add the items to.</param>
-            <param name="equipments">The equipments indices to add to the given drop tables.</param>
-        </member>
-        <member name="M:R2API.ItemDropAPI.RemoveEquipmentByDropType(System.Collections.Generic.IEnumerable{R2API.ItemDrop.EquipmentDropType},RoR2.EquipmentIndex[])">
-            <summary>
-            Remove the given equipments from the given drop tables.
-            </summary>
-            <param name="equipmentDropTypes">The drop tables to remove the items from.</param>
-            <param name="equipments">The equipments indices to remove from the given drop tables.</param>
-        </member>
-        <member name="M:R2API.ItemDropAPI.AddEquipment(RoR2.EquipmentIndex[])">
-            <summary>
-            Add the given equipments to the drop tables automatically, the api will look up the equipmentDefs from the indices
-            and add the equipment depending on the information provided from the EquipmentDef. (isLunar, isElite, etc)
-            </summary>
-            <param name="equipments">Equipment Indices to add.</param>
-        </member>
-        <member name="M:R2API.ItemDropAPI.RemoveEquipment(RoR2.EquipmentIndex[])">
-            <summary>
-            Remove the given equipments from the drop tables.
-            </summary>
-            <param name="equipments">Equipment Indices to remove.</param>
-        </member>
         <member name="T:R2API.LanguageAPI">
             <summary>
             class for language files to load
@@ -1349,61 +1107,6 @@
             <param name="key"></param>
             <param name="value"></param>
         </member>
-        <member name="M:R2API.MonsterItemsAPI.AddItemByTier(RoR2.ItemTier,RoR2.ItemIndex[])">
-            <summary>
-            Add the given items to the given drop table.
-            </summary>
-            <param name="itemTier">The drop table to add the items to.</param>
-            <param name="items">The item indices to add to the given drop table.</param>
-        </member>
-        <member name="M:R2API.MonsterItemsAPI.RemoveItemByTier(RoR2.ItemTier,RoR2.ItemIndex[])">
-            <summary>
-            Remove the given items to the given drop table.
-            </summary>
-            <param name="itemTier">The drop table to remove the items from.</param>
-            <param name="items">The item indices to remove from the given drop table.</param>
-        </member>
-        <member name="M:R2API.MonsterItemsAPI.AddEquipmentByDropType(R2API.ItemDrop.EquipmentDropType,RoR2.EquipmentIndex[])">
-            <summary>
-            Add the given equipments to the given drop table.
-            </summary>
-            <param name="equipmentDropType">The drop table to add the items to.</param>
-            <param name="equipments">The equipments indices to add to the given drop table.</param>
-        </member>
-        <member name="M:R2API.MonsterItemsAPI.RemoveEquipmentByDropType(R2API.ItemDrop.EquipmentDropType,RoR2.EquipmentIndex[])">
-            <summary>
-            Remove the given equipments from the given drop table.
-            </summary>
-            <param name="equipmentDropType">The drop table to remove the items from.</param>
-            <param name="equipments">The equipments indices to remove from the given drop table.</param>
-        </member>
-        <member name="M:R2API.MonsterItemsAPI.AddEquipmentByDropType(System.Collections.Generic.IEnumerable{R2API.ItemDrop.EquipmentDropType},RoR2.EquipmentIndex[])">
-            <summary>
-            Add the given equipments to the given drop tables.
-            </summary>
-            <param name="equipmentDropTypes">The drop tables to add the items to.</param>
-            <param name="equipments">The equipments indices to add to the given drop tables.</param>
-        </member>
-        <member name="M:R2API.MonsterItemsAPI.RemoveEquipmentByDropType(System.Collections.Generic.IEnumerable{R2API.ItemDrop.EquipmentDropType},RoR2.EquipmentIndex[])">
-            <summary>
-            Remove the given equipments from the given drop tables.
-            </summary>
-            <param name="equipmentDropTypes">The drop tables to remove the items from.</param>
-            <param name="equipments">The equipments indices to remove from the given drop tables.</param>
-        </member>
-        <member name="M:R2API.MonsterItemsAPI.AddEquipment(RoR2.EquipmentIndex[])">
-            <summary>
-            Add the given equipments to the monster drop tables (mostly scavenger backpack), the api will look up the equipmentDefs from the indices
-            and add the equipment depending on the information provided from the EquipmentDef (isLunar, isElite, etc)
-            </summary>
-            <param name="equipments"></param>
-        </member>
-        <member name="M:R2API.MonsterItemsAPI.RemoveEquipment(RoR2.EquipmentIndex[])">
-            <summary>
-            Remove the given equipments from the drop tables.
-            </summary>
-            <param name="equipments"></param>
-        </member>
         <member name="P:R2API.Networking.NetworkingAPI.Loaded">
             <summary>
             Return true if the submodule is loaded.
@@ -1642,6 +1345,87 @@
             <summary>
             This class allows loading of resources not stored in an assetbundle with Resources.Load. Primary use would be for generating an item icon in code.
             </summary>
+        </member>
+        <member name="T:R2API.IModdedUnlockableDataProvider">
+            <summary>
+            Interface used to provide the metadata needed to register an achievement + unlockable
+            </summary>
+        </member>
+        <member name="P:R2API.IModdedUnlockableDataProvider.AchievementIdentifier">
+            <summary>
+            The identifier of the achievement being added.
+            Should be unique
+            </summary>
+        </member>
+        <member name="P:R2API.IModdedUnlockableDataProvider.UnlockableIdentifier">
+            <summary>
+            The identifier of the unlockable granted when the achievement is completed.
+            Should be unique.
+            This is what is used when specifying an unlock condition for various things in the game
+            </summary>
+        </member>
+        <member name="P:R2API.IModdedUnlockableDataProvider.AchievementNameToken">
+            <summary>
+            The unlockableIdentifier of a prerequisite.
+            Should be used for skill unlocks for a custom character if the character has an unlock condition.
+            Multiple prereqs are not supported (as far as I can tell)
+            </summary>
+        </member>
+        <member name="P:R2API.IModdedUnlockableDataProvider.PrerequisiteUnlockableIdentifier">
+            <summary>
+            The language token for the name to be shown in logbook for this achievement.
+            </summary>
+        </member>
+        <member name="P:R2API.IModdedUnlockableDataProvider.UnlockableNameToken">
+            <summary>
+            The language token for the unlockable.
+            Not 100% sure where this is shown in game.
+            </summary>
+        </member>
+        <member name="P:R2API.IModdedUnlockableDataProvider.AchievementDescToken">
+            <summary>
+            The language token for the description to be shown in logbook for this achievement.
+            Also used to create the 'How to unlock' text.
+            </summary>
+        </member>
+        <member name="P:R2API.IModdedUnlockableDataProvider.Sprite">
+            <summary>
+            Sprite that is used for this achievement.
+            </summary>
+        </member>
+        <member name="P:R2API.IModdedUnlockableDataProvider.GetHowToUnlock">
+            <summary>
+            Delegate that return a string that will be shown to the user on how to unlock the achievement.
+            </summary>
+        </member>
+        <member name="P:R2API.IModdedUnlockableDataProvider.GetUnlocked">
+            <summary>
+            Delegate that return a string that will be shown to the user when the achievement is unlocked.
+            </summary>
+        </member>
+        <member name="T:R2API.ModdedUnlockable">
+            <summary>
+            Class used to provide the metadata needed to register an achievement + unlockable
+            </summary>
+        </member>
+        <member name="T:R2API.UnlockableAPI">
+            <summary>
+            API for adding custom unlockables to the game.
+            </summary>
+        </member>
+        <member name="P:R2API.UnlockableAPI.Loaded">
+            <summary>
+            Return true if the submodule is loaded.
+            </summary>
+        </member>
+        <member name="M:R2API.UnlockableAPI.AddUnlockable``1(System.Boolean)">
+            <summary>
+            Add an unlockable tied to an achievement.
+            For an example usage check <see href="https://github.com/ArcPh1r3/HenryTutorial/blob/master/HenryMod/Modules/Achievements/HenryMasteryAchievement.cs">Rob repository</see>
+            </summary>
+            <typeparam name="TUnlockable">Class that herit from BaseAchievement and implement IModdedUnlockableDataProvider</typeparam>
+            <param name="serverTracked">whether or not the achievement should be tracked by the server.</param>
+            <returns></returns>
         </member>
         <member name="T:R2API.Utils.R2APISubmoduleDependency">
             <summary>
