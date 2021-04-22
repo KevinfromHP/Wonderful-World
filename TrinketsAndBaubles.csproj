@@ -65,6 +65,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Wonderful World\TrinketsAndBaubles\TrinketsAndBaubles.cs" />
+    <Compile Include="Assets\Wonderful World\TrinketsAndBaubles\Utils\CloudUtils.cs" />
+    <Compile Include="Assets\Wonderful World\TrinketsAndBaubles\Utils\ComponentHelpers.cs" />
+    <Compile Include="Assets\Wonderful World\TrinketsAndBaubles\Utils\EquipBuilder.cs" />
+    <Compile Include="Assets\Wonderful World\TrinketsAndBaubles\Utils\EquipmentHandler.cs" />
+    <Compile Include="Assets\Wonderful World\TrinketsAndBaubles\Utils\ItemBuilder.cs" />
+    <Compile Include="Assets\Wonderful World\TrinketsAndBaubles\Utils\LogCore.cs" />
     <None Include="Assets\Wonderful World\TrinketsAndBaubles\TrinketsAndBaubles.asmdef" />
     <Reference Include="UnityEngine.AIModule">
       <HintPath>F:/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -294,26 +300,44 @@
     <Reference Include="UnityEditor.WindowsStandalone.Extensions">
       <HintPath>F:/Unity/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
     </Reference>
-    <Reference Include="ForgottenFoes">
-      <HintPath>E:/All Coding Stuff/RoR2 Modding/Wonderful World/Assets/Wonderful World/ForgottenFoes/Builds/ForgottenFoes.dll</HintPath>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>E:/All Coding Stuff/RoR2 Modding/Wonderful World/Packages/Risk of Rain 2/Assembly-CSharp.dll</HintPath>
     </Reference>
-    <Reference Include="Markdig.Signed">
-      <HintPath>E:/All Coding Stuff/RoR2 Modding/Wonderful World/Library/PackageCache/com.passivepicasso.thunderkit@c63740fb67cb455f1941026c65ba20a436f18fed/Editor/ThirdParty/MarkDig/Markdig.Signed.dll</HintPath>
+    <Reference Include="BepInEx">
+      <HintPath>E:/All Coding Stuff/RoR2 Modding/Wonderful World/Packages/BepInExPack/BepInExPack/BepInEx/core/BepInEx.dll</HintPath>
     </Reference>
-    <Reference Include="SharpCompress">
-      <HintPath>E:/All Coding Stuff/RoR2 Modding/Wonderful World/Library/PackageCache/com.passivepicasso.thunderkit@c63740fb67cb455f1941026c65ba20a436f18fed/Editor/ThirdParty/SharpCompress/SharpCompress.dll</HintPath>
+    <Reference Include="EnigmaticThunder">
+      <HintPath>E:/All Coding Stuff/RoR2 Modding/Wonderful World/Packages/EnigmaticThunder/plugins/EnigmaticThunder/EnigmaticThunder.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Analytics.Editor">
-      <HintPath>E:/All Coding Stuff/RoR2 Modding/Wonderful World/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
+    <Reference Include="MMHOOK_Assembly-CSharp">
+      <HintPath>E:/All Coding Stuff/RoR2 Modding/Wonderful World/Packages/MMHOOK_Standalone/MMHOOK_Assembly-CSharp.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>E:/All Coding Stuff/RoR2 Modding/Wonderful World/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
+    <Reference Include="MMHook">
+      <HintPath>E:/All Coding Stuff/RoR2 Modding/Wonderful World/Packages/MMHOOK_Standalone/MMHook.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Analytics.Tracker">
-      <HintPath>E:/All Coding Stuff/RoR2 Modding/Wonderful World/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
+    <Reference Include="Mono.Cecil">
+      <HintPath>E:/All Coding Stuff/RoR2 Modding/Wonderful World/Packages/BepInExPack/BepInExPack/BepInEx/core/Mono.Cecil.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoMod.Utils">
+      <HintPath>E:/All Coding Stuff/RoR2 Modding/Wonderful World/Packages/BepInExPack/BepInExPack/BepInEx/core/MonoMod.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="R2API">
+      <HintPath>E:/All Coding Stuff/RoR2 Modding/Wonderful World/Packages/R2API/plugins/R2API/R2API.dll</HintPath>
+    </Reference>
+    <Reference Include="Rewired_Core">
+      <HintPath>E:/All Coding Stuff/RoR2 Modding/Wonderful World/Packages/Risk of Rain 2/Rewired_Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Rewired_CSharp">
+      <HintPath>E:/All Coding Stuff/RoR2 Modding/Wonderful World/Packages/Risk of Rain 2/Rewired_CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Postprocessing.Runtime">
+      <HintPath>E:/All Coding Stuff/RoR2 Modding/Wonderful World/Packages/Risk of Rain 2/Unity.Postprocessing.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>E:/All Coding Stuff/RoR2 Modding/Wonderful World/Packages/Risk of Rain 2/Unity.TextMeshPro.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.StackTrace">
+      <HintPath>E:/All Coding Stuff/RoR2 Modding/Wonderful World/Packages/Risk of Rain 2/System.Diagnostics.StackTrace.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>F:/Unity/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>

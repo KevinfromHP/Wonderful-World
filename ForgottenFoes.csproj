@@ -65,13 +65,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Wonderful World\ForgottenFoes\ForgottenFoes.cs" />
+    <Compile Include="Assets\Wonderful World\ForgottenFoes\MonoBehaviours\ForgottenFoesDirectorCardHolder.cs" />
     <Compile Include="Assets\Wonderful World\ForgottenFoes\MonoBehaviours\ProjectileSteerAboveTarget.cs" />
     <Compile Include="Assets\Wonderful World\ForgottenFoes\Monsters\BellBoss.cs" />
     <Compile Include="Assets\Wonderful World\ForgottenFoes\Monsters\ImpSorcerer.cs" />
     <Compile Include="Assets\Wonderful World\ForgottenFoes\Utils\CloudUtils.cs" />
     <Compile Include="Assets\Wonderful World\ForgottenFoes\Utils\ComponentHelpers.cs" />
-    <Compile Include="Assets\Wonderful World\ForgottenFoes\Utils\EnemyBuilderNew.cs" />
-    <Compile Include="Assets\Wonderful World\ForgottenFoes\Utils\ForgottenFoesDirectorCardHolder.cs" />
+    <Compile Include="Assets\Wonderful World\ForgottenFoes\Utils\EnemyBuilder.cs" />
     <Compile Include="Assets\Wonderful World\ForgottenFoes\Utils\LogCore.cs" />
     <None Include="Assets\Wonderful World\ForgottenFoes\ForgottenFoes.asmdef" />
     <Reference Include="UnityEngine.AIModule">
@@ -340,6 +340,9 @@
     </Reference>
     <Reference Include="System.Diagnostics.StackTrace">
       <HintPath>E:/All Coding Stuff/RoR2 Modding/Wonderful World/Packages/Risk of Rain 2/System.Diagnostics.StackTrace.dll</HintPath>
+    </Reference>
+    <Reference Include="ModLoader">
+      <HintPath>E:/All Coding Stuff/RoR2 Modding/Wonderful World/Packages/Risk of Rain 2/ModLoader.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>F:/Unity/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>

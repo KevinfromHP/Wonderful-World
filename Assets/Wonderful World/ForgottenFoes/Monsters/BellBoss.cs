@@ -22,7 +22,7 @@ using UnityEngine.Networking;
 
 namespace ForgottenFoes.Enemies
 {
-    class BellBoss : EnemyBuilderNew
+    class BellBoss : EnemyBuilder
     {
         public override int DirectorCost => 27;
 

@@ -19,7 +19,8 @@
         "Rewired_CSharp.dll",
         "Unity.Postprocessing.Runtime.dll",
         "Unity.TextMeshPro.dll",
-        "System.Diagnostics.StackTrace.dll"
+        "System.Diagnostics.StackTrace.dll",
+        "ModLoader.dll"
     ],
     "autoReferenced": true,
     "defineConstraints": []

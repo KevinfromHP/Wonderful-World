@@ -1,0 +1,175 @@
+fileFormatVersion: 2
+guid: 1bb234fa19eedb84b81bc21196a37289
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: ArmChain1
+    100002: ArmChain2
+    100004: ArmChain3
+    100006: ArmChain4
+    100008: ArmChain4_end
+    100010: ArmController
+    100012: Ball
+    100014: Ball_end
+    100016: BellBallMesh
+    100018: //RootNode
+    100020: BellBossArmature
+    100022: BellBossMesh
+    100024: Chain1
+    100026: Chain2
+    100028: Chain3
+    100030: Chain4
+    100032: Ding1
+    100034: Ding2
+    100036: Ding3
+    100038: Ding3_end
+    100040: Dong1
+    100042: Dong2
+    100044: Dong3
+    100046: Dong3_end
+    100048: Head
+    100050: lower
+    100052: LowerArm.L
+    100054: LowerArm.L_end
+    100056: LowerArm.R
+    100058: Root
+    100060: UpperArm.L
+    100062: UpperArm.L_end
+    100064: UpperArm.R
+    100066: UpperArm.R_end
+    400000: ArmChain1
+    400002: ArmChain2
+    400004: ArmChain3
+    400006: ArmChain4
+    400008: ArmChain4_end
+    400010: ArmController
+    400012: Ball
+    400014: Ball_end
+    400016: BellBallMesh
+    400018: //RootNode
+    400020: BellBossArmature
+    400022: BellBossMesh
+    400024: Chain1
+    400026: Chain2
+    400028: Chain3
+    400030: Chain4
+    400032: Ding1
+    400034: Ding2
+    400036: Ding3
+    400038: Ding3_end
+    400040: Dong1
+    400042: Dong2
+    400044: Dong3
+    400046: Dong3_end
+    400048: Head
+    400050: lower
+    400052: LowerArm.L
+    400054: LowerArm.L_end
+    400056: LowerArm.R
+    400058: Root
+    400060: UpperArm.L
+    400062: UpperArm.L_end
+    400064: UpperArm.R
+    400066: UpperArm.R_end
+    2100000: Default OBJ
+    2100002: matBell
+    2300000: BellBallMesh
+    3300000: BellBallMesh
+    4300000: BellBallMesh
+    4300002: BellBossMesh
+    7400000: BellBossArmature|Death
+    7400002: BellBossArmature|Idle
+    7400004: BellBossArmature|Secondary1
+    7400006: BellBossArmature|Secondary2
+    7400008: BellBossArmature|Secondary3
+    7400010: BellBossArmature|Spawn
+    7400012: BellBossArmature|Special
+    7400014: BellBossArmature|Utility
+    9500000: //RootNode
+    13700000: BellBossMesh
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

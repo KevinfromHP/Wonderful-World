@@ -7,7 +7,7 @@ using EnigmaticThunder.Modules;
 using EnigmaticThunder.Util;
 using EntityStates;
 using EntityStates.ForgottenFoes.ImpSorcererStates;
-using ForgottenFoes.Enemies;
+using ForgottenFoes.Utils;
 using Mono.Cecil.Cil;
 using MonoMod.Cil;
 using R2API;
@@ -22,7 +22,7 @@ using UnityEngine.Networking;
 
 namespace ForgottenFoes.Enemies
 {
-    class ImpSorcerer : EnemyBuilderNew
+    class ImpSorcerer : EnemyBuilder
     {
         //public override DirectorAPI.Stage[] stagesToSpawnOn => new DirectorAPI.Stage[] { DirectorAPI.Stage.ScorchedAcres, DirectorAPI.Stage.RallypointDelta, DirectorAPI.Stage.AbyssalDepths };
 
@@ -31,6 +31,13 @@ namespace ForgottenFoes.Enemies
         public override GameObject bodyPrefab => Assets.mainAssetBundle.LoadAsset<GameObject>("ImpSorcererBody");
         public override GameObject masterPrefab => Assets.mainAssetBundle.LoadAsset<GameObject>("ImpSorcererMaster");
         public override ForgottenFoesDirectorCardHolder directorCardHolder => Assets.mainAssetBundle.LoadAsset<ForgottenFoesDirectorCardHolder>("ImpSorcererDirectorCardHolder");
+        public override Type[] entityStateTypes => new Type[]
+        {
+            typeof(SpawnState),
+            typeof(DeathState),
+            typeof(BlinkState),
+            typeof(FireVoidClusterState)
+        };
         public override string monsterName => "ImpSorcerer";
 
 
@@ -75,7 +82,6 @@ namespace ForgottenFoes.Enemies
 
         public override void ModifyPrefabs()
         {
-
         }
 
         public override void RegisterPrefabs()
@@ -83,8 +89,9 @@ namespace ForgottenFoes.Enemies
             base.RegisterPrefabs();
             //where we would add projectiles
         }
-
-        //https://cdn.discordapp.com/attachments/785698006212804619/806241149412835338/Screenshot_20210202-121414_Discord.jpg
+        public override void ModifyDirectorCardOrHolder()
+        {
+        }
 
         /*private void AddProjectiles()
         {
@@ -171,10 +178,6 @@ namespace ForgottenFoes.Enemies
             FireVoidCluster.projectilePrefab = projectilePrefab;
         }*/
 
-        public override void ModifyDirectorCardOrHolder(ForgottenFoesDirectorCardHolder holder)
-        {
-            base.ModifyDirectorCardOrHolder(holder);
-        }
 
     }
     public class VoidClusterBombIndicator : MonoBehaviour
@@ -406,7 +409,7 @@ namespace EntityStates.ForgottenFoes.ImpSorcererStates
 
     }
 
-    public class FireVoidCluster : BaseSkillState
+    public class FireVoidClusterState : BaseSkillState
     {
         public static GameObject projectilePrefab;
         public static GameObject effectPrefab;
@@ -462,7 +465,7 @@ namespace EntityStates.ForgottenFoes.ImpSorcererStates
             }
         }
     }
-    public class ImpSorcererBlinkState : BaseSkillState
+    public class BlinkState : BaseSkillState
     {
         private Transform modelTransform;
         public static GameObject blinkPrefab = Resources.Load<GameObject>("prefabs/effects/ImpBlinkEffect");
@@ -581,5 +584,4 @@ namespace EntityStates.ForgottenFoes.ImpSorcererStates
         }
     }
 
-    //word dissassacion
 }

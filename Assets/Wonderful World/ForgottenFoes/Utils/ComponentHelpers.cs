@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 
 
+namespace ForgottenFoes.Utils
+{
     public static class ComponentHelpers
     {
         public static bool HasComponent<T>(this GameObject g) where T : Component
@@ -72,3 +74,4 @@
             return (t.HasComponent<T>() ? t.GetComponent(typeof(T)) : t.gameObject.AddComponent(typeof(T))) as T;
         }
     }
+}

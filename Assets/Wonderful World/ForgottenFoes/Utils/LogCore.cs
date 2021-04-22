@@ -2,6 +2,8 @@
 using System.Runtime.CompilerServices;
 
 
+namespace ForgottenFoes.Utils
+{
     public static class LogCore
     {
         public static ManualLogSource logger = null;
@@ -30,3 +32,4 @@ using System.Runtime.CompilerServices;
             logger.LogWarning(string.Format("ForgottenFoes :: {0} :: Line: {1}, Method {2}", data, i, member));
         }
     }
+}

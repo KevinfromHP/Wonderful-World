@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -281164913, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
+  m_Name: ContentPack
+  m_EditorClassIdentifier: 
+  bodyPrefabs: []
+  masterPrefabs: []
+  projectilePrefabs: []
+  gameModePrefabs: []
+  networkedObjectPrefabs: []
+  skillDefs:
+  - {fileID: 11400000, guid: 9bbbed2a91a6a8e43bb077b086368b2e, type: 2}
+  - {fileID: 11400000, guid: 4b55de0b9ed2dd54cb1ae68ec66ecb43, type: 2}
+  - {fileID: 11400000, guid: d149c267cf4d7a54b8d8dc1f0d76aacf, type: 2}
+  skillFamilies:
+  - {fileID: 11400000, guid: 9086310d7ffe3704b9d020a70ca86d2b, type: 2}
+  - {fileID: 11400000, guid: a09b6407ca0b3e745a7148c517a6f20f, type: 2}
+  - {fileID: 11400000, guid: 2e05335dad004f445bd85b6348f3e60e, type: 2}
+  sceneDefs: []
+  itemDefs: []
+  equipmentDefs: []
+  buffDefs: []
+  eliteDefs: []
+  unlockableDefs: []
+  survivorDefs: []
+  artifactDefs: []
+  surfaceDefs: []
+  networkSoundEventDefs: []
+  musicTrackDefs: []
+  gameEndingDefs: []
+  entityStateConfigurations: []
+  entityStateTypes: []
