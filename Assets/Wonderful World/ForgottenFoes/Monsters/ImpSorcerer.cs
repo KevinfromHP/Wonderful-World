@@ -6,7 +6,7 @@ using BepInEx.Configuration;
 using EnigmaticThunder.Modules;
 using EnigmaticThunder.Util;
 using EntityStates;
-using EntityStates.ForgottenFoes.ImpSorcererStates;
+using ForgottenFoes.EntityStates.ImpSorcerer;
 using ForgottenFoes.Utils;
 using Mono.Cecil.Cil;
 using MonoMod.Cil;
@@ -24,10 +24,6 @@ namespace ForgottenFoes.Enemies
 {
     class ImpSorcerer : EnemyBuilder
     {
-        //public override DirectorAPI.Stage[] stagesToSpawnOn => new DirectorAPI.Stage[] { DirectorAPI.Stage.ScorchedAcres, DirectorAPI.Stage.RallypointDelta, DirectorAPI.Stage.AbyssalDepths };
-
-        //public override DirectorAPI.MonsterCategory monsterCategory => DirectorAPI.MonsterCategory.BasicMonsters;
-
         public override GameObject bodyPrefab => Assets.mainAssetBundle.LoadAsset<GameObject>("ImpSorcererBody");
         public override GameObject masterPrefab => Assets.mainAssetBundle.LoadAsset<GameObject>("ImpSorcererMaster");
         public override ForgottenFoesDirectorCardHolder directorCardHolder => Assets.mainAssetBundle.LoadAsset<ForgottenFoesDirectorCardHolder>("ImpSorcererDirectorCardHolder");
@@ -199,82 +195,10 @@ namespace ForgottenFoes.Enemies
             Destroy(indicator);
         }
     }
-    
-    public class ProjectileSteerAboveTarget : MonoBehaviour
-    {
-        public bool yAxisOnly;
-        public float maxVelocity;
-        private float velocity;
-        private Vector3 velocityAsVector;
-        private new Transform transform;
-        private ProjectileTargetComponent targetComponent;
-        private ProjectileSimple projectileSimple;
-        private Transform model;
-        private void Start()
-        {
-            if (!NetworkServer.active)
-            {
-                enabled = false;
-                return;
-            }
-            transform = gameObject.transform;
-            targetComponent = GetComponent<ProjectileTargetComponent>();
-            projectileSimple = GetComponent<ProjectileSimple>();
-            model = gameObject.transform.Find("Model");
-            velocity = maxVelocity;
-            velocityAsVector = Vector3.zero;
-        }
-
-        /*private void FixedUpdate()
-        {
-            if (targetComponent.target)
-            {
-                Vector3 vector = targetComponent.target.transform.position + new Vector3(0f, 10f) - transform.position;
-                if (Mathf.Abs(vector.y) < 1f)
-                    vector.y = 0f;
-                if (vector != Vector3.zero)
-                {
-                    transform.forward = Vector3.RotateTowards(transform.forward, vector, rotationSpeed * Mathf.Deg2Rad * Time.fixedDeltaTime, 0f);
-                    model.forward = Vector3.RotateTowards(model.forward, -vector, rotationSpeed * Mathf.Deg2Rad * Time.fixedDeltaTime, 0f);
-                }
-                if (Mathf.Abs(vector.x) < 1f && Mathf.Abs(vector.z) < 1f && projectileSimple.velocity > 0.25f && vector.y > -1f)
-                    projectileSimple.velocity -= 0.25f;
-                else
-                if (projectileSimple.velocity < 13f)
-                    projectileSimple.velocity += 1f;
-                if (projectileSimple.velocity > 13f)
-                    projectileSimple.velocity = 13f;
-            }
-        }*/
-
-        private void FixedUpdate()
-        {
-            if (targetComponent.target)
-            {
-                Vector3 vector = targetComponent.target.transform.position + new Vector3(0f, 10f) - transform.position;
-                Vector3 movePosition = targetComponent.target.transform.position + new Vector3(0f, 10f);
-                //if (Mathf.Abs(vector.y) < 0.1f)
-                //  vector.y = 0f;
-                if (vector.sqrMagnitude < 1.3f)
-                {
-                    velocity -= 0.15f;
-                    if (velocity < 0.15f)
-                        velocity = 0.15f;
-                }
-                else
-                if (velocity < 13f)
-                    velocity += 0.2f;
-                if (velocity > 13f)
-                    velocity = 13f;
-                if (vector != Vector3.zero)
-                    transform.position = Vector3.SmoothDamp(transform.position, movePosition, ref velocityAsVector, vector.magnitude / velocity, maxVelocity, Time.deltaTime);
-            }
-        }
-    }
 }
 
 
-namespace EntityStates.ForgottenFoes.ImpSorcererStates
+namespace ForgottenFoes.EntityStates.ImpSorcerer
 {
     /*Imp has these animation layers:
      * Layer 0: Body
@@ -292,30 +216,25 @@ namespace EntityStates.ForgottenFoes.ImpSorcererStates
     public class SpawnState : BaseState
     {
         public static float duration = 3f;
-        public static string spawnSoundString;
-        public static GameObject spawnEffectPrefab;
-        private float stopwatch;
         public override void OnEnter()
         {
-            OnEnter();
-            var modelTransform = GetModelTransform();
-            if (modelTransform)
-                modelTransform.GetComponent<PrintController>().enabled = true;
+            base.OnEnter();
             PlayAnimation("Body", "Spawn", "Spawn.playbackRate", duration);
-            //Util.PlaySound(SpawnState.spawnSoundString, gameObject);
-            //if (spawnEffectPrefab)
-            //EffectManager.SimpleMuzzleFlash(spawnEffectPrefab, gameObject, "Base", false);
         }
 
         public override void FixedUpdate()
         {
-            FixedUpdate();
-            stopwatch += Time.fixedDeltaTime;
-            if (stopwatch >= duration && isAuthority)
+            base.FixedUpdate();
+            if (fixedAge >= duration && isAuthority)
             {
                 outer.SetNextStateToMain();
                 return;
             }
+        }
+
+        public override void OnExit()
+        {
+            base.OnExit();
         }
 
         public override InterruptPriority GetMinimumInterruptPriority()
@@ -412,64 +331,34 @@ namespace EntityStates.ForgottenFoes.ImpSorcererStates
     public class FireVoidClusterState : BaseSkillState
     {
         public static GameObject projectilePrefab;
-        public static GameObject effectPrefab;
         public static float baseDuration = 3f;
         public static float damageCoefficient = 4f;
-        public static float procCoefficient;
-        public static float selfForce;
-        public static float forceMagnitude = 16f;
-        public static GameObject hitEffectPrefab;
-        public static GameObject swipeEffectPrefab;
-        public static string enterSoundString;
-        public static string slashSoundString;
-        public static float walkSpeedPenaltyCoefficient;
         private Animator modelAnimator;
         private float duration;
         private Ray aimRay;
 
-        public override InterruptPriority GetMinimumInterruptPriority()
-        {
-            return InterruptPriority.PrioritySkill;
-        }
-
         public override void OnEnter()
         {
-            OnEnter();
-            duration = baseDuration / attackSpeedStat;
-            modelAnimator = GetModelAnimator();
-            rigidbodyMotor.enabled = false;
-            //Util.PlayScaledSound(enterSoundString, gameObject, attackSpeedStat);
-
-            if (modelAnimator)
-            {
-                PlayAnimation("Body", "Secondary", "Secondary.playbackRate", duration);
-            }
-        }
-        public override void OnExit()
-        {
-            aimRay = GetAimRay();
-            ProjectileManager.instance.FireProjectile(projectilePrefab, aimRay.direction, Util.QuaternionSafeLookRotation(aimRay.direction), gameObject, damageStat * damageCoefficient, 0f, Util.CheckRoll(critStat, characterBody.master), DamageColorIndex.Default, null, -1f);
-            if (characterBody)
-                characterBody.SetAimTimer(2f);
-            rigidbodyMotor.enabled = true;
-            OnExit();
+            base.OnEnter();
+            duration = baseDuration / characterBody.attackSpeed;
+            PlayAnimation("Gesture, Override", "FireVoidCluster", "FireVoidCluster.PlaybackRate", duration);
+            ProjectileManager.instance.FireProjectile(projectilePrefab, characterBody.aimOrigin + characterBody.aimOriginTransform.forward, Quaternion.identity, gameObject, damageStat * damageCoefficient, 0f, Util.CheckRoll(critStat, characterBody.master), DamageColorIndex.Default, null, -1f);
         }
 
         public override void FixedUpdate()
         {
-            FixedUpdate();
-            if (fixedAge >= duration && isAuthority)
-            {
+            base.FixedUpdate();
+            if (fixedAge >= duration)
                 outer.SetNextStateToMain();
-                return;
-            }
         }
+
+
     }
     public class BlinkState : BaseSkillState
     {
         private Transform modelTransform;
         public static GameObject blinkPrefab = Resources.Load<GameObject>("prefabs/effects/ImpBlinkEffect");
-        public static Material destealthMaterial = EntityStates.ImpMonster.BlinkState.destealthMaterial;
+        public static Material destealthMaterial;
         private float stopwatch;
         private Vector3 blinkDestination = Vector3.zero;
         private Vector3 blinkStart = Vector3.zero;

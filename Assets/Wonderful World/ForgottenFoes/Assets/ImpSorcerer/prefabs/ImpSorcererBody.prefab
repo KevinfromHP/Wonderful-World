@@ -253,6 +253,36 @@ MonoBehaviour:
   damageModifier: 0
   hurtBoxGroup: {fileID: 5776560897889262470}
   indexInGroup: 21
+--- !u!1 &1203245040796513304
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7754118680413737360}
+  m_Layer: 0
+  m_Name: CameraPivot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7754118680413737360
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1203245040796513304}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.197, z: -0.446}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7660080657713624154}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1422742613240600361
 GameObject:
   m_ObjectHideFlags: 0
@@ -4280,7 +4310,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6571806411953786181}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -4305,7 +4335,7 @@ Animator:
   m_GameObject: {fileID: 6571806411953786181}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 3c103d630b46e634fae5e7b960433aa2, type: 2}
-  m_Controller: {fileID: 9100000, guid: e03385fa5f0713848a64d8d10ab884f4, type: 2}
+  m_Controller: {fileID: 9100000, guid: 9f18c40c79a02504fa4c9f722f1216a9, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -5287,7 +5317,6 @@ Transform:
   - {fileID: 6571806411953819969}
   - {fileID: 6571806411953819999}
   - {fileID: 1042222094375007725}
-  - {fileID: 7576678492516813480}
   m_Father: {fileID: 6571806411953819997}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 26.614632, y: -17.587141, z: -5.1226196}
@@ -6151,6 +6180,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6571806411953819941}
+  - {fileID: 7754118680413737360}
+  - {fileID: 7576678492516813480}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6186,7 +6217,7 @@ MonoBehaviour:
     i14: 0
     i15: 0
   m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
+  m_LocalPlayerAuthority: 1
 --- !u!114 &2967251590505366594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6245,7 +6276,8 @@ MonoBehaviour:
   currentVehicle: {fileID: 0}
   preferredPodPrefab: {fileID: 0}
   preferredInitialStateType:
-    _typeName: EntityStates.ForgottenFoes.ImpSorcererStates.SpawnState
+    _typeName: ForgottenFoes.EntityStates.ImpSorcerer.SpawnState, ForgottenFoes, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   skinIndex: 0
   customKillTotalStatName: 
   overrideCoreTransform: {fileID: 0}
@@ -6308,7 +6340,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraParams: {fileID: 11400000, guid: 58c81e93338d6b14985d659574adfdac, type: 2}
-  cameraPivotTransform: {fileID: 4910806244403779644}
+  cameraPivotTransform: {fileID: 7754118680413737360}
   aimMode: 0
   recoil: {x: 0, y: 0}
   idealLocalCameraPos: {x: 0, y: 0, z: 0}
@@ -6344,7 +6376,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 1
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!114 &7331645699772050258
 MonoBehaviour:
@@ -6483,7 +6515,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   customName: Body
   initialStateType:
-    _typeName: EntityStates.ForgottenFoes.ImpSorcererStates.SpawnState
+    _typeName: ForgottenFoes.EntityStates.ImpSorcerer.SpawnState, ForgottenFoes, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   mainStateType:
     _typeName: EntityStates.FlyState
 --- !u!114 &1532147696697057293
@@ -6542,7 +6575,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _modelTransform: {fileID: 6571806411953819941}
-  modelBaseTransform: {fileID: 781178381182092206}
+  modelBaseTransform: {fileID: 0}
   dontReleaseModelOnDeath: 0
   autoUpdateModelTransform: 1
   dontDetatchFromParent: 0
@@ -6795,11 +6828,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6788510324192448135}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.325, z: 0.25}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0.39, z: -0.017}
+  m_LocalScale: {x: 0.779746, y: 0.779746, z: 0.77974606}
   m_Children: []
-  m_Father: {fileID: 6571806411953819995}
-  m_RootOrder: 6
+  m_Father: {fileID: 7660080657713624154}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7716134423431718623
 GameObject:

@@ -6,6 +6,10 @@ using System;
 using UnityEngine;
 using System.Collections.Generic;
 using EntityStates;
+using EntityStates;
+using JetBrains.Annotations;
+using System;
+using UnityEngine;
 
 namespace ForgottenFoes.Utils
 {
@@ -14,6 +18,7 @@ namespace ForgottenFoes.Utils
         public static List<GameObject> bodyPrefabs = new List<GameObject>();
         public static List<GameObject> masterPrefabs = new List<GameObject>();
         public static List<SerializableEntityStateType> entityStates = new List<SerializableEntityStateType>();
+        public static List<EntityStateConfiguration> entityStateConfigs = new List<EntityStateConfiguration>();
 
         /// <summary>
         /// The body prefab of the enemy in the assetbundle;
@@ -45,11 +50,11 @@ namespace ForgottenFoes.Utils
             LogCore.LogI("h1");
             BuildConfig(config);
             LogCore.LogI("h2");
-            ModifyPrefabs();
-            LogCore.LogI("h3");
-            RegisterPrefabs();
-            LogCore.LogI("h5");
             RegisterEntityStates();
+            LogCore.LogI("h3");
+            ModifyPrefabs();
+            LogCore.LogI("h5");
+            RegisterPrefabs();
             LogCore.LogI("h6");
             LogCore.LogI("h7");
             LogCore.LogI("h8");
@@ -67,13 +72,16 @@ namespace ForgottenFoes.Utils
         {
             bodyPrefabs.Add(bodyPrefab);
             masterPrefabs.Add(masterPrefab);
-            //CloudUtils.RegisterNewBody(bodyPrefab);
-            //CloudUtils.RegisterNewMaster(masterPrefab);
         }
         public virtual void RegisterEntityStates()
         {
             foreach (Type type in entityStateTypes)
+            {
                 entityStates.Add(new SerializableEntityStateType(type));
+                //var typeName = type.FullName.Substring(type.FullName.LastIndexOf('.') + 1);
+                //entityStateConfigs.Add(Assets.mainAssetBundle.LoadAsset<EntityStateConfiguration>(typeName));
+                LogCore.LogI("Registered entitystate typename: " + entityStates[entityStates.Count - 1].typeName);
+            }
         }
 
         public abstract void ModifyPrefabs();
@@ -107,8 +115,8 @@ namespace ForgottenFoes.Utils
         /// </summary>
         public static void AddToContentPack()
         {
-            ContentPackProvider.serializedContentPack.bodyPrefabs = EnemyBuilder.bodyPrefabs.ToArray();
-            ContentPackProvider.serializedContentPack.bodyPrefabs = EnemyBuilder.masterPrefabs.ToArray();
+            ContentPackProvider.serializedContentPack.bodyPrefabs = bodyPrefabs.ToArray();
+            ContentPackProvider.serializedContentPack.masterPrefabs = masterPrefabs.ToArray();
             ContentPackProvider.serializedContentPack.entityStateTypes = entityStates.ToArray();
         }
     }

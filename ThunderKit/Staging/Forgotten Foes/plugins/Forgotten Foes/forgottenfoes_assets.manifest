@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 2203616348
+CRC: 3535363243
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 54ff486314f510bc7552cb3ab8631f81
+    Hash: bd6cce9f3d50c4f0ee890161ea78bbb7
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 230412bafd98884c29d3c6501c874224
+    Hash: 8daf12088990d720bfd36a48855d688d
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -38,6 +38,8 @@ ClassTypes:
 - Class: 91
   Script: {instanceID: 0}
 - Class: 95
+  Script: {instanceID: 0}
+- Class: 108
   Script: {instanceID: 0}
 - Class: 114
   Script: {fileID: 11500000, guid: 146a3b02e351e364584c228fd13d9537, type: 3}
@@ -74,13 +76,21 @@ ClassTypes:
 - Class: 114
   Script: {fileID: -578974823, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
 - Class: 114
+  Script: {fileID: -335047464, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
+- Class: 114
   Script: {fileID: 783060153, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
+- Class: 114
+  Script: {fileID: 511512695, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
+- Class: 114
+  Script: {fileID: 89795172, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
 - Class: 114
   Script: {fileID: 1297580292, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
 - Class: 114
   Script: {fileID: 1144835783, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
 - Class: 114
   Script: {fileID: -319460159, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
+- Class: 114
+  Script: {fileID: -875252823, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
 - Class: 114
   Script: {fileID: 298587437, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
 - Class: 114
@@ -109,6 +119,8 @@ ClassTypes:
   Script: {fileID: -1848696948, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
 - Class: 114
   Script: {fileID: 1790887305, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
+- Class: 114
+  Script: {fileID: 678291247, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
 - Class: 114
   Script: {fileID: -317677761, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
 - Class: 114
@@ -144,6 +156,8 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 1052602003, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
 - Class: 114
+  Script: {fileID: -306948816, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
+- Class: 114
   Script: {fileID: -315171339, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
 - Class: 114
   Script: {fileID: -1895344032, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
@@ -152,11 +166,15 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 52559370, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
 - Class: 114
+  Script: {fileID: 816898038, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: 5a3dd8f40548b3d47ad605c9375d890c, type: 3}
 - Class: 114
   Script: {fileID: -1752031980, guid: b2ac317a67c468eb8fd6ed06da7572d4, type: 3}
 - Class: 114
   Script: {fileID: -130519023, guid: b2ac317a67c468eb8fd6ed06da7572d4, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 4a6b2546c37182d48b5fb5b0fc9d7acc, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 135
@@ -167,24 +185,27 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 144
   Script: {instanceID: 0}
-- Class: 1818360608
+- Class: 198
   Script: {instanceID: 0}
-- Class: 1818360609
+- Class: 199
   Script: {instanceID: 0}
 Assets:
 - Assets/Wonderful World/ForgottenFoes/Assets/BellBoss/animations/Death.anim
 - Assets/Wonderful World/ForgottenFoes/Assets/ImpSorcerer/animations/ImpSorcererUtility1.anim
+- Assets/Wonderful World/ForgottenFoes/Assets/ImpSorcerer/materials/matIndicatorFriendly.mat
 - Assets/Wonderful World/ForgottenFoes/Assets/BellBoss/materials/matBellBoss.mat
 - Assets/Wonderful World/ForgottenFoes/Assets/BellBoss/animations/Spawn.anim
 - Assets/Wonderful World/ForgottenFoes/Assets/BellBoss/textures/texBellDiffuse.jpeg
-- Assets/Wonderful World/ForgottenFoes/Assets/Scripts/SpawnCards/cscImpSorcerer.asset
+- Assets/Wonderful World/ForgottenFoes/Assets/ImpSorcerer/spawncards/cscImpSorcerer.asset
 - Assets/Wonderful World/ForgottenFoes/Assets/BellBoss/meshes/TollingBellMesh.mesh
+- Assets/Wonderful World/ForgottenFoes/Assets/ImpSorcerer/entitystateconfigurations/FireVoidClusterState.asset
 - Assets/Wonderful World/ForgottenFoes/Assets/BellBoss/textures/texBellBallDiffuse.jpeg
+- Assets/Wonderful World/ForgottenFoes/Assets/ImpSorcerer/textures/texVoidCluster.png
+- Assets/Wonderful World/ForgottenFoes/Assets/ImpSorcerer/prefabs/ImpSorcererVoidClusterGhost.prefab
 - Assets/Wonderful World/ForgottenFoes/Assets/ImpSorcerer/meshes/ImpSorcererMeshOld.mesh
-- Assets/Wonderful World/ForgottenFoes/Assets/ImpSorcerer/prefabs/CrystalFollower.prefab
 - Assets/Wonderful World/ForgottenFoes/Assets/ImpSorcerer/animations/ImpSorcererAvatar.asset
-- Assets/Wonderful World/ForgottenFoes/Assets/Scripts/CameraParams/ccpStandardTall.asset
-- Assets/Wonderful World/ForgottenFoes/Assets/Scripts/ItemDisplayRuleset.asset
+- Assets/Wonderful World/ForgottenFoes/Assets/general/CameraParams/ccpStandardTall.asset
+- Assets/Wonderful World/ForgottenFoes/Assets/general/ItemDisplayRuleset.asset
 - Assets/Wonderful World/ForgottenFoes/Assets/ImpSorcerer/textures/texGlowFlowerDiffuse.jpeg
 - Assets/Wonderful World/ForgottenFoes/Assets/BellBoss/meshes/BellBossMesh.002.mesh
 - Assets/Wonderful World/ForgottenFoes/Assets/ImpSorcerer/meshes/Cone.mesh
@@ -199,10 +220,10 @@ Assets:
 - Assets/Wonderful World/ForgottenFoes/Assets/ImpSorcerer/textures/texImpSorcerer.png
 - Assets/Wonderful World/ForgottenFoes/Assets/ImpSorcerer/animations/ImpSorcererSpecial1.anim
 - Assets/Wonderful World/ForgottenFoes/Assets/BellBoss/materials/matBellBall.mat
-- Assets/Wonderful World/ForgottenFoes/Assets/Scripts/Skills/ISF2.asset
+- Assets/Wonderful World/ForgottenFoes/Assets/ImpSorcerer/skills/ISF2.asset
 - Assets/Wonderful World/ForgottenFoes/Assets/ContentPack.asset
-- Assets/Wonderful World/ForgottenFoes/Assets/Scripts/Skills/ImpSorcererUtility.asset
-- Assets/Wonderful World/ForgottenFoes/Assets/ImpSorcerer/prefabs/ImpSorcererVoidClusterBomb.prefab
+- Assets/Wonderful World/ForgottenFoes/Assets/ImpSorcerer/skills/ImpSorcererUtility.asset
+- Assets/Wonderful World/ForgottenFoes/Assets/ImpSorcerer/prefabs/ImpSorcererVoidCluster.prefab
 - Assets/Wonderful World/ForgottenFoes/Assets/BellBoss/meshes/Torus.mesh
 - Assets/Wonderful World/ForgottenFoes/Assets/ImpSorcerer/animations/ImpSorcererFlinch.anim
 - Assets/Wonderful World/ForgottenFoes/Assets/BellBoss/animations/Secondary2.anim
@@ -214,30 +235,38 @@ Assets:
 - Assets/Wonderful World/ForgottenFoes/Assets/ImpSorcerer/materials/matIndicator.mat
 - Assets/Wonderful World/ForgottenFoes/Assets/ImpSorcerer/prefabs/ImpSorcererBody.prefab
 - Assets/Wonderful World/ForgottenFoes/Assets/BellBoss/animations/Idle.anim
+- Assets/Wonderful World/ForgottenFoes/Assets/ImpSorcerer/entitystateconfigurations/DeathState.asset
+- Assets/Wonderful World/ForgottenFoes/Assets/ImpSorcerer/materials/matIndicatorEnemy.mat
 - Assets/Wonderful World/ForgottenFoes/Assets/BellBoss/prefabs/BellBossBody.prefab
 - Assets/Wonderful World/ForgottenFoes/Assets/BellBoss/animations/Special.anim
-- Assets/Wonderful World/ForgottenFoes/Assets/Scripts/Skills/ImpSorcererSecondary.asset
-- Assets/Wonderful World/ForgottenFoes/Assets/Scripts/SurfaceDefs/sdBellBoss.asset
+- Assets/Wonderful World/ForgottenFoes/Assets/ImpSorcerer/materials/matVoidCluster.mat
+- Assets/Wonderful World/ForgottenFoes/Assets/ImpSorcerer/skills/ImpSorcererSecondary.asset
+- Assets/Wonderful World/ForgottenFoes/Assets/general/SurfaceDefs/sdBellBoss.asset
 - Assets/Wonderful World/ForgottenFoes/Assets/BellBoss/meshes/BellBoss.fbx
-- Assets/Wonderful World/ForgottenFoes/Assets/ImpSorcerer/animations/animImpSorcerer.controller
-- Assets/Wonderful World/ForgottenFoes/Assets/Scripts/Skills/ImpSorcererSpecial.asset
+- Assets/Wonderful World/ForgottenFoes/Assets/ImpSorcerer/skills/ImpSorcererSpecial.asset
 - Assets/Wonderful World/ForgottenFoes/Assets/BellBoss/textures/texBellDiffusePurple.png
 - Assets/Wonderful World/ForgottenFoes/Assets/ImpSorcerer/prefabs/ImpSorcererMaster.prefab
 - Assets/Wonderful World/ForgottenFoes/Assets/BellBoss/textures/texBellDiffuse.png
 - Assets/Wonderful World/ForgottenFoes/Assets/ImpSorcerer/animations/ImpSorcererSpecial2.anim
+- Assets/Wonderful World/ForgottenFoes/Assets/ImpSorcerer/animations/animImpSorcerer.controller
 - Assets/Wonderful World/ForgottenFoes/Assets/ImpSorcerer/animations/ImpSorcererStun2.anim
 - Assets/Wonderful World/ForgottenFoes/Assets/ImpSorcerer/animations/ImpSorcererAimYaw.anim
+- Assets/Wonderful World/ForgottenFoes/Assets/ImpSorcerer/entitystateconfigurations/BlinkState.asset
 - Assets/Wonderful World/ForgottenFoes/Assets/BellBoss/meshes/BellBallMesh.mesh
 - Assets/Wonderful World/ForgottenFoes/Assets/BellBoss/animations/Secondary1.anim
-- Assets/Wonderful World/ForgottenFoes/Assets/Scripts/SpawnCards/ImpSorcererDirectorCardHolder.asset
-- Assets/Wonderful World/ForgottenFoes/Assets/Scripts/Skills/ISF1.asset
+- Assets/Wonderful World/ForgottenFoes/Assets/ImpSorcerer/spawncards/ImpSorcererDirectorCardHolder.asset
+- Assets/Wonderful World/ForgottenFoes/Assets/ImpSorcerer/skills/ISF1.asset
 - Assets/Wonderful World/ForgottenFoes/Assets/BellBoss/animations/Utility.anim
-- Assets/Wonderful World/ForgottenFoes/Assets/Scripts/Skills/ISF3.asset
+- Assets/Wonderful World/ForgottenFoes/Assets/ImpSorcerer/skills/ISF3.asset
 - Assets/Wonderful World/ForgottenFoes/Assets/ImpSorcerer/meshes/ImpSorcererMesh.mesh
 - Assets/Wonderful World/ForgottenFoes/Assets/ImpSorcerer/animations/ImpSorcererStun1.anim
+- Assets/Wonderful World/ForgottenFoes/Assets/ImpSorcerer/animations/animVagrant.controller
 - Assets/Wonderful World/ForgottenFoes/Assets/ImpSorcerer/animations/ImpSorcererUtility2.anim
 - Assets/Wonderful World/ForgottenFoes/Assets/ImpSorcerer/animations/ImpSorcererTaunt.anim
 - Assets/Wonderful World/ForgottenFoes/Assets/ImpSorcerer/animations/ImpSorcererIdle.anim
+- Assets/Wonderful World/ForgottenFoes/Assets/ImpSorcerer/entitystateconfigurations/SpawnState.asset
 - Assets/Wonderful World/ForgottenFoes/Assets/ImpSorcerer/animations/ImpSorcererStun3.anim
 - Assets/Wonderful World/ForgottenFoes/Assets/ImpSorcerer/animations/ImpSorcererSecondary.anim
+- Assets/Wonderful World/ForgottenFoes/Assets/ImpSorcerer/prefabs/effects/VoidClusterExplosionEffect.prefab
+- Assets/Wonderful World/ForgottenFoes/Assets/ImpSorcerer/textures/texVoidClusterNormal2.png
 Dependencies: []

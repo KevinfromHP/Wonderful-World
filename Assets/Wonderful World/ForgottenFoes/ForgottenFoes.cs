@@ -111,7 +111,6 @@ namespace ForgottenFoes
                     mainAssetBundle = AssetBundle.LoadFromStream(assetStream);
                 }
             }
-            LogCore.LogW("1");
             ContentPackProvider.serializedContentPack = mainAssetBundle.LoadAsset<SerializableContentPack>("ContentPack");
         }
 
@@ -145,6 +144,19 @@ namespace ForgottenFoes
                         material.SetFloat("_SliceBandHeight", 1f);
                         material.SetFloat("_SliceHeight", 1f);
                         break;
+                    case "matIndicator":
+                        material.CopyPropertiesFromMaterial(Resources.Load<GameObject>("Prefabs/Projectiles/ImpVoidspikeProjectile").transform.Find("ImpactEffect/TeamAreaIndicator, FullSphere/Mesh").GetComponent<MeshRenderer>().material);
+                        break;
+                    case "matIndicatorEnemy":
+                        material.CopyPropertiesFromMaterial(Resources.Load<GameObject>("Prefabs/Projectiles/ImpVoidspikeProjectile").transform.Find("ImpactEffect/TeamAreaIndicator, FullSphere").GetComponent<TeamAreaIndicator>().teamMaterialPairs[0].sharedMaterial);
+                            break;
+                    case "matIndicatorFriendly":
+                        material.CopyPropertiesFromMaterial(Resources.Load<GameObject>("Prefabs/Projectiles/ImpVoidspikeProjectile").transform.Find("ImpactEffect/TeamAreaIndicator, FullSphere").GetComponent<TeamAreaIndicator>().teamMaterialPairs[1].sharedMaterial);
+                        break;
+                    /*case "matVoidCluster":
+                        material.CopyPropertiesFromMaterial(Resources.Load<GameObject>("Prefabs/ProjectileGhosts/ImpVoidspikeProjectileGhost").transform.Find("Mesh").GetComponent<MeshRenderer>().material);
+                        break;*/
+
                 }
             }
         }
