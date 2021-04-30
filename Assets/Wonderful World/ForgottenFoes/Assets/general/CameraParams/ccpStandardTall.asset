@@ -15,5 +15,5 @@ MonoBehaviour:
   minPitch: -70
   maxPitch: 70
   wallCushion: 0.1
-  pivotVerticalOffset: 2
-  standardLocalCameraPos: {x: 0, y: 0, z: -15}
+  pivotVerticalOffset: 1
+  standardLocalCameraPos: {x: 0, y: 0, z: -10}

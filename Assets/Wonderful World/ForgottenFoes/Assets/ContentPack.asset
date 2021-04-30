@@ -34,7 +34,8 @@ MonoBehaviour:
   unlockableDefs: []
   survivorDefs: []
   artifactDefs: []
-  surfaceDefs: []
+  surfaceDefs:
+  - {fileID: 11400000, guid: 28c9262822d0db840aadc539932ea76c, type: 2}
   networkSoundEventDefs: []
   musicTrackDefs: []
   gameEndingDefs: []

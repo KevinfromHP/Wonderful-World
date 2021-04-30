@@ -51,6 +51,22 @@ namespace ForgottenFoes
 
         internal static List<EnemyBuilder> enemies = new List<EnemyBuilder>();
 
+
+        //For debugging purposes, remove this shit on release/figure out how to build in debug config
+        private void Update()
+        {
+            var input0 = Input.GetKeyDown(KeyCode.F3);
+            //add more if necessary
+            if (input0)
+            {
+                var transform = PlayerCharacterMasterController.instances[0].master.GetBodyObject().transform;
+                var position = transform.position + transform.forward * 5;
+                var quaternion = Util.QuaternionSafeLookRotation(-transform.forward);
+                var effectPrefab = Assets.mainAssetBundle.LoadAsset<GameObject>("ImpSorcererSpawnEffect");
+                EffectManager.SimpleEffect(effectPrefab, position, quaternion, false);
+            }
+        }
+
         public void Awake()
         {
             LogCore.logger = Logger;
@@ -81,10 +97,11 @@ namespace ForgottenFoes
 
         internal bool ValidateEnemy(EnemyBuilder enemy, List<EnemyBuilder> enemyList)
         {
-            var enabled = Config.Bind<bool>("Enemy: " + enemy.monsterName, "Enable Enemy?", true, "Should this enemy appear in runs?").Value;
+            var enabled = Config.Bind("Enemy: " + enemy.monsterName, "Enable Enemy?", true, "Should this enemy appear in runs?").Value;
             if (enabled)
             {
                 enemyList.Add(enemy);
+                LogCore.LogM("Added " + enemy.monsterName);
             }
             return enabled;
         }
@@ -149,14 +166,36 @@ namespace ForgottenFoes
                         break;
                     case "matIndicatorEnemy":
                         material.CopyPropertiesFromMaterial(Resources.Load<GameObject>("Prefabs/Projectiles/ImpVoidspikeProjectile").transform.Find("ImpactEffect/TeamAreaIndicator, FullSphere").GetComponent<TeamAreaIndicator>().teamMaterialPairs[0].sharedMaterial);
-                            break;
+                        break;
                     case "matIndicatorFriendly":
                         material.CopyPropertiesFromMaterial(Resources.Load<GameObject>("Prefabs/Projectiles/ImpVoidspikeProjectile").transform.Find("ImpactEffect/TeamAreaIndicator, FullSphere").GetComponent<TeamAreaIndicator>().teamMaterialPairs[1].sharedMaterial);
                         break;
-                    /*case "matVoidCluster":
+                    case "matVoidCluster":
+                        material.shader = Resources.Load<Shader>("shaders/fx/hgcloudremap");
                         material.CopyPropertiesFromMaterial(Resources.Load<GameObject>("Prefabs/ProjectileGhosts/ImpVoidspikeProjectileGhost").transform.Find("Mesh").GetComponent<MeshRenderer>().material);
-                        break;*/
+                        break;
+                    case "matPortal":
+                        {
+                            material.shader = Resources.Load<Shader>("shaders/fx/hgcloudremap");
+                            material.CopyPropertiesFromMaterial(Resources.Load<GameObject>("Prefabs/effects/ImpBossDeathEffect").transform.Find("Ring").GetComponent<ParticleSystemRenderer>().material);
+                            material.SetTexture("_MainTex", mainAssetBundle.LoadAsset<Texture2D>("texPortal"));
+                            material.SetTextureScale("_MainTex", Vector2.one);
+                        }
+                        break;
+                    case "matPortalCrack":
+                        {
+                            material.shader = Resources.Load<Shader>("shaders/fx/hgcloudremap");
+                            material.CopyPropertiesFromMaterial(Resources.Load<GameObject>("Prefabs/Projectileghosts/ImpVoidspikeProjectileGhost").transform.Find("Mesh").GetComponent<MeshRenderer>().material);
+                            material.SetTexture("_MainTex", mainAssetBundle.LoadAsset<Texture2D>("texPortalCrack"));
+                            material.SetTextureScale("_MainTex", Vector2.one);
 
+                            //Testing stuff, delete at some point
+                            var voidSpikeMat = Resources.Load<GameObject>("Prefabs/Projectileghosts/ImpVoidspikeProjectileGhost").transform.Find("Mesh").GetComponent<MeshRenderer>().material;
+                            LogCore.LogW(voidSpikeMat.GetTexture("_Cloud1Tex").name);
+                            LogCore.LogW(voidSpikeMat.GetTexture("_RemapTex").name);
+
+                        }
+                        break;
                 }
             }
         }

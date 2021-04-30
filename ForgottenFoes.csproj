@@ -65,12 +65,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Wonderful World\ForgottenFoes\ForgottenFoes.cs" />
-    <Compile Include="Assets\Wonderful World\ForgottenFoes\MonoBehaviours\ForgottenFoesDirectorCardHolder.cs" />
-    <Compile Include="Assets\Wonderful World\ForgottenFoes\MonoBehaviours\ProjectileSteerAboveTarget.cs" />
     <Compile Include="Assets\Wonderful World\ForgottenFoes\Monsters\BellBoss.cs" />
     <Compile Include="Assets\Wonderful World\ForgottenFoes\Monsters\ImpSorcerer.cs" />
     <Compile Include="Assets\Wonderful World\ForgottenFoes\Utils\CloudUtils.cs" />
     <Compile Include="Assets\Wonderful World\ForgottenFoes\Utils\ComponentHelpers.cs" />
+    <Compile Include="Assets\Wonderful World\ForgottenFoes\Utils\ComponentsAndScriptableObjects\ForgottenFoesDirectorCardHolder.cs" />
+    <Compile Include="Assets\Wonderful World\ForgottenFoes\Utils\ComponentsAndScriptableObjects\ForgottenFoesEffectDefHolder.cs" />
+    <Compile Include="Assets\Wonderful World\ForgottenFoes\Utils\ComponentsAndScriptableObjects\ProjectileSteerAboveTarget.cs" />
     <Compile Include="Assets\Wonderful World\ForgottenFoes\Utils\EnemyBuilder.cs" />
     <Compile Include="Assets\Wonderful World\ForgottenFoes\Utils\LogCore.cs" />
     <None Include="Assets\Wonderful World\ForgottenFoes\ForgottenFoes.asmdef" />

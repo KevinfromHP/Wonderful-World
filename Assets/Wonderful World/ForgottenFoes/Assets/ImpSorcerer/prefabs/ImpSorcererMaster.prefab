@@ -71,7 +71,7 @@ MonoBehaviour:
     i14: 0
     i15: 0
   m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
+  m_LocalPlayerAuthority: 1
 --- !u!114 &1624370080873303879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -88,7 +88,7 @@ MonoBehaviour:
   bodyPrefab: {fileID: 6782708711184772368, guid: 351270e8b4081614ca2d6ffe434da4da,
     type: 3}
   spawnOnStart: 0
-  _teamIndex: 2
+  _teamIndex: 1
   onBodyDeath:
     m_PersistentCalls:
       m_Calls: []
@@ -141,7 +141,7 @@ MonoBehaviour:
   isHealer: 0
   enemyAttention: 0
   aimVectorDampTime: 0.2
-  aimVectorMaxSpeed: 6
+  aimVectorMaxSpeed: 180
   selectedSkilldriverName: 
   debugEnemyHurtBox: {fileID: 0}
 --- !u!114 &5809443574929329323
@@ -175,7 +175,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   customName: BlinkBecauseTooClose
   skillSlot: 2
-  requiredSkill: {fileID: 11400000, guid: 98e2a403e33597c4a9e937060db21f39, type: 2}
+  requiredSkill: {fileID: 0}
   requireSkillReady: 1
   requireEquipmentReady: 0
   minUserHealthFraction: -Infinity
@@ -259,7 +259,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   customName: FireVoidCluster
   skillSlot: 0
-  requiredSkill: {fileID: 11400000, guid: 95e1b7c658bada942ae5349aea7b611e, type: 2}
+  requiredSkill: {fileID: 0}
   requireSkillReady: 1
   requireEquipmentReady: 0
   minUserHealthFraction: -Infinity

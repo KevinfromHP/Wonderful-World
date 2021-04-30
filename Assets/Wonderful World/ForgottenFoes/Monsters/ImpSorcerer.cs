@@ -76,6 +76,13 @@ namespace ForgottenFoes.Enemies
         //I FUCKING HATE CHICAGO
         //FUCK YOU CHICAGO
 
+        public override void ModifyAssets()
+        {
+            //Adds the surfaceDef's impact prefab
+            var surfaceDef = Assets.mainAssetBundle.LoadAsset<SurfaceDef>("sdImpSorcerer");
+            surfaceDef.impactEffectPrefab = Resources.Load<SurfaceDef>("surfacedefs/sdImp").impactEffectPrefab;
+        }
+
         public override void ModifyPrefabs()
         {
         }
