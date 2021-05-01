@@ -64,8 +64,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Wonderful World\TrinketsAndBaubles\TrinketsAndBaubles.cs" />
-    <None Include="Assets\Wonderful World\TrinketsAndBaubles\TrinketsAndBaubles.asmdef" />
+    <Compile Include="Assets\OtherShit\DebugToolKitShaderExtension\DebugToolKitShaderExtension.cs" />
+    <None Include="Assets\OtherShit\DebugToolKitShaderExtension\DebugToolKitShaderExtension.asmdef" />
+    <Reference Include="Unity.Timeline.Editor">
+      <HintPath>E:/All Coding Stuff/RoR2 Modding/Wonderful World/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEditor.CacheServer">
       <HintPath>E:/All Coding Stuff/RoR2 Modding/Wonderful World/Library/ScriptAssemblies/UnityEditor.CacheServer.dll</HintPath>
     </Reference>
@@ -75,11 +78,26 @@
     <Reference Include="ThunderKit.Thunderstore">
       <HintPath>E:/All Coding Stuff/RoR2 Modding/Wonderful World/Library/ScriptAssemblies/ThunderKit.Thunderstore.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Formats.Fbx.Editor">
+      <HintPath>E:/All Coding Stuff/RoR2 Modding/Wonderful World/Library/ScriptAssemblies/Unity.Formats.Fbx.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Recorder.Editor">
+      <HintPath>E:/All Coding Stuff/RoR2 Modding/Wonderful World/Library/ScriptAssemblies/Unity.Recorder.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Recorder">
+      <HintPath>E:/All Coding Stuff/RoR2 Modding/Wonderful World/Library/ScriptAssemblies/Unity.Recorder.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
       <HintPath>E:/All Coding Stuff/RoR2 Modding/Wonderful World/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="ThunderKit.Markdown">
       <HintPath>E:/All Coding Stuff/RoR2 Modding/Wonderful World/Library/ScriptAssemblies/ThunderKit.Markdown.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Timeline">
+      <HintPath>E:/All Coding Stuff/RoR2 Modding/Wonderful World/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+    </Reference>
+    <Reference Include="Autodesk.Fbx">
+      <HintPath>E:/All Coding Stuff/RoR2 Modding/Wonderful World/Library/ScriptAssemblies/Autodesk.Fbx.dll</HintPath>
     </Reference>
     <Reference Include="ThunderKit.Core">
       <HintPath>E:/All Coding Stuff/RoR2 Modding/Wonderful World/Library/ScriptAssemblies/ThunderKit.Core.dll</HintPath>
@@ -89,6 +107,9 @@
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
       <HintPath>E:/All Coding Stuff/RoR2 Modding/Wonderful World/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Formats.Fbx.Runtime">
+      <HintPath>E:/All Coding Stuff/RoR2 Modding/Wonderful World/Library/ScriptAssemblies/Unity.Formats.Fbx.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="ThunderKit.Common">
       <HintPath>E:/All Coding Stuff/RoR2 Modding/Wonderful World/Library/ScriptAssemblies/ThunderKit.Common.dll</HintPath>
@@ -305,6 +326,9 @@
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
       <HintPath>E:/All Coding Stuff/RoR2 Modding/Wonderful World/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>E:/All Coding Stuff/RoR2 Modding/Wonderful World/Packages/Risk of Rain 2/Assembly-CSharp.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>E:/All Coding Stuff/RoR2 Modding/Wonderful World/Packages/Risk of Rain 2/Unity.TextMeshPro.dll</HintPath>
@@ -656,6 +680,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="TrinketsAndBaubles.csproj">
+      <Project>{806C4808-02E4-2134-2DAB-397993DFD595}</Project>
+      <Name>TrinketsAndBaubles</Name>
+    </ProjectReference>
     <ProjectReference Include="ForgottenFoes.csproj">
       <Project>{0F4D7C4F-0AD8-BA3F-ADE6-71085444460F}</Project>
       <Name>ForgottenFoes</Name>

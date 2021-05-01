@@ -178,22 +178,13 @@ namespace ForgottenFoes
                         {
                             material.shader = Resources.Load<Shader>("shaders/fx/hgcloudremap");
                             material.CopyPropertiesFromMaterial(Resources.Load<GameObject>("Prefabs/effects/ImpBossDeathEffect").transform.Find("Ring").GetComponent<ParticleSystemRenderer>().material);
-                            material.SetTexture("_MainTex", mainAssetBundle.LoadAsset<Texture2D>("texPortal"));
-                            material.SetTextureScale("_MainTex", Vector2.one);
+                            material.SetTexture("_MainTex", null);
                         }
                         break;
                     case "matPortalCrack":
                         {
                             material.shader = Resources.Load<Shader>("shaders/fx/hgcloudremap");
                             material.CopyPropertiesFromMaterial(Resources.Load<GameObject>("Prefabs/Projectileghosts/ImpVoidspikeProjectileGhost").transform.Find("Mesh").GetComponent<MeshRenderer>().material);
-                            material.SetTexture("_MainTex", mainAssetBundle.LoadAsset<Texture2D>("texPortalCrack"));
-                            material.SetTextureScale("_MainTex", Vector2.one);
-
-                            //Testing stuff, delete at some point
-                            var voidSpikeMat = Resources.Load<GameObject>("Prefabs/Projectileghosts/ImpVoidspikeProjectileGhost").transform.Find("Mesh").GetComponent<MeshRenderer>().material;
-                            LogCore.LogW(voidSpikeMat.GetTexture("_Cloud1Tex").name);
-                            LogCore.LogW(voidSpikeMat.GetTexture("_RemapTex").name);
-
                         }
                         break;
                 }

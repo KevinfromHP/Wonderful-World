@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 718064441320088602}
   - component: {fileID: 718064441320088600}
   - component: {fileID: 718064441320088603}
+  - component: {fileID: 6846460241377258675}
   m_Layer: 0
   m_Name: Portal
   m_TagString: Untagged
@@ -491,7 +492,7 @@ ParticleSystem:
           outWeight: 0.55064106
         - serializedVersion: 3
           time: 1
-          value: 0.06278182
+          value: 0
           inSlope: -11.65914
           outSlope: -11.65914
           tangentMode: 0
@@ -2587,6 +2588,20 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &6846460241377258675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 718064441320088605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cb47d1ab9336ca42b34a3c009537e02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Renderer: {fileID: 0}
+  Material: {fileID: 0}
 --- !u!1 &718064441916671917
 GameObject:
   m_ObjectHideFlags: 0
@@ -2663,6 +2678,7 @@ GameObject:
   - component: {fileID: 3418390580364573462}
   - component: {fileID: 6023713630449375457}
   - component: {fileID: 1821379379910210843}
+  - component: {fileID: 8396042801597840818}
   m_Layer: 0
   m_Name: Crack
   m_TagString: Untagged
@@ -2678,7 +2694,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3602458871243876292}
   m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.05}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 718064441916671914}
@@ -2767,7 +2783,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 3
+      scalar: 2
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -3254,7 +3270,7 @@ ParticleSystem:
     randomizeRotationDirection: 0
     maxNumParticles: 1000
     size3D: 0
-    rotation3D: 1
+    rotation3D: 0
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
@@ -3685,31 +3701,31 @@ ParticleSystem:
     curve:
       serializedVersion: 2
       minMaxState: 1
-      scalar: 1.5
+      scalar: 2.2443058
       minScalar: 1
       maxCurve:
         serializedVersion: 2
         m_Curve:
         - serializedVersion: 3
-          time: 0
+          time: 0.060759496
           value: 0
           inSlope: 0.60459936
-          outSlope: 3.1907768
+          outSlope: 7.181819
           tangentMode: 65
           weightedMode: 0
           inWeight: 0.33333334
           outWeight: 0.33333334
         - serializedVersion: 3
-          time: 0.3134033
+          time: 0.19999999
           value: 1
-          inSlope: 3.1907768
+          inSlope: 7.181819
           outSlope: Infinity
           tangentMode: 101
           weightedMode: 0
           inWeight: 0.33333334
           outWeight: 0.15742134
         - serializedVersion: 3
-          time: 0.78155714
+          time: 0.7798787
           value: 1
           inSlope: 10.507287
           outSlope: -0.0000010063708
@@ -4023,7 +4039,7 @@ ParticleSystem:
         m_RotationOrder: 4
     separateAxes: 0
   ColorModule:
-    enabled: 0
+    enabled: 1
     gradient:
       serializedVersion: 2
       minMaxState: 1
@@ -4031,9 +4047,9 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 1, b: 1, a: 1}
-        key1: {r: 1, g: 1, b: 1, a: 1}
-        key2: {r: 0, g: 0, b: 0, a: 0}
+        key0: {r: 1, g: 1, b: 1, a: 0}
+        key1: {r: 1, g: 1, b: 1, a: 0.6117647}
+        key2: {r: 0, g: 0, b: 0, a: 1}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
@@ -4048,16 +4064,16 @@ ParticleSystem:
         ctime6: 0
         ctime7: 0
         atime0: 0
-        atime1: 65535
-        atime2: 0
-        atime3: 0
+        atime1: 28527
+        atime2: 53585
+        atime3: 65535
         atime4: 0
         atime5: 0
         atime6: 0
         atime7: 0
         m_Mode: 0
         m_NumColorKeys: 2
-        m_NumAlphaKeys: 2
+        m_NumAlphaKeys: 4
       minGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -4101,25 +4117,25 @@ ParticleSystem:
         serializedVersion: 2
         m_Curve:
         - serializedVersion: 3
-          time: 0
-          value: 0
+          time: 0.07554883
+          value: 0.33411768
           inSlope: 0.60459936
-          outSlope: 1.9972795
+          outSlope: 5.3505516
           tangentMode: 65
           weightedMode: 0
           inWeight: 0.33333334
           outWeight: 0.33333334
         - serializedVersion: 3
-          time: 0.50068104
+          time: 0.19999999
           value: 1
-          inSlope: 1.9972795
+          inSlope: 5.3505516
           outSlope: Infinity
           tangentMode: 101
           weightedMode: 0
           inWeight: 0.33333334
           outWeight: 0.15742134
         - serializedVersion: 3
-          time: 0.78155714
+          time: 0.7798787
           value: 1
           inSlope: 10.507287
           outSlope: -0.0000010063708
@@ -4217,7 +4233,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     speedRange: {x: 0, y: 1}
-    tilesX: 1
+    tilesX: 12
     tilesY: 1
     animationType: 0
     rowIndex: 0
@@ -4225,12 +4241,18 @@ ParticleSystem:
     uvChannelMask: -1
     randomRow: 1
     sprites:
-    - sprite: {fileID: 21300000, guid: 8e9f11ee6a9f1bc45a72a81f55f351f2, type: 3}
-    - sprite: {fileID: 21300002, guid: 8e9f11ee6a9f1bc45a72a81f55f351f2, type: 3}
-    - sprite: {fileID: 21300004, guid: 8e9f11ee6a9f1bc45a72a81f55f351f2, type: 3}
-    - sprite: {fileID: 21300006, guid: 8e9f11ee6a9f1bc45a72a81f55f351f2, type: 3}
-    - sprite: {fileID: 21300008, guid: 8e9f11ee6a9f1bc45a72a81f55f351f2, type: 3}
-    - sprite: {fileID: 21300010, guid: 8e9f11ee6a9f1bc45a72a81f55f351f2, type: 3}
+    - sprite: {fileID: 21300024, guid: 71e0b23b78fdaab45aeca92118caad62, type: 3}
+    - sprite: {fileID: 21300026, guid: 71e0b23b78fdaab45aeca92118caad62, type: 3}
+    - sprite: {fileID: 21300028, guid: 71e0b23b78fdaab45aeca92118caad62, type: 3}
+    - sprite: {fileID: 21300030, guid: 71e0b23b78fdaab45aeca92118caad62, type: 3}
+    - sprite: {fileID: 21300032, guid: 71e0b23b78fdaab45aeca92118caad62, type: 3}
+    - sprite: {fileID: 21300034, guid: 71e0b23b78fdaab45aeca92118caad62, type: 3}
+    - sprite: {fileID: 21300036, guid: 71e0b23b78fdaab45aeca92118caad62, type: 3}
+    - sprite: {fileID: 21300038, guid: 71e0b23b78fdaab45aeca92118caad62, type: 3}
+    - sprite: {fileID: 21300040, guid: 71e0b23b78fdaab45aeca92118caad62, type: 3}
+    - sprite: {fileID: 21300042, guid: 71e0b23b78fdaab45aeca92118caad62, type: 3}
+    - sprite: {fileID: 21300044, guid: 71e0b23b78fdaab45aeca92118caad62, type: 3}
+    - sprite: {fileID: 21300046, guid: 71e0b23b78fdaab45aeca92118caad62, type: 3}
     flipU: 0
     flipV: 0
   VelocityModule:
@@ -7449,6 +7471,57 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &8396042801597840818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3602458871243876292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a24d0516990dac74cab549d15f20cfcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Material: {fileID: 2100000, guid: e6701f45a6d2fc242ab2c0f2cc3a4ac8, type: 2}
+  Renderer: {fileID: 1821379379910210843}
+  MaterialName: matPortalCrack
+  _Tint: {r: 1, g: 0.13333334, b: 0.14901961, a: 1}
+  _DisableRemapping: 0
+  _MainTex: {fileID: 0}
+  _MainTexScale: {x: 1, y: 1}
+  _MainTexOffset: {x: 0, y: 0}
+  _RemapTex: {fileID: 2800000, guid: 56c31711fcc4a1d47b6a3241bbef0c3d, type: 3}
+  _RemapTexScale: {x: 1, y: 1}
+  _RemapTexOffset: {x: 0, y: 0}
+  _SoftFactor: 2
+  _BrightnessBoost: 7.5
+  _AlphaBoost: 0.27
+  _AlphaBias: 0.21
+  _UseUV1: 1
+  _FadeWhenNearCamera: 0
+  _FadeCloseDistance: 0
+  _Cull_Mode: 2
+  _ZTest_Mode: 4
+  _DepthOffset: 0
+  _CloudRemapping: 1
+  _DistortionClouds: 1
+  _DistortionStrength: 0.71
+  _Cloud1Tex: {fileID: 2800000, guid: f801245946d57b246a68474f92bb4ee7, type: 3}
+  _Cloud1TexScale: {x: 18, y: 1.5}
+  _Cloud1TexOffset: {x: 0, y: 0}
+  _Cloud2Tex: {fileID: 2800000, guid: c7569c613a87ace418b4ae951616c176, type: 3}
+  _Cloud2TexScale: {x: 12, y: 0.25}
+  _Cloud2TexOffset: {x: 0, y: 0}
+  _CutoffScroll: {x: 1.5, y: 0.3, z: 0, w: 0}
+  _VertexColors: 0
+  _LuminanceForVertexAlpha: 0
+  _LuminanceForTextureAlpha: 0
+  _VertexOffset: 0
+  _FresnelFade: 1
+  _SkyboxOnly: 0
+  _FresnelPower: -0.2
+  _VertexOffsetAmount: 0
 --- !u!1 &7540684713979324654
 GameObject:
   m_ObjectHideFlags: 0
