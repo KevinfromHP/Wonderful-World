@@ -178,7 +178,7 @@ namespace ForgottenFoes
                         {
                             material.shader = Resources.Load<Shader>("shaders/fx/hgcloudremap");
                             material.CopyPropertiesFromMaterial(Resources.Load<GameObject>("Prefabs/effects/ImpBossDeathEffect").transform.Find("Ring").GetComponent<ParticleSystemRenderer>().material);
-                            material.SetTexture("_MainTex", null);
+                            material.SetTexture("_MainTex", mainAssetBundle.LoadAsset<Texture2D>("texPortal"));
                         }
                         break;
                     case "matPortalCrack":

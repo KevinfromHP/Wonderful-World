@@ -4625,6 +4625,7 @@ GameObject:
   - component: {fileID: 3079068090698627163}
   - component: {fileID: 5776560897889262470}
   - component: {fileID: 225614290020381971}
+  - component: {fileID: 4932471555745372283}
   m_Layer: 0
   m_Name: mdlImpSorcerer
   m_TagString: Untagged
@@ -4703,6 +4704,8 @@ MonoBehaviour:
     transform: {fileID: 781178381182092206}
   - name: Chest
     transform: {fileID: 4910806244403779644}
+  - name: SpawnPortalCenter
+    transform: {fileID: 4802795017581574348}
 --- !u!114 &6556548557931982159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4819,6 +4822,25 @@ MonoBehaviour:
   destroyObjectOnEnd: 0
   destroyEffectPrefab: {fileID: 0}
   destroyEffectChildString: 
+--- !u!114 &4932471555745372283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6571806411953786181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92ffbec3c23e35b438e208f792cd77a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crystals:
+  - crystalObject: {fileID: 6571806411953819877}
+    hasCrystal: 0
+  - crystalObject: {fileID: 6571806411953819873}
+    hasCrystal: 0
+  - crystalObject: {fileID: 6571806411953819901}
+    hasCrystal: 0
 --- !u!1 &6571806411953786183
 GameObject:
   m_ObjectHideFlags: 0

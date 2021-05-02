@@ -44,7 +44,6 @@ namespace ForgottenFoes.Enemies
         {
             base.BuildConfig(config);
         }
-
         public override void Hook()
         {
             base.Hook();

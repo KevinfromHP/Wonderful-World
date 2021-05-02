@@ -73,8 +73,11 @@
     <Compile Include="Assets\Wonderful World\ForgottenFoes\Utils\ComponentsAndScriptableObjects\AetheriumStuff\HGControllerFinder.cs" />
     <Compile Include="Assets\Wonderful World\ForgottenFoes\Utils\ComponentsAndScriptableObjects\AetheriumStuff\HGIntersectionController.cs" />
     <Compile Include="Assets\Wonderful World\ForgottenFoes\Utils\ComponentsAndScriptableObjects\AetheriumStuff\HGStandardController.cs" />
+    <Compile Include="Assets\Wonderful World\ForgottenFoes\Utils\ComponentsAndScriptableObjects\CrystalLocator.cs" />
     <Compile Include="Assets\Wonderful World\ForgottenFoes\Utils\ComponentsAndScriptableObjects\ForgottenFoesDirectorCardHolder.cs" />
     <Compile Include="Assets\Wonderful World\ForgottenFoes\Utils\ComponentsAndScriptableObjects\ForgottenFoesEffectDefHolder.cs" />
+    <Compile Include="Assets\Wonderful World\ForgottenFoes\Utils\ComponentsAndScriptableObjects\MotionManager.cs" />
+    <Compile Include="Assets\Wonderful World\ForgottenFoes\Utils\ComponentsAndScriptableObjects\OnParticleEndEventSaveData.cs" />
     <Compile Include="Assets\Wonderful World\ForgottenFoes\Utils\ComponentsAndScriptableObjects\ProjectileSteerAboveTarget.cs" />
     <Compile Include="Assets\Wonderful World\ForgottenFoes\Utils\EnemyBuilder.cs" />
     <Compile Include="Assets\Wonderful World\ForgottenFoes\Utils\LogCore.cs" />

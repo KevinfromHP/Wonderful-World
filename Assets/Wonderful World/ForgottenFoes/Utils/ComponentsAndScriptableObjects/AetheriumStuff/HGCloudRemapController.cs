@@ -14,7 +14,8 @@ namespace ForgottenFoes.Utils
         public Material Material;
         public Renderer Renderer;
         public string MaterialName;
-        public bool replaceShaderDataAndDelete = false;
+        public bool replaceShaderData = false;
+        public bool deleteOnStart = false;
 
         public Color _Tint;
         public bool _DisableRemapping;
@@ -96,7 +97,7 @@ namespace ForgottenFoes.Utils
 
         public void Start()
         {
-            if (!replaceShaderDataAndDelete)
+            if (!replaceShaderData)
                 GrabMaterialValues();
         }
 
@@ -233,7 +234,7 @@ namespace ForgottenFoes.Utils
                 Material.SetFloat("_FresnelPower", _FresnelPower);
                 Material.SetFloat("_OffsetAmount", _VertexOffsetAmount);
             }
-            if (replaceShaderDataAndDelete)
+            if (deleteOnStart)
                 Destroy(this);
         }
     }

@@ -14,7 +14,8 @@ namespace ForgottenFoes.Utils
         public Material Material;
         public Renderer Renderer;
         public string MaterialName;
-        public bool replaceShaderDataAndDelete = false;
+        public bool replaceShaderData = false;
+        public bool deleteOnStart = false;
 
         public enum _SrcBlendFloatEnum
         {
@@ -96,7 +97,7 @@ namespace ForgottenFoes.Utils
 
         public void Start()
         {
-            if (!replaceShaderDataAndDelete)
+            if (!replaceShaderData)
                 GrabMaterialValues();
         }
 
@@ -211,7 +212,7 @@ namespace ForgottenFoes.Utils
                 Material.SetFloat("_VertexColorsOn", Convert.ToSingle(_IgnoreVertexColors));
                 Material.SetFloat("_TriplanarOn", Convert.ToSingle(_EnableTriplanarProjectionsForClouds));
             }
-            if (replaceShaderDataAndDelete)
+            if (deleteOnStart)
                 Destroy(this);
         }
     }
