@@ -89,6 +89,7 @@ namespace ForgottenFoes
                 }
             }
             EnemyBuilder.AddToContentPack();
+            Assets.AddEffectDefs();
 
             LogCore.LogD("Adding Monsters Complete.");
 
@@ -104,135 +105,6 @@ namespace ForgottenFoes
                 LogCore.LogM("Added " + enemy.monsterName);
             }
             return enabled;
-        }
-    }
-
-
-    public static class Assets
-    {
-        static bool imTooGodDamnLazyToSetUpConfigurationForThisSoJustSetThisToTrueIfAssetBundleIsntEmbeddedOkay = true;
-
-        public static AssetBundle mainAssetBundle = null;
-
-        public static void PopulateAssets()
-        {
-            if (imTooGodDamnLazyToSetUpConfigurationForThisSoJustSetThisToTrueIfAssetBundleIsntEmbeddedOkay)
-            {
-                var path = Assembly.GetExecutingAssembly().Location.Remove(Assembly.GetExecutingAssembly().Location.LastIndexOf('\\') + 1);
-                mainAssetBundle = AssetBundle.LoadFromFile(Path.Combine(path, "forgottenfoes_assets"));
-            }
-            else
-            {
-                using (var assetStream = Assembly.GetExecutingAssembly().GetManifestResourceStream("ForgottenFoes.forgottenfoes_assets"))
-                {
-                    mainAssetBundle = AssetBundle.LoadFromStream(assetStream);
-                }
-            }
-            ContentPackProvider.serializedContentPack = mainAssetBundle.LoadAsset<SerializableContentPack>("ContentPack");
-        }
-
-        public static void ApplyShaders()
-        {
-            var materials = mainAssetBundle.LoadAllAssets<Material>();
-
-            foreach (Material material in materials)
-            {
-                switch (material.name)
-                {
-                    case "matImpSorcerer":
-                        Material impMat = Resources.Load<GameObject>("Prefabs/CharacterBodies/ImpBody").transform.Find("ModelBase/mdlImp/ImpMesh").GetComponent<SkinnedMeshRenderer>().material;
-                        material.CopyPropertiesFromMaterial(impMat);
-                        material.mainTexture = mainAssetBundle.LoadAsset<Texture2D>("texImpSorcerer");
-
-                        //material.SetTexture("_EmTex", null);
-                        material.SetTexture("_SliceAlphaText", mainAssetBundle.LoadAsset<Texture2D>("texCloudOrganic2"));
-
-                        /*material.shader = Resources.Load<Shader>("shaders/deferred/hgstandard");
-                        string[] texProperties = new string[] { "_FlowHeightRamp", "_FlowHeightMap", "_FlowTex", "_FresnelRamp", "_PrintRamp", "_SliceAlphaTest" };
-                        foreach (string property in texProperties)
-                            material.SetTexture(property, impMat.GetTexture(property));
-
-                        //impMat = Resources.Load<GameObject>("Prefabs/CharacterBodies/ImpBody").transform.Find("ModelBase/mdlImp/ImpMesh").GetComponent<SkinnedMeshRenderer>().material;
-                        string[] floatProperties = new string[] { "_BlueChannelBias", "_BlueChannelSmoothness", "_BumpScale", "_ColorsOn", "_Cull", "_Cutoff", "_DecalLayer", "_Depth", "_DetailNormalMapScale", "_DiffuseBias", "_DiffuseExponent", "_DiffuseScale", "_DitherOn", "_DstBlend", "_EliteBrightnessMax", "_EliteBrightnessMin", "_EliteIndex", "_EmPower", "_EnableCutout", "_FEON", "_Fade", "_FadeBias", "_FlowDiffuseStrength", "_FlowEmissionStrength", "_FlowHeightBias", "_FlowHeightPower", "_FlowMaskStrength", "_FlowNormalStrength", "_FlowSpeed", "_FlowTextureScaleFactor", "_FlowmapOn", "_ForceSpecOn", "_FresnelBoost", "_FresnelPower", "_GlossMapScale", "_Glossiness", "_GlossyReflections", "_GreenChannelBias", "_GreenChannelSmoothness", "_LimbPrimeMask", "_LimbRemovalOn", "_Metallic", "_Mode", "_NormalStrength", "_OcclusionStrength", "_Parallax", "_PrintBias", "_PrintBoost", "_PrintDirection", "_PrintEmissionToAlbedoLerp", "_PrintOn", "_RampInfo", "_RimPower", "_RimStrength", "_SliceAlphaDepth", "_SliceBandHeight", "_SliceHeight", "_Smoothness", "_SmoothnessTextureChannel", "_SpecularExponent", "_SpecularHighlights", "_SpecularStrength", "_SplatmapOn", "_SplatmapTileScale", "_SrcBlend", "_UVSec", "_ZWrite" };
-                        foreach (string property in floatProperties)
-                                material.SetFloat(property, impMat.GetFloat(property));*/
-                        material.SetFloat("_LimbRemoval", 1);
-                        material.SetFloat("_PrintDirection", 0f);
-                        material.SetFloat("_SliceBandHeight", 1f);
-                        material.SetFloat("_SliceHeight", 1f);
-                        break;
-                    case "matIndicator":
-                        material.CopyPropertiesFromMaterial(Resources.Load<GameObject>("Prefabs/Projectiles/ImpVoidspikeProjectile").transform.Find("ImpactEffect/TeamAreaIndicator, FullSphere/Mesh").GetComponent<MeshRenderer>().material);
-                        break;
-                    case "matIndicatorEnemy":
-                        material.CopyPropertiesFromMaterial(Resources.Load<GameObject>("Prefabs/Projectiles/ImpVoidspikeProjectile").transform.Find("ImpactEffect/TeamAreaIndicator, FullSphere").GetComponent<TeamAreaIndicator>().teamMaterialPairs[0].sharedMaterial);
-                        break;
-                    case "matIndicatorFriendly":
-                        material.CopyPropertiesFromMaterial(Resources.Load<GameObject>("Prefabs/Projectiles/ImpVoidspikeProjectile").transform.Find("ImpactEffect/TeamAreaIndicator, FullSphere").GetComponent<TeamAreaIndicator>().teamMaterialPairs[1].sharedMaterial);
-                        break;
-                    case "matVoidCluster":
-                        material.shader = Resources.Load<Shader>("shaders/fx/hgcloudremap");
-                        material.CopyPropertiesFromMaterial(Resources.Load<GameObject>("Prefabs/ProjectileGhosts/ImpVoidspikeProjectileGhost").transform.Find("Mesh").GetComponent<MeshRenderer>().material);
-                        break;
-                    case "matPortal":
-                        {
-                            material.shader = Resources.Load<Shader>("shaders/fx/hgcloudremap");
-                            material.CopyPropertiesFromMaterial(Resources.Load<GameObject>("Prefabs/effects/ImpBossDeathEffect").transform.Find("Ring").GetComponent<ParticleSystemRenderer>().material);
-                            material.SetTexture("_MainTex", mainAssetBundle.LoadAsset<Texture2D>("texPortal"));
-                        }
-                        break;
-                    case "matPortalCrack":
-                        {
-                            material.shader = Resources.Load<Shader>("shaders/fx/hgcloudremap");
-                            material.CopyPropertiesFromMaterial(Resources.Load<GameObject>("Prefabs/Projectileghosts/ImpVoidspikeProjectileGhost").transform.Find("Mesh").GetComponent<MeshRenderer>().material);
-                        }
-                        break;
-                }
-            }
-        }
-    }
-
-    public class ContentPackProvider : IContentPackProvider
-    {
-        public static SerializableContentPack serializedContentPack;
-        public static ContentPack contentPack;
-
-        public string identifier
-        {
-            get
-            {
-                return "ForgottenFoes";
-            }
-        }
-
-        internal static void Init()
-        {
-            contentPack = serializedContentPack.CreateContentPack();
-            ContentManager.collectContentPackProviders += AddCustomContent;
-        }
-
-        private static void AddCustomContent(ContentManager.AddContentPackProviderDelegate addContentPackProvider)
-        {
-            addContentPackProvider(new ContentPackProvider());
-        }
-
-        public IEnumerator LoadStaticContentAsync(LoadStaticContentAsyncArgs args)
-        {
-            args.ReportProgress(1f);
-            yield break;
-        }
-
-        public IEnumerator GenerateContentPackAsync(GetContentPackAsyncArgs args)
-        {
-            ContentPack.Copy(contentPack, args.output);
-            args.ReportProgress(1f);
-            yield break;
-        }
-
-        public IEnumerator FinalizeAsync(FinalizeAsyncArgs args)
-        {
-            args.ReportProgress(1f);
-            yield break;
         }
     }
 }

@@ -3497,6 +3497,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6571806411953819895}
   - component: {fileID: 6571806411967381935}
+  - component: {fileID: 2920480488314090287}
   m_Layer: 0
   m_Name: CrystalMesh
   m_TagString: Untagged
@@ -3525,7 +3526,7 @@ SkinnedMeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6571806411953786135}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -3535,7 +3536,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6ab108f51f87bbb4a885dacfbf65faf7, type: 2}
+  - {fileID: 2100000, guid: 0e96c5ea898169f459a23e52ac55a468, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3653,6 +3654,94 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.00000011920929, y: 4.278507, z: -0.08655667}
     m_Extent: {x: 1.7550465, y: 0.43261242, z: 1.8805361}
   m_DirtyAABB: 0
+--- !u!114 &2920480488314090287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6571806411953786135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 839064329, guid: 648b06dd450e17847adc710c191178c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Material: {fileID: 2100000, guid: 0e96c5ea898169f459a23e52ac55a468, type: 2}
+  Renderer: {fileID: 6571806411967381935}
+  MaterialName: matCrystal
+  replaceShaderData: 0
+  deleteOnStart: 0
+  _EnableCutout: 0
+  _Color: {r: 0, g: 0, b: 0, a: 0}
+  _MainTex: {fileID: 0}
+  _MainTexScale: {x: 0, y: 0}
+  _MainTexOffset: {x: 0, y: 0}
+  _NormalStrength: 0
+  _NormalTex: {fileID: 0}
+  _NormalTexScale: {x: 0, y: 0}
+  _NormalTexOffset: {x: 0, y: 0}
+  _EmColor: {r: 0, g: 0, b: 0, a: 0}
+  _EmTex: {fileID: 0}
+  _EmPower: 0
+  _Smoothness: 0
+  _IgnoreDiffuseAlphaForSpeculars: 0
+  _RampChoice: 0
+  _DecalLayer: 0
+  _SpecularStrength: 0
+  _SpecularExponent: 0
+  _Cull_Mode: 0
+  _EnableDither: 0
+  _FadeBias: 0
+  _EnableFresnelEmission: 0
+  _FresnelRamp: {fileID: 0}
+  _FresnelPower: 0
+  _FresnelMask: {fileID: 0}
+  _FresnelBoost: 0
+  _EnablePrinting: 0
+  _SliceHeight: 0
+  _PrintBandHeight: 0
+  _PrintAlphaDepth: 0
+  _PrintAlphaTexture: {fileID: 0}
+  _PrintAlphaTextureScale: {x: 0, y: 0}
+  _PrintAlphaTextureOffset: {x: 0, y: 0}
+  _PrintColorBoost: 0
+  _PrintAlphaBias: 0
+  _PrintEmissionToAlbedoLerp: 0
+  _PrintDirection: 0
+  _PrintRamp: {fileID: 0}
+  _EliteBrightnessMin: 0
+  _EliteBrightnessMax: 0
+  _EnableSplatmap: 0
+  _UseVertexColorsInstead: 0
+  _BlendDepth: 0
+  _SplatmapTex: {fileID: 0}
+  _SplatmapTexScale: {x: 0, y: 0}
+  _SplatmapTexOffset: {x: 0, y: 0}
+  _SplatmapTileScale: 0
+  _GreenChannelTex: {fileID: 0}
+  _GreenChannelNormalTex: {fileID: 0}
+  _GreenChannelSmoothness: 0
+  _GreenChannelBias: 0
+  _BlueChannelTex: {fileID: 0}
+  _BlueChannelNormalTex: {fileID: 0}
+  _BlueChannelSmoothness: 0
+  _BlueChannelBias: 0
+  _EnableFlowmap: 0
+  _FlowTexture: {fileID: 0}
+  _FlowHeightmap: {fileID: 0}
+  _FlowHeightmapScale: {x: 0, y: 0}
+  _FlowHeightmapOffset: {x: 0, y: 0}
+  _FlowHeightRamp: {fileID: 0}
+  _FlowHeightRampScale: {x: 0, y: 0}
+  _FlowHeightRampOffset: {x: 0, y: 0}
+  _FlowHeightBias: 0
+  _FlowHeightPower: 0
+  _FlowEmissionStrength: 0
+  _FlowSpeed: 0
+  _MaskFlowStrength: 0
+  _NormalFlowStrength: 0
+  _FlowTextureScaleFactor: 0
+  _EnableLimbRemoval: 0
 --- !u!1 &6571806411953786137
 GameObject:
   m_ObjectHideFlags: 0
@@ -4418,6 +4507,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6571806411953819937}
   - component: {fileID: 6571806411967381931}
+  - component: {fileID: 5871143186574111068}
   m_Layer: 0
   m_Name: ImpSorcererMesh
   m_TagString: Untagged
@@ -4574,6 +4664,94 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.0015207529, y: 4.599453, z: 0.04627703}
     m_Extent: {x: 2.971466, y: 4.595481, z: 0.4845779}
   m_DirtyAABB: 0
+--- !u!114 &5871143186574111068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6571806411953786177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 839064329, guid: 648b06dd450e17847adc710c191178c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Material: {fileID: 2100000, guid: 6ab108f51f87bbb4a885dacfbf65faf7, type: 2}
+  Renderer: {fileID: 6571806411967381931}
+  MaterialName: matImpSorcerer
+  replaceShaderData: 0
+  deleteOnStart: 0
+  _EnableCutout: 0
+  _Color: {r: 0, g: 0, b: 0, a: 0}
+  _MainTex: {fileID: 0}
+  _MainTexScale: {x: 0, y: 0}
+  _MainTexOffset: {x: 0, y: 0}
+  _NormalStrength: 0
+  _NormalTex: {fileID: 0}
+  _NormalTexScale: {x: 0, y: 0}
+  _NormalTexOffset: {x: 0, y: 0}
+  _EmColor: {r: 0, g: 0, b: 0, a: 0}
+  _EmTex: {fileID: 0}
+  _EmPower: 0
+  _Smoothness: 0
+  _IgnoreDiffuseAlphaForSpeculars: 0
+  _RampChoice: 0
+  _DecalLayer: 0
+  _SpecularStrength: 0
+  _SpecularExponent: 0
+  _Cull_Mode: 0
+  _EnableDither: 0
+  _FadeBias: 0
+  _EnableFresnelEmission: 0
+  _FresnelRamp: {fileID: 0}
+  _FresnelPower: 0
+  _FresnelMask: {fileID: 0}
+  _FresnelBoost: 0
+  _EnablePrinting: 0
+  _SliceHeight: 0
+  _PrintBandHeight: 0
+  _PrintAlphaDepth: 0
+  _PrintAlphaTexture: {fileID: 0}
+  _PrintAlphaTextureScale: {x: 0, y: 0}
+  _PrintAlphaTextureOffset: {x: 0, y: 0}
+  _PrintColorBoost: 0
+  _PrintAlphaBias: 0
+  _PrintEmissionToAlbedoLerp: 0
+  _PrintDirection: 0
+  _PrintRamp: {fileID: 0}
+  _EliteBrightnessMin: 0
+  _EliteBrightnessMax: 0
+  _EnableSplatmap: 0
+  _UseVertexColorsInstead: 0
+  _BlendDepth: 0
+  _SplatmapTex: {fileID: 0}
+  _SplatmapTexScale: {x: 0, y: 0}
+  _SplatmapTexOffset: {x: 0, y: 0}
+  _SplatmapTileScale: 0
+  _GreenChannelTex: {fileID: 0}
+  _GreenChannelNormalTex: {fileID: 0}
+  _GreenChannelSmoothness: 0
+  _GreenChannelBias: 0
+  _BlueChannelTex: {fileID: 0}
+  _BlueChannelNormalTex: {fileID: 0}
+  _BlueChannelSmoothness: 0
+  _BlueChannelBias: 0
+  _EnableFlowmap: 0
+  _FlowTexture: {fileID: 0}
+  _FlowHeightmap: {fileID: 0}
+  _FlowHeightmapScale: {x: 0, y: 0}
+  _FlowHeightmapOffset: {x: 0, y: 0}
+  _FlowHeightRamp: {fileID: 0}
+  _FlowHeightRampScale: {x: 0, y: 0}
+  _FlowHeightRampOffset: {x: 0, y: 0}
+  _FlowHeightBias: 0
+  _FlowHeightPower: 0
+  _FlowEmissionStrength: 0
+  _FlowSpeed: 0
+  _MaskFlowStrength: 0
+  _NormalFlowStrength: 0
+  _FlowTextureScaleFactor: 0
+  _EnableLimbRemoval: 0
 --- !u!1 &6571806411953786179
 GameObject:
   m_ObjectHideFlags: 0
@@ -6311,7 +6489,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 4300000, guid: 112624857bebe2b479aa27013ee665e0, type: 2}
+  m_Mesh: {fileID: 0}
   m_Bones:
   - {fileID: 6571806411953819877}
   - {fileID: 6571806411953819873}
@@ -6720,11 +6898,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   customName: Angular Velocity PID
-  PID: {x: 1, y: 1, z: 1}
+  PID: {x: 5, y: 1, z: 0}
   inputQuat: {x: 0, y: 0, z: 0, w: 1}
   targetQuat: {x: 0, y: 0, z: 0, w: 1}
   outputVector: {x: 0, y: 0, z: 0}
-  gain: 1
+  gain: 1.1
 --- !u!114 &440939502908970303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6738,12 +6916,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   customName: torquePID
-  PID: {x: 1, y: 1, z: 1}
+  PID: {x: 1, y: 1, z: 0}
   inputVector: {x: 0, y: 0, z: 0}
   targetVector: {x: 0, y: 0, z: 0}
   outputVector: {x: 0, y: 0, z: 0}
   isAngle: 1
-  gain: 1
+  gain: 13
 --- !u!114 &8484994720621223639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6757,12 +6935,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   customName: Force PID
-  PID: {x: 3, y: 0, z: 0}
+  PID: {x: 1, y: 0, z: 0}
   inputVector: {x: 0, y: 0, z: 0}
   targetVector: {x: 0, y: 0, z: 0}
   outputVector: {x: 0, y: 0, z: 0}
   isAngle: 0
-  gain: 1
+  gain: 1.4
 --- !u!114 &6411937443274981608
 MonoBehaviour:
   m_ObjectHideFlags: 0

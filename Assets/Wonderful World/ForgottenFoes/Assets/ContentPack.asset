@@ -17,7 +17,8 @@ MonoBehaviour:
   projectilePrefabs:
   - {fileID: 5902064289435259812, guid: 5e6caf8753945d2419e735e4aee3828f, type: 3}
   gameModePrefabs: []
-  networkedObjectPrefabs: []
+  networkedObjectPrefabs:
+  - {fileID: 8251680047820569326, guid: da0b49cc9acbc1546bfc1e77f53c99eb, type: 3}
   skillDefs:
   - {fileID: 11400000, guid: 9bbbed2a91a6a8e43bb077b086368b2e, type: 2}
   - {fileID: 11400000, guid: 4b55de0b9ed2dd54cb1ae68ec66ecb43, type: 2}
@@ -41,4 +42,5 @@ MonoBehaviour:
   gameEndingDefs: []
   entityStateConfigurations:
   - {fileID: 11400000, guid: 688f6e72d7aef1d41b18aaf6b2b1b474, type: 2}
+  - {fileID: 11400000, guid: a752f2ce772e1ab4f82c4fd59fdab145, type: 2}
   entityStateTypes: []

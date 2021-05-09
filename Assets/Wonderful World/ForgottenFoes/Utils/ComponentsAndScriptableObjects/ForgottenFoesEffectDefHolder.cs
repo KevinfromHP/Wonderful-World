@@ -7,11 +7,11 @@ namespace ForgottenFoes.Utils
     [CreateAssetMenu(fileName = "EffectDef Holder", menuName = "ForgottenFoes/EffectDef Holder", order = 2)]
     public class ForgottenFoesEffectDefHolder : ScriptableObject
     {
-        public GameObject effectPrefab;
+        public GameObject[] effectPrefabs;
 
-        public EffectDef ToEffectDef()
+        public static EffectDef ToEffectDef(GameObject effect)
         {
-            return new EffectDef(effectPrefab);
+            return new EffectDef(effect);
         }
         
     }

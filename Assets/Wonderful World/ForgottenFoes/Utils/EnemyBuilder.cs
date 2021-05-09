@@ -122,20 +122,6 @@ namespace ForgottenFoes.Utils
             ContentPackProvider.serializedContentPack.bodyPrefabs = bodyPrefabs.ToArray();
             ContentPackProvider.serializedContentPack.masterPrefabs = masterPrefabs.ToArray();
             ContentPackProvider.serializedContentPack.entityStateTypes = entityStates.ToArray();
-            AddEffectDefs();
-        }
-
-        /// <summary>
-        /// This is only here because EffectDefs can't be made through Unity due to Hopoo forgetting to make them scriptable/serializable. You can delete this retarded shit once it's patched.
-        /// </summary>
-        public static void AddEffectDefs()
-        {
-            var effectHolders = Assets.mainAssetBundle.LoadAllAssets<ForgottenFoesEffectDefHolder>();
-            ContentPackProvider.serializedContentPack.effectDefs = new EffectDef[effectHolders.Length];
-            for(int i = 0; i < effectHolders.Length; i++)
-            {
-                ContentPackProvider.serializedContentPack.effectDefs[i] = effectHolders[i].ToEffectDef();
-            }
         }
     }
 }

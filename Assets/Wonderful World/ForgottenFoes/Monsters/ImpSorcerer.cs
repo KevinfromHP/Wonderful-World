@@ -80,6 +80,7 @@ namespace ForgottenFoes.Enemies
             //Adds the surfaceDef's impact prefab
             var surfaceDef = Assets.mainAssetBundle.LoadAsset<SurfaceDef>("sdImpSorcerer");
             surfaceDef.impactEffectPrefab = Resources.Load<SurfaceDef>("surfacedefs/sdImp").impactEffectPrefab;
+            CrystalLocator.crystalPrefab = Assets.mainAssetBundle.LoadAsset<GameObject>("ImpSorcererCrystal");
         }
 
         public override void ModifyPrefabs()
@@ -221,10 +222,26 @@ namespace ForgottenFoes.EntityStates.ImpSorcerer
 
     public class SpawnState : BaseState
     {
+        public static GameObject spawnEffect;
         public static float duration = 3f;
+        private Animator animator;
         public override void OnEnter()
         {
             base.OnEnter();
+            animator = GetModelAnimator();
+            if (rigidbodyMotor)
+                rigidbodyMotor.enabled = false;
+            if (modelLocator)
+            {
+                Transform modelTransform = modelLocator.modelTransform;
+                ChildLocator component = modelTransform.GetComponent<ChildLocator>();
+                CrystalLocator crystalLocator = modelTransform.GetComponent<CrystalLocator>();
+                if (component && crystalLocator && spawnEffect)
+                {
+                    EffectManager.SimpleMuzzleFlash(spawnEffect, gameObject, "SpawnPortalCenter", false);
+                    modelTransform.Find("SpawnPortalCenter/ImpSorcererSpawnEffect(Clone)").GetComponent<SpawnCrystalOnDeath>().locator = crystalLocator;
+                }
+            }
             PlayAnimation("Body", "Spawn", "Spawn.playbackRate", duration);
         }
 
@@ -233,6 +250,7 @@ namespace ForgottenFoes.EntityStates.ImpSorcerer
             base.FixedUpdate();
             if (fixedAge >= duration && isAuthority)
             {
+                rigidbodyMotor.enabled = true;
                 outer.SetNextStateToMain();
                 return;
             }
