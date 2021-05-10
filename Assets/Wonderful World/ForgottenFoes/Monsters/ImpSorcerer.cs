@@ -225,6 +225,10 @@ namespace ForgottenFoes.EntityStates.ImpSorcerer
         public static GameObject spawnEffect;
         public static float duration = 3f;
         private Animator animator;
+        private CrystalLocator crystalLocator;
+        private ChildLocator childLocator;
+        private Transform spawnPortalCenter;
+        private bool hasFoundEffect = false;
         public override void OnEnter()
         {
             base.OnEnter();
@@ -234,12 +238,12 @@ namespace ForgottenFoes.EntityStates.ImpSorcerer
             if (modelLocator)
             {
                 Transform modelTransform = modelLocator.modelTransform;
-                ChildLocator component = modelTransform.GetComponent<ChildLocator>();
-                CrystalLocator crystalLocator = modelTransform.GetComponent<CrystalLocator>();
-                if (component && crystalLocator && spawnEffect)
+                childLocator = modelTransform.GetComponent<ChildLocator>();
+                crystalLocator = modelTransform.GetComponent<CrystalLocator>();
+                if (childLocator && crystalLocator && spawnEffect)
                 {
                     EffectManager.SimpleMuzzleFlash(spawnEffect, gameObject, "SpawnPortalCenter", false);
-                    modelTransform.Find("SpawnPortalCenter/ImpSorcererSpawnEffect(Clone)").GetComponent<SpawnCrystalOnDeath>().locator = crystalLocator;
+                    spawnPortalCenter = childLocator.FindChild("SpawnPortalCenter");
                 }
             }
             PlayAnimation("Body", "Spawn", "Spawn.playbackRate", duration);
@@ -248,6 +252,11 @@ namespace ForgottenFoes.EntityStates.ImpSorcerer
         public override void FixedUpdate()
         {
             base.FixedUpdate();
+            if (!hasFoundEffect && childLocator && spawnPortalCenter.childCount > 0)
+            {
+                spawnPortalCenter.GetChild(0).GetComponent<SpawnCrystalOnDeath>().locator = crystalLocator;
+                hasFoundEffect = true;
+            }
             if (fixedAge >= duration && isAuthority)
             {
                 rigidbodyMotor.enabled = true;
@@ -366,7 +375,7 @@ namespace ForgottenFoes.EntityStates.ImpSorcerer
             base.OnEnter();
             duration = baseDuration / characterBody.attackSpeed;
             PlayAnimation("Gesture, Override", "FireVoidCluster", "FireVoidCluster.PlaybackRate", duration);
-            ProjectileManager.instance.FireProjectile(projectilePrefab, characterBody.aimOrigin + characterBody.aimOriginTransform.forward, Quaternion.identity, gameObject, damageStat * damageCoefficient, 0f, Util.CheckRoll(critStat, characterBody.master), DamageColorIndex.Default, null, -1f);
+            ProjectileManager.instance.FireProjectile(projectilePrefab, inputBank.aimOrigin + inputBank.aimDirection * 1.8f, Quaternion.identity, gameObject, damageStat * damageCoefficient, 0f, Util.CheckRoll(critStat, characterBody.master), DamageColorIndex.Default, null, -1f);
         }
 
         public override void FixedUpdate()

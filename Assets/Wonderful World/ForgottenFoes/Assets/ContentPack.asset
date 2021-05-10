@@ -15,7 +15,7 @@ MonoBehaviour:
   bodyPrefabs: []
   masterPrefabs: []
   projectilePrefabs:
-  - {fileID: 5902064289435259812, guid: 5e6caf8753945d2419e735e4aee3828f, type: 3}
+  - {fileID: 8587392415074972039, guid: 222b8e20a2836334790077732a87b3d2, type: 3}
   gameModePrefabs: []
   networkedObjectPrefabs:
   - {fileID: 8251680047820569326, guid: da0b49cc9acbc1546bfc1e77f53c99eb, type: 3}

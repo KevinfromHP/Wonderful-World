@@ -16,15 +16,35 @@ namespace ForgottenFoes.Utils
         }
         public void Update()
         {
-            particleSystemToTrack.GetParticles(particles, 3);
-            if (particleSystemToTrack && particleSystemToTrack.particleCount > 0 && locator)
+            int particlesAlive = particleSystemToTrack.GetParticles(particles);
+            if (particleSystemToTrack && locator && stopwatch > 0f)
             {
-                foreach (ParticleSystem.Particle particle in particles)
-                    if (particle.remainingLifetime <= 0f)
-                        locator.SpawnCrystal(particle.position, particle.rotation3D);
+                bool disable = false;
+                for (int i = 0; i < 3; i++)
+                {
+                    if (stopwatch >= particleSystemToTrack.main.startLifetime.constant)
+                    {
+                        LogCore.LogW("boutta spawn a crystal in this bitch " + cachedPositions[i] + " " + cachedRotations[i]);
+                        locator.SpawnCrystal(cachedPositions[i], cachedRotations[i]);
+                        disable = true;
+                    }
+                    else
+                    {
+                        cachedPositions[i] = particles[i].position;
+                        cachedRotations[i] = particles[i].rotation3D;
+                    }
+                }
+                if (disable)
+                    enabled = false;
             }
+            stopwatch += Time.deltaTime;
+
         }
 
+        float stopwatch = 0f;
         private ParticleSystem.Particle[] particles;
+        private Vector3[] cachedPositions = new Vector3[3];
+        private Vector3[] cachedRotations = new Vector3[3];
+
     }
 }

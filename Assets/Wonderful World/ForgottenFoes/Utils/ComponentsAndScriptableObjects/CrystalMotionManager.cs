@@ -28,15 +28,10 @@ namespace ForgottenFoes.Utils
     {
         public GameObject crystalPrefab;
         public Transform referenceObject;
-        public float acceleration = 20f;
-        public float smoothTime = 1f;
+        public float smoothTime = .1f;
+        public float maxVelocityDividend = 5;
         private Vector3 velocity = Vector3.zero;
-        private Rigidbody rigidBody;
 
-        private void Start()
-        {
-            rigidBody = GetComponent<Rigidbody>();
-        }
         private void Update()
         {
             if (!referenceObject)
@@ -47,11 +42,12 @@ namespace ForgottenFoes.Utils
                 UpdateRotation();
             }
         }
-
         private void UpdateMotion()
         {
             Vector3 desiredPosition = referenceObject.position;
-                transform.position = Vector3.SmoothDamp(transform.position, desiredPosition, ref velocity, smoothTime, 6f);
+            var lhs = Vector3.Distance(transform.position, desiredPosition);
+            //smoothTime = 1f / (Mathf.Pow(1.1f, lhs / 4f) - .9f);
+                transform.position = Vector3.SmoothDamp(transform.position, desiredPosition, ref velocity, smoothTime, Mathf.Max(lhs / maxVelocityDividend, 8f));
         }
 
         /*private void UpdateMotion()

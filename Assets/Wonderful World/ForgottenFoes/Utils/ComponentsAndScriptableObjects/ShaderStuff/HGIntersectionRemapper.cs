@@ -151,15 +151,6 @@ namespace ForgottenFoes.Utils
                 Material.SetFloat("_VertexColorsOn", Convert.ToSingle(_IgnoreVertexColors));
                 Material.SetFloat("_TriplanarOn", Convert.ToSingle(_EnableTriplanarProjectionsForClouds));
             }
-            var remappers = Assets.mainAssetBundle.LoadAllAssets<HGStandardRemapper>();
-            for (int i = 0; i < remappers.Length; i++)
-                remappers[i].UpdateMaterial();
-            var remappers2 = Assets.mainAssetBundle.LoadAllAssets<HGCloudRemapRemapper>();
-            for (int i = 0; i < remappers2.Length; i++)
-                remappers2[i].UpdateMaterial();
-            var remappers3 = Assets.mainAssetBundle.LoadAllAssets<HGCloudRemapRemapper>();
-            for (int i = 0; i < remappers3.Length; i++)
-                remappers3[i].UpdateMaterial();
         }
     }
 }

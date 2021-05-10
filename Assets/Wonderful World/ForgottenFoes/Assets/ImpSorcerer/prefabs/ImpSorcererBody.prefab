@@ -4884,6 +4884,12 @@ MonoBehaviour:
     transform: {fileID: 4910806244403779644}
   - name: SpawnPortalCenter
     transform: {fileID: 4802795017581574348}
+  - name: Crystal1
+    transform: {fileID: 6571806411953819877}
+  - name: Crystal2
+    transform: {fileID: 6571806411953819873}
+  - name: Crystal3
+    transform: {fileID: 6571806411953819901}
 --- !u!114 &6556548557931982159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5012,13 +5018,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92ffbec3c23e35b438e208f792cd77a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  crystals:
-  - crystalObject: {fileID: 6571806411953819877}
-    hasCrystal: 0
-  - crystalObject: {fileID: 6571806411953819873}
-    hasCrystal: 0
-  - crystalObject: {fileID: 6571806411953819901}
-    hasCrystal: 0
 --- !u!1 &6571806411953786183
 GameObject:
   m_ObjectHideFlags: 0
@@ -6701,7 +6700,7 @@ MonoBehaviour:
   baseMaxHealth: 250
   baseRegen: 0
   baseMaxShield: 0
-  baseMoveSpeed: 10
+  baseMoveSpeed: 6
   baseAcceleration: 15
   baseJumpPower: 0
   baseDamage: 10
@@ -6935,12 +6934,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   customName: Force PID
-  PID: {x: 1, y: 0, z: 0}
+  PID: {x: 0.5, y: 0, z: 0}
   inputVector: {x: 0, y: 0, z: 0}
   targetVector: {x: 0, y: 0, z: 0}
   outputVector: {x: 0, y: 0, z: 0}
   isAngle: 0
-  gain: 1.4
+  gain: 0.5
 --- !u!114 &6411937443274981608
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -35,7 +35,7 @@ MonoBehaviour:
   _EnableDither: 1
   _FadeBias: 0
   _EnableFresnelEmission: 1
-  _FresnelRamp: {fileID: 2800000, guid: 13eca9c6a6219e84ab490e261f80a74a, type: 3}
+  _FresnelRamp: {fileID: 2800000, guid: 61965a5a7c7d84c4da5fb7876a1c180a, type: 3}
   _FresnelPower: 1.2
   _FresnelMask: {fileID: 0}
   _FresnelBoost: 3

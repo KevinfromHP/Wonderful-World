@@ -20,7 +20,7 @@ MonoBehaviour:
     - fieldName: projectilePrefab
       fieldValue:
         stringValue: 
-        objectValue: {fileID: 5902064289435259812, guid: 5e6caf8753945d2419e735e4aee3828f,
+        objectValue: {fileID: 8587392415074972039, guid: 222b8e20a2836334790077732a87b3d2,
           type: 3}
     - fieldName: baseDuration
       fieldValue:
