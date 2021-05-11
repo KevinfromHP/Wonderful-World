@@ -53,19 +53,34 @@ namespace ForgottenFoes
 
 
         //For debugging purposes, remove this shit on release/figure out how to build in debug config
+#if DEBUG
         private void Update()
         {
-            var input0 = Input.GetKeyDown(KeyCode.F3);
+            var input0 = Input.GetKeyDown(KeyCode.F2);
+            var input1 = Input.GetKeyDown(KeyCode.F3);
             //add more if necessary
             if (input0)
             {
-                var transform = PlayerCharacterMasterController.instances[0].master.GetBodyObject().transform;
-                var position = transform.position + transform.forward * 5;
-                var quaternion = Util.QuaternionSafeLookRotation(-transform.forward);
+                var inputBank = PlayerCharacterMasterController.instances[0].master.GetBodyObject().GetComponent<InputBankTest>();
+                var position = inputBank.aimOrigin + inputBank.aimDirection * 5;
+                var rotation = inputBank.transform.eulerAngles;
+                rotation.Set(rotation.x, rotation.y + 180f, rotation.z);
+                var quaternion = Quaternion.Euler(rotation);
+                var materialTester = Assets.mainAssetBundle.LoadAsset<GameObject>("MaterialTester");
+                Instantiate<GameObject>(materialTester, position, quaternion);
+            }
+            if (input1)
+            {
+                var inputBank = PlayerCharacterMasterController.instances[0].master.GetBodyObject().GetComponent<InputBankTest>();
+                var position = inputBank.aimOrigin + inputBank.aimDirection * 5;
+                var rotation = inputBank.transform.eulerAngles;
+                rotation.Set(rotation.x, rotation.y + 180f, rotation.z);
+                var quaternion = Quaternion.Euler(rotation);
                 var effectPrefab = Assets.mainAssetBundle.LoadAsset<GameObject>("ImpSorcererSpawnEffect");
                 EffectManager.SimpleEffect(effectPrefab, position, quaternion, false);
             }
         }
+#endif
 
         public void Awake()
         {

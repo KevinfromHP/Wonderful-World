@@ -14,8 +14,8 @@ namespace ForgottenFoes.Utils
         public Material Material;
         public Renderer Renderer;
         public string MaterialName;
-        public bool replaceShaderData = false;
-        public bool deleteOnStart = false;
+        public string[] shaderKeywords;
+
 
         public Color _Tint;
         public bool _DisableRemapping;
@@ -97,7 +97,6 @@ namespace ForgottenFoes.Utils
 
         public void Start()
         {
-            if (!replaceShaderData)
                 GrabMaterialValues();
         }
 
@@ -105,6 +104,7 @@ namespace ForgottenFoes.Utils
         {
             if (Material)
             {
+                shaderKeywords = Material.shaderKeywords;
                 _Tint = Material.GetColor("_TintColor");
                 _DisableRemapping = Convert.ToBoolean(Material.GetFloat("_DisableRemapOn"));
                 _MainTex = Material.GetTexture("_MainTex");
@@ -163,6 +163,7 @@ namespace ForgottenFoes.Utils
                     GrabMaterialValues();
                     PutMaterialIntoRenderer(Renderer);
                 }
+                Material.shaderKeywords = shaderKeywords;
                 Material.SetColor("_TintColor", _Tint);
                 Material.SetFloat("_DisableRemapOn", Convert.ToSingle(_DisableRemapping));
 
@@ -234,8 +235,6 @@ namespace ForgottenFoes.Utils
                 Material.SetFloat("_FresnelPower", _FresnelPower);
                 Material.SetFloat("_OffsetAmount", _VertexOffsetAmount);
             }
-            if (deleteOnStart)
-                Destroy(this);
         }
     }
 }

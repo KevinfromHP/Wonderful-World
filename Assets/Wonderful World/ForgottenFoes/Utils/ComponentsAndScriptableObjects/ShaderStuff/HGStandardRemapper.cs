@@ -192,11 +192,12 @@ namespace ForgottenFoes.Utils
             }
         }
 
-        public void UpdateMaterial()
+        public override void UpdateMaterial()
         {
             if (Material)
             {
                 Material.shader = Resources.Load<Shader>("shaders/deferred/hgstandard");
+                Material.shaderKeywords = shaderKeywords;
                 Material.SetFloat("_EnableCutout", Convert.ToSingle(_EnableCutout));
                 Material.SetColor("_Color", _Color);
 

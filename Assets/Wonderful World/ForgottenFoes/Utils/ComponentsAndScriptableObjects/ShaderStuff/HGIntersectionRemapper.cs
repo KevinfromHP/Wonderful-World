@@ -86,12 +86,13 @@ namespace ForgottenFoes.Utils
         public bool _IgnoreVertexColors;
         public bool _EnableTriplanarProjectionsForClouds;
 
-        public void UpdateMaterial()
+        public override void UpdateMaterial()
         {
 
             if (Material)
             {
                 Material.shader = Resources.Load<Shader>("shaders/fx/hgintersectioncloudremap");
+                Material.shaderKeywords = shaderKeywords;
                 Material.SetFloat("_SrcBlendFloat", Convert.ToSingle(_Source_Blend_Mode));
                 Material.SetFloat("_DstBlendFloat", Convert.ToSingle(_Destination_Blend_Mode));
                 Material.SetColor("_TintColor", _Tint);

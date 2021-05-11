@@ -2,8 +2,10 @@
 
 namespace ForgottenFoes.Utils
 {
-    public class ShaderRemapper : ScriptableObject
+    public abstract class ShaderRemapper : ScriptableObject
     {
         public Material Material;
+        public string[] shaderKeywords;
+        public abstract void UpdateMaterial();
     }
 }

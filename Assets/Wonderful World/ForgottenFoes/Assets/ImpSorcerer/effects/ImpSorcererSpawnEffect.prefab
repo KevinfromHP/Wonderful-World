@@ -2526,7 +2526,6 @@ GameObject:
   - component: {fileID: 718064441320088602}
   - component: {fileID: 718064441320088600}
   - component: {fileID: 718064441320088603}
-  - component: {fileID: 188419349574253308}
   m_Layer: 0
   m_Name: Portal
   m_TagString: Untagged
@@ -2585,7 +2584,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 1
+  moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 0
   randomSeed: 0
@@ -5094,59 +5093,6 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
---- !u!114 &188419349574253308
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 718064441320088605}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a24d0516990dac74cab549d15f20cfcb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Material: {fileID: 2100000, guid: 6db17db5250365e42a53eaf22beb8ddb, type: 2}
-  Renderer: {fileID: 718064441320088603}
-  MaterialName: matPortal
-  replaceShaderData: 1
-  deleteOnStart: 0
-  _Tint: {r: 1, g: 1, b: 1, a: 1}
-  _DisableRemapping: 0
-  _MainTex: {fileID: 2800000, guid: 3dfb6bfd13ddd6f49bf8d2d17dcf42e3, type: 3}
-  _MainTexScale: {x: 1, y: 1}
-  _MainTexOffset: {x: 0, y: 0}
-  _RemapTex: {fileID: 2800000, guid: bb050f6227738fe429b2a9d33bdd313b, type: 3}
-  _RemapTexScale: {x: 1, y: 1}
-  _RemapTexOffset: {x: 0, y: 0}
-  _SoftFactor: 2
-  _BrightnessBoost: 6.65
-  _AlphaBoost: 0.3
-  _AlphaBias: 0.2
-  _UseUV1: 0
-  _FadeWhenNearCamera: 0
-  _FadeCloseDistance: 0
-  _Cull_Mode: 0
-  _ZTest_Mode: 4
-  _DepthOffset: 0
-  _CloudRemapping: 1
-  _DistortionClouds: 0
-  _DistortionStrength: 0.18
-  _Cloud1Tex: {fileID: 2800000, guid: f4a49db7ccbcdb940a1217ec55df016f, type: 3}
-  _Cloud1TexScale: {x: 5, y: 3}
-  _Cloud1TexOffset: {x: 0, y: 0}
-  _Cloud2Tex: {fileID: 2800000, guid: f4a49db7ccbcdb940a1217ec55df016f, type: 3}
-  _Cloud2TexScale: {x: 2.1, y: 4}
-  _Cloud2TexOffset: {x: 0, y: 0}
-  _CutoffScroll: {x: -3, y: 20, z: 14, w: 3}
-  _VertexColors: 0
-  _LuminanceForVertexAlpha: 1
-  _LuminanceForTextureAlpha: 0
-  _VertexOffset: 0
-  _FresnelFade: 1
-  _SkyboxOnly: 0
-  _FresnelPower: 0.24
-  _VertexOffsetAmount: 0
 --- !u!1 &718064441916671917
 GameObject:
   m_ObjectHideFlags: 0
@@ -5243,7 +5189,6 @@ GameObject:
   - component: {fileID: 7376623227780569565}
   - component: {fileID: 2800386030773377964}
   - component: {fileID: 1750226948830032774}
-  - component: {fileID: 973949006192746798}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -7739,49 +7684,6 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
---- !u!114 &973949006192746798
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1280531249657965976}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9ff11836298bd6439d3824d9b41610b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Material: {fileID: 2100000, guid: 9436e17ccafa5694fa2399cd506bdd7b, type: 2}
-  Renderer: {fileID: 1750226948830032774}
-  MaterialName: matPortalExplosion
-  replaceShaderData: 0
-  deleteOnStart: 0
-  _Source_Blend_Mode: 0
-  _Destination_Blend_Mode: 0
-  _Tint: {r: 0, g: 0, b: 0, a: 0}
-  _MainTex: {fileID: 0}
-  _MainTexScale: {x: 0, y: 0}
-  _MainTexOffset: {x: 0, y: 0}
-  _Cloud1Tex: {fileID: 0}
-  _Cloud1TexScale: {x: 0, y: 0}
-  _Cloud1TexOffset: {x: 0, y: 0}
-  _Cloud2Tex: {fileID: 0}
-  _Cloud2TexScale: {x: 0, y: 0}
-  _Cloud2TexOffset: {x: 0, y: 0}
-  _RemapTex: {fileID: 0}
-  _RemapTexScale: {x: 0, y: 0}
-  _RemapTexOffset: {x: 0, y: 0}
-  _CutoffScroll: {x: 0, y: 0, z: 0, w: 0}
-  _SoftFactor: 0
-  _SoftPower: 0
-  _BrightnessBoost: 0
-  _RimPower: 0
-  _RimStrength: 0
-  _AlphaBoost: 0
-  _IntersectionStrength: 0
-  _Cull_Mode: 0
-  _IgnoreVertexColors: 0
-  _EnableTriplanarProjectionsForClouds: 0
 --- !u!1 &3260597260359500121
 GameObject:
   m_ObjectHideFlags: 0
@@ -8006,7 +7908,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 1
+  moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: 0
@@ -12719,8 +12621,7 @@ MonoBehaviour:
   Material: {fileID: 2100000, guid: e6701f45a6d2fc242ab2c0f2cc3a4ac8, type: 2}
   Renderer: {fileID: 1821379379910210843}
   MaterialName: matPortalCrack
-  replaceShaderData: 1
-  deleteOnStart: 0
+  shaderKeywords: []
   _Tint: {r: 1, g: 0.13333334, b: 0.14901961, a: 1}
   _DisableRemapping: 0
   _MainTex: {fileID: 0}
@@ -12768,7 +12669,6 @@ GameObject:
   - component: {fileID: 1785933972081038158}
   - component: {fileID: 2362281962823795027}
   - component: {fileID: 4192947509979502752}
-  - component: {fileID: 2543672688957336671}
   m_Layer: 0
   m_Name: LongLifeNoiseTrails
   m_TagString: Untagged
@@ -15273,59 +15173,6 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
---- !u!114 &2543672688957336671
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6262556362489806353}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a24d0516990dac74cab549d15f20cfcb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Material: {fileID: 2100000, guid: f4c0b5966566bea4088bc0796409a8ce, type: 2}
-  Renderer: {fileID: 4192947509979502752}
-  MaterialName: matPortalParticles
-  replaceShaderData: 0
-  deleteOnStart: 0
-  _Tint: {r: 0, g: 0, b: 0, a: 0}
-  _DisableRemapping: 0
-  _MainTex: {fileID: 0}
-  _MainTexScale: {x: 0, y: 0}
-  _MainTexOffset: {x: 0, y: 0}
-  _RemapTex: {fileID: 0}
-  _RemapTexScale: {x: 0, y: 0}
-  _RemapTexOffset: {x: 0, y: 0}
-  _SoftFactor: 0
-  _BrightnessBoost: 0
-  _AlphaBoost: 0
-  _AlphaBias: 0
-  _UseUV1: 0
-  _FadeWhenNearCamera: 0
-  _FadeCloseDistance: 0
-  _Cull_Mode: 0
-  _ZTest_Mode: 0
-  _DepthOffset: 0
-  _CloudRemapping: 0
-  _DistortionClouds: 0
-  _DistortionStrength: 0
-  _Cloud1Tex: {fileID: 0}
-  _Cloud1TexScale: {x: 0, y: 0}
-  _Cloud1TexOffset: {x: 0, y: 0}
-  _Cloud2Tex: {fileID: 0}
-  _Cloud2TexScale: {x: 0, y: 0}
-  _Cloud2TexOffset: {x: 0, y: 0}
-  _CutoffScroll: {x: 0, y: 0, z: 0, w: 0}
-  _VertexColors: 0
-  _LuminanceForVertexAlpha: 0
-  _LuminanceForTextureAlpha: 0
-  _VertexOffset: 0
-  _FresnelFade: 0
-  _SkyboxOnly: 0
-  _FresnelPower: 0
-  _VertexOffsetAmount: 0
 --- !u!1 &7540684713979324654
 GameObject:
   m_ObjectHideFlags: 0
@@ -15337,7 +15184,6 @@ GameObject:
   - component: {fileID: 5486957688186265669}
   - component: {fileID: 8841930067801648364}
   - component: {fileID: 3808675967821614731}
-  - component: {fileID: 4623512033110351025}
   m_Layer: 0
   m_Name: Crystals
   m_TagString: Untagged
@@ -15432,7 +15278,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 1
+  moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 0
   randomSeed: 0
@@ -17941,94 +17787,6 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
---- !u!114 &4623512033110351025
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7540684713979324654}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 839064329, guid: 648b06dd450e17847adc710c191178c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Material: {fileID: 2100000, guid: 0e96c5ea898169f459a23e52ac55a468, type: 2}
-  Renderer: {fileID: 3808675967821614731}
-  MaterialName: matCrystal
-  replaceShaderData: 0
-  deleteOnStart: 0
-  _EnableCutout: 0
-  _Color: {r: 0, g: 0, b: 0, a: 0}
-  _MainTex: {fileID: 0}
-  _MainTexScale: {x: 0, y: 0}
-  _MainTexOffset: {x: 0, y: 0}
-  _NormalStrength: 0
-  _NormalTex: {fileID: 0}
-  _NormalTexScale: {x: 0, y: 0}
-  _NormalTexOffset: {x: 0, y: 0}
-  _EmColor: {r: 0, g: 0, b: 0, a: 0}
-  _EmTex: {fileID: 0}
-  _EmPower: 0
-  _Smoothness: 0
-  _IgnoreDiffuseAlphaForSpeculars: 0
-  _RampChoice: 0
-  _DecalLayer: 0
-  _SpecularStrength: 0
-  _SpecularExponent: 0
-  _Cull_Mode: 0
-  _EnableDither: 0
-  _FadeBias: 0
-  _EnableFresnelEmission: 0
-  _FresnelRamp: {fileID: 0}
-  _FresnelPower: 0
-  _FresnelMask: {fileID: 0}
-  _FresnelBoost: 0
-  _EnablePrinting: 0
-  _SliceHeight: 0
-  _PrintBandHeight: 0
-  _PrintAlphaDepth: 0
-  _PrintAlphaTexture: {fileID: 0}
-  _PrintAlphaTextureScale: {x: 0, y: 0}
-  _PrintAlphaTextureOffset: {x: 0, y: 0}
-  _PrintColorBoost: 0
-  _PrintAlphaBias: 0
-  _PrintEmissionToAlbedoLerp: 0
-  _PrintDirection: 0
-  _PrintRamp: {fileID: 0}
-  _EliteBrightnessMin: 0
-  _EliteBrightnessMax: 0
-  _EnableSplatmap: 0
-  _UseVertexColorsInstead: 0
-  _BlendDepth: 0
-  _SplatmapTex: {fileID: 0}
-  _SplatmapTexScale: {x: 0, y: 0}
-  _SplatmapTexOffset: {x: 0, y: 0}
-  _SplatmapTileScale: 0
-  _GreenChannelTex: {fileID: 0}
-  _GreenChannelNormalTex: {fileID: 0}
-  _GreenChannelSmoothness: 0
-  _GreenChannelBias: 0
-  _BlueChannelTex: {fileID: 0}
-  _BlueChannelNormalTex: {fileID: 0}
-  _BlueChannelSmoothness: 0
-  _BlueChannelBias: 0
-  _EnableFlowmap: 0
-  _FlowTexture: {fileID: 0}
-  _FlowHeightmap: {fileID: 0}
-  _FlowHeightmapScale: {x: 0, y: 0}
-  _FlowHeightmapOffset: {x: 0, y: 0}
-  _FlowHeightRamp: {fileID: 0}
-  _FlowHeightRampScale: {x: 0, y: 0}
-  _FlowHeightRampOffset: {x: 0, y: 0}
-  _FlowHeightBias: 0
-  _FlowHeightPower: 0
-  _FlowEmissionStrength: 0
-  _FlowSpeed: 0
-  _MaskFlowStrength: 0
-  _NormalFlowStrength: 0
-  _FlowTextureScaleFactor: 0
-  _EnableLimbRemoval: 0
 --- !u!1 &7644011969316507178
 GameObject:
   m_ObjectHideFlags: 0
@@ -18040,7 +17798,6 @@ GameObject:
   - component: {fileID: 5892204269605447888}
   - component: {fileID: 7846791609437025357}
   - component: {fileID: 8086464288467426130}
-  - component: {fileID: 8577467461709625707}
   m_Layer: 0
   m_Name: LongLifeNoiseTrails, Bright
   m_TagString: Untagged
@@ -20545,56 +20302,3 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
---- !u!114 &8577467461709625707
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7644011969316507178}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a24d0516990dac74cab549d15f20cfcb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Material: {fileID: 2100000, guid: 3c02b05af2e1201459956123e018325f, type: 2}
-  Renderer: {fileID: 8086464288467426130}
-  MaterialName: matPortalParticlesBright
-  replaceShaderData: 0
-  deleteOnStart: 0
-  _Tint: {r: 0, g: 0, b: 0, a: 0}
-  _DisableRemapping: 0
-  _MainTex: {fileID: 0}
-  _MainTexScale: {x: 0, y: 0}
-  _MainTexOffset: {x: 0, y: 0}
-  _RemapTex: {fileID: 0}
-  _RemapTexScale: {x: 0, y: 0}
-  _RemapTexOffset: {x: 0, y: 0}
-  _SoftFactor: 0
-  _BrightnessBoost: 0
-  _AlphaBoost: 0
-  _AlphaBias: 0
-  _UseUV1: 0
-  _FadeWhenNearCamera: 0
-  _FadeCloseDistance: 0
-  _Cull_Mode: 0
-  _ZTest_Mode: 0
-  _DepthOffset: 0
-  _CloudRemapping: 0
-  _DistortionClouds: 0
-  _DistortionStrength: 0
-  _Cloud1Tex: {fileID: 0}
-  _Cloud1TexScale: {x: 0, y: 0}
-  _Cloud1TexOffset: {x: 0, y: 0}
-  _Cloud2Tex: {fileID: 0}
-  _Cloud2TexScale: {x: 0, y: 0}
-  _Cloud2TexOffset: {x: 0, y: 0}
-  _CutoffScroll: {x: 0, y: 0, z: 0, w: 0}
-  _VertexColors: 0
-  _LuminanceForVertexAlpha: 0
-  _LuminanceForTextureAlpha: 0
-  _VertexOffset: 0
-  _FresnelFade: 0
-  _SkyboxOnly: 0
-  _FresnelPower: 0
-  _VertexOffsetAmount: 0

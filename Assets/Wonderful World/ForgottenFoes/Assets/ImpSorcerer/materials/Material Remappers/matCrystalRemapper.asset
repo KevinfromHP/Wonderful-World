@@ -13,13 +13,16 @@ MonoBehaviour:
   m_Name: matCrystalRemapper
   m_EditorClassIdentifier: 
   Material: {fileID: 2100000, guid: 0e96c5ea898169f459a23e52ac55a468, type: 2}
+  shaderKeywords:
+  - DITHER
+  - FRESNEL_EMISSION
   _EnableCutout: 0
   _Color: {r: 0.61960787, g: 0, b: 0.8784314, a: 1}
   _MainTex: {fileID: 0}
   _MainTexScale: {x: 1, y: 1}
   _MainTexOffset: {x: 0, y: 0}
   _NormalStrength: 1
-  _NormalTex: {fileID: 2800000, guid: 15da1eee33c5a7f4d92ca8dc998ddacc, type: 3}
+  _NormalTex: {fileID: 0}
   _NormalTexScale: {x: 1, y: 1}
   _NormalTexOffset: {x: 0, y: 0}
   _EmColor: {r: 0.6627451, g: 0, b: 0.4, a: 1}

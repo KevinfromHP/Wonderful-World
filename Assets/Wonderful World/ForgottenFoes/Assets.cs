@@ -23,24 +23,19 @@ namespace ForgottenFoes
 {
     public static class Assets
     {
-        static bool imTooGodDamnLazyToSetUpConfigurationForThisSoJustSetThisToTrueIfAssetBundleIsntEmbeddedOkay = true;
-
         public static AssetBundle mainAssetBundle = null;
 
         public static void PopulateAssets()
         {
-            if (imTooGodDamnLazyToSetUpConfigurationForThisSoJustSetThisToTrueIfAssetBundleIsntEmbeddedOkay)
-            {
-                var path = Assembly.GetExecutingAssembly().Location.Remove(Assembly.GetExecutingAssembly().Location.LastIndexOf('\\') + 1);
-                mainAssetBundle = AssetBundle.LoadFromFile(Path.Combine(path, "forgottenfoes_assets"));
-            }
-            else
-            {
+#if DEBUG
+            var path = Assembly.GetExecutingAssembly().Location.Remove(Assembly.GetExecutingAssembly().Location.LastIndexOf('\\') + 1);
+            mainAssetBundle = AssetBundle.LoadFromFile(Path.Combine(path, "forgottenfoes_assets"));
+#else
                 using (var assetStream = Assembly.GetExecutingAssembly().GetManifestResourceStream("ForgottenFoes.forgottenfoes_assets"))
                 {
                     mainAssetBundle = AssetBundle.LoadFromStream(assetStream);
                 }
-            }
+#endif
             ContentPackProvider.serializedContentPack = mainAssetBundle.LoadAsset<SerializableContentPack>("ContentPack");
         }
 
@@ -60,15 +55,12 @@ namespace ForgottenFoes
                         material.SetTexture("_EmTex", mainAssetBundle.LoadAsset<Texture2D>("texImpSorcererEmission"));
                         material.SetTexture("_NormalTex", mainAssetBundle.LoadAsset<Texture2D>("texImpSorcererNormal"));
                         break;
-                    case "matIndicator":
-                        material.CopyPropertiesFromMaterial(Resources.Load<GameObject>("Prefabs/Projectiles/ImpVoidspikeProjectile").transform.Find("ImpactEffect/TeamAreaIndicator, FullSphere/Mesh").GetComponent<MeshRenderer>().material);
-                        break;
-                    case "matIndicatorEnemy":
-                        material.CopyPropertiesFromMaterial(Resources.Load<GameObject>("Prefabs/Projectiles/ImpVoidspikeProjectile").transform.Find("ImpactEffect/TeamAreaIndicator, FullSphere").GetComponent<TeamAreaIndicator>().teamMaterialPairs[0].sharedMaterial);
+                    /*case "matIndicatorEnemy":
+                        material.CopyPropertiesFromMaterial(Resources.Load<GameObject>("Prefabs/Projectiles/TitanPreFistProjectile").transform.Find("ImpactEffect/TeamAreaIndicator, GroundOnly").GetComponent<TeamAreaIndicator>().teamMaterialPairs[0].sharedMaterial);
                         break;
                     case "matIndicatorFriendly":
-                        material.CopyPropertiesFromMaterial(Resources.Load<GameObject>("Prefabs/Projectiles/ImpVoidspikeProjectile").transform.Find("ImpactEffect/TeamAreaIndicator, FullSphere").GetComponent<TeamAreaIndicator>().teamMaterialPairs[1].sharedMaterial);
-                        break;
+                        material.CopyPropertiesFromMaterial(Resources.Load<GameObject>("Prefabs/Projectiles/TitanPreFistProjectile").transform.Find("ImpactEffect/TeamAreaIndicator, GroundOnly").GetComponent<TeamAreaIndicator>().teamMaterialPairs[1].sharedMaterial);
+                        break;*/
                     case "matVoidCluster":
                         material.shader = Resources.Load<Shader>("shaders/fx/hgcloudremap");
                         material.CopyPropertiesFromMaterial(Resources.Load<GameObject>("Prefabs/ProjectileGhosts/ImpVoidspikeProjectileGhost").transform.Find("Mesh").GetComponent<MeshRenderer>().material);
@@ -81,6 +73,12 @@ namespace ForgottenFoes
                     case "matPortalCrack":
                         material.shader = Resources.Load<Shader>("shaders/fx/hgcloudremap");
                         material.CopyPropertiesFromMaterial(Resources.Load<GameObject>("Prefabs/Projectileghosts/ImpVoidspikeProjectileGhost").transform.Find("Mesh").GetComponent<MeshRenderer>().material);
+                        foreach (string keyword in material.shaderKeywords)
+                            LogCore.LogE(keyword);
+                        break;
+                    case "matCrystal":
+                        material.shader = Resources.Load<Shader>("shaders/deferred/hgstandard");
+                        material.CopyPropertiesFromMaterial(Resources.Load<GameObject>("Prefabs/pickupmodels/PickupDiamond").transform.Find("TonicCap").GetComponent<MeshRenderer>().material);
                         break;
                     case "matPortalParticles":
                         material.shader = Resources.Load<Shader>("shaders/fx/hgcloudremap");
@@ -99,22 +97,11 @@ namespace ForgottenFoes
                         material.shader = Resources.Load<Shader>("shaders/fx/hgintersectioncloudremap");
                         material.CopyPropertiesFromMaterial(Resources.Load<GameObject>("Prefabs/Effects/ImpBossBlink").transform.Find("Particles/Sphere").GetComponent<ParticleSystemRenderer>().material);
                         break;
-                    case "matCrystal":
-                        material.shader = Resources.Load<Shader>("shaders/deferred/hgstandard");
-                        material.CopyPropertiesFromMaterial(Resources.Load<GameObject>("Prefabs/pickupmodels/PickupDiamond").transform.Find("TonicCap").GetComponent<MeshRenderer>().material);
-                        break;
                 }
             }
-            var remappers = Assets.mainAssetBundle.LoadAllAssets<HGStandardRemapper>();
+            var remappers = Assets.mainAssetBundle.LoadAllAssets<ShaderRemapper>();
             for (int i = 0; i < remappers.Length; i++)
                 remappers[i].UpdateMaterial();
-            var remappers2 = Assets.mainAssetBundle.LoadAllAssets<HGCloudRemapRemapper>();
-            for (int i = 0; i < remappers2.Length; i++)
-                remappers2[i].UpdateMaterial();
-            var remappers3 = Assets.mainAssetBundle.LoadAllAssets<HGCloudRemapRemapper>();
-            for (int i = 0; i < remappers3.Length; i++)
-                remappers3[i].UpdateMaterial();
-
         }
         /// <summary>
         /// This is only here because EffectDefs can't be made through Unity due to Hopoo forgetting to make them scriptable/serializable. You can delete this retarded shit once it's patched.

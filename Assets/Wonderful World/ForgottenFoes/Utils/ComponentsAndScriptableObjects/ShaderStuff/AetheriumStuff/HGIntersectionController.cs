@@ -14,8 +14,7 @@ namespace ForgottenFoes.Utils
         public Material Material;
         public Renderer Renderer;
         public string MaterialName;
-        public bool replaceShaderData = false;
-        public bool deleteOnStart = false;
+        public string[] shaderKeywords;
 
         public enum _SrcBlendFloatEnum
         {
@@ -97,14 +96,14 @@ namespace ForgottenFoes.Utils
 
         public void Start()
         {
-            if (!replaceShaderData)
-                GrabMaterialValues();
+            GrabMaterialValues();
         }
 
         public void GrabMaterialValues()
         {
             if (Material)
             {
+                shaderKeywords = Material.shaderKeywords;
                 _Source_Blend_Mode = (_SrcBlendFloatEnum)(int)Material.GetFloat("_SrcBlendFloat");
                 _Destination_Blend_Mode = (_DstBlendFloatEnum)(int)Material.GetFloat("_DstBlendFloat");
                 _Tint = Material.GetColor("_TintColor");
@@ -153,6 +152,7 @@ namespace ForgottenFoes.Utils
                     GrabMaterialValues();
                     PutMaterialIntoRenderer(Renderer);
                 }
+                Material.shaderKeywords = shaderKeywords;
                 Material.SetFloat("_SrcBlendFloat", Convert.ToSingle(_Source_Blend_Mode));
                 Material.SetFloat("_DstBlendFloat", Convert.ToSingle(_Destination_Blend_Mode));
                 Material.SetColor("_TintColor", _Tint);
@@ -212,8 +212,6 @@ namespace ForgottenFoes.Utils
                 Material.SetFloat("_VertexColorsOn", Convert.ToSingle(_IgnoreVertexColors));
                 Material.SetFloat("_TriplanarOn", Convert.ToSingle(_EnableTriplanarProjectionsForClouds));
             }
-            if (deleteOnStart)
-                Destroy(this);
         }
     }
 }

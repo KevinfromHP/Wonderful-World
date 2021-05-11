@@ -10,8 +10,8 @@ namespace ForgottenFoes.Utils
         public Material Material;
         public Renderer Renderer;
         public string MaterialName;
-        public bool replaceShaderData = false;
-        public bool deleteOnStart = false;
+        public string[] shaderKeywords;
+
 
         public bool _EnableCutout;
         public Color _Color;
@@ -191,13 +191,13 @@ namespace ForgottenFoes.Utils
 
         public void Start()
         {
-            if (!replaceShaderData)
-                GrabMaterialValues();
+            GrabMaterialValues();
         }
         public void GrabMaterialValues()
         {
             if (Material)
             {
+                shaderKeywords = Material.shaderKeywords;
                 _EnableCutout = Convert.ToBoolean(Material.GetFloat("_EnableCutout"));
                 _Color = Material.GetColor("_Color");
                 _MainTex = Material.GetTexture("_MainTex");
@@ -290,7 +290,7 @@ namespace ForgottenFoes.Utils
                     GrabMaterialValues();
                     PutMaterialIntoRenderer(Renderer);
                 }
-
+                Material.shaderKeywords = shaderKeywords;
                 Material.SetFloat("_EnableCutout", Convert.ToSingle(_EnableCutout));
                 Material.SetColor("_Color", _Color);
 
@@ -495,9 +495,6 @@ namespace ForgottenFoes.Utils
                 Material.SetFloat("_FlowTextureScaleFactor", _FlowTextureScaleFactor);
                 Material.SetFloat("_LimbRemovalOn", Convert.ToSingle(_EnableLimbRemoval));
             }
-            if (deleteOnStart)
-                Destroy(this);
-
         }
 
     }

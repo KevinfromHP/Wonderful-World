@@ -86,12 +86,13 @@ namespace ForgottenFoes.Utils
         [Range(0f, 3f)]
         public float _VertexOffsetAmount;
 
-        public void UpdateMaterial()
+        public override void UpdateMaterial()
         {
 
             if (Material)
             {
                 Material.shader = Resources.Load<Shader>("shaders/fx/hgcloudremap");
+                Material.shaderKeywords = shaderKeywords;
                 Material.SetColor("_TintColor", _Tint);
                 Material.SetFloat("_DisableRemapOn", Convert.ToSingle(_DisableRemapping));
 

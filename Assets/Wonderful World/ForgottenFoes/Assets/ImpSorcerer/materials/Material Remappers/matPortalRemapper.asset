@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3a54f485ba5a4d4b81cd6853e11f737, type: 3}
+  m_Name: matPortalRemapper
+  m_EditorClassIdentifier: 
+  Material: {fileID: 2100000, guid: 6db17db5250365e42a53eaf22beb8ddb, type: 2}
+  shaderKeywords:
+  - USE_CLOUDS
+  - VERTEXALPHA
+  - _EMISSION
+  _Tint: {r: 1, g: 1, b: 1, a: 1}
+  _DisableRemapping: 0
+  _MainTex: {fileID: 2800000, guid: 3dfb6bfd13ddd6f49bf8d2d17dcf42e3, type: 3}
+  _MainTexScale: {x: 1, y: 1}
+  _MainTexOffset: {x: 0, y: 0}
+  _RemapTex: {fileID: 2800000, guid: bb050f6227738fe429b2a9d33bdd313b, type: 3}
+  _RemapTexScale: {x: 1, y: 1}
+  _RemapTexOffset: {x: 0, y: 0}
+  _SoftFactor: 2
+  _BrightnessBoost: 6.65
+  _AlphaBoost: 0.3
+  _AlphaBias: 0.2
+  _UseUV1: 0
+  _FadeWhenNearCamera: 0
+  _FadeCloseDistance: 0
+  _Cull_Mode: 0
+  _ZTest_Mode: 4
+  _DepthOffset: 0
+  _CloudRemapping: 1
+  _DistortionClouds: 0
+  _DistortionStrength: 0.18
+  _Cloud1Tex: {fileID: 2800000, guid: f4a49db7ccbcdb940a1217ec55df016f, type: 3}
+  _Cloud1TexScale: {x: 5, y: 3}
+  _Cloud1TexOffset: {x: 0, y: 0}
+  _Cloud2Tex: {fileID: 2800000, guid: f4a49db7ccbcdb940a1217ec55df016f, type: 3}
+  _Cloud2TexScale: {x: 2.1, y: 4}
+  _Cloud2TexOffset: {x: 0, y: 0}
+  _CutoffScroll: {x: -3, y: 20, z: 14, w: 3}
+  _VertexColors: 0
+  _LuminanceForVertexAlpha: 1
+  _LuminanceForTextureAlpha: 0
+  _VertexOffset: 0
+  _FresnelFade: 1
+  _SkyboxOnly: 0
+  _FresnelPower: 0.24
+  _VertexOffsetAmount: 0

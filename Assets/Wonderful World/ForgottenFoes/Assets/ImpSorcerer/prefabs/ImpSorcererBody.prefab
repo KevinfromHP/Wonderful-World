@@ -3669,8 +3669,7 @@ MonoBehaviour:
   Material: {fileID: 2100000, guid: 0e96c5ea898169f459a23e52ac55a468, type: 2}
   Renderer: {fileID: 6571806411967381935}
   MaterialName: matCrystal
-  replaceShaderData: 0
-  deleteOnStart: 0
+  shaderKeywords: []
   _EnableCutout: 0
   _Color: {r: 0, g: 0, b: 0, a: 0}
   _MainTex: {fileID: 0}
@@ -4507,7 +4506,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6571806411953819937}
   - component: {fileID: 6571806411967381931}
-  - component: {fileID: 5871143186574111068}
   m_Layer: 0
   m_Name: ImpSorcererMesh
   m_TagString: Untagged
@@ -4664,94 +4662,6 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.0015207529, y: 4.599453, z: 0.04627703}
     m_Extent: {x: 2.971466, y: 4.595481, z: 0.4845779}
   m_DirtyAABB: 0
---- !u!114 &5871143186574111068
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6571806411953786177}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 839064329, guid: 648b06dd450e17847adc710c191178c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Material: {fileID: 2100000, guid: 6ab108f51f87bbb4a885dacfbf65faf7, type: 2}
-  Renderer: {fileID: 6571806411967381931}
-  MaterialName: matImpSorcerer
-  replaceShaderData: 0
-  deleteOnStart: 0
-  _EnableCutout: 0
-  _Color: {r: 0, g: 0, b: 0, a: 0}
-  _MainTex: {fileID: 0}
-  _MainTexScale: {x: 0, y: 0}
-  _MainTexOffset: {x: 0, y: 0}
-  _NormalStrength: 0
-  _NormalTex: {fileID: 0}
-  _NormalTexScale: {x: 0, y: 0}
-  _NormalTexOffset: {x: 0, y: 0}
-  _EmColor: {r: 0, g: 0, b: 0, a: 0}
-  _EmTex: {fileID: 0}
-  _EmPower: 0
-  _Smoothness: 0
-  _IgnoreDiffuseAlphaForSpeculars: 0
-  _RampChoice: 0
-  _DecalLayer: 0
-  _SpecularStrength: 0
-  _SpecularExponent: 0
-  _Cull_Mode: 0
-  _EnableDither: 0
-  _FadeBias: 0
-  _EnableFresnelEmission: 0
-  _FresnelRamp: {fileID: 0}
-  _FresnelPower: 0
-  _FresnelMask: {fileID: 0}
-  _FresnelBoost: 0
-  _EnablePrinting: 0
-  _SliceHeight: 0
-  _PrintBandHeight: 0
-  _PrintAlphaDepth: 0
-  _PrintAlphaTexture: {fileID: 0}
-  _PrintAlphaTextureScale: {x: 0, y: 0}
-  _PrintAlphaTextureOffset: {x: 0, y: 0}
-  _PrintColorBoost: 0
-  _PrintAlphaBias: 0
-  _PrintEmissionToAlbedoLerp: 0
-  _PrintDirection: 0
-  _PrintRamp: {fileID: 0}
-  _EliteBrightnessMin: 0
-  _EliteBrightnessMax: 0
-  _EnableSplatmap: 0
-  _UseVertexColorsInstead: 0
-  _BlendDepth: 0
-  _SplatmapTex: {fileID: 0}
-  _SplatmapTexScale: {x: 0, y: 0}
-  _SplatmapTexOffset: {x: 0, y: 0}
-  _SplatmapTileScale: 0
-  _GreenChannelTex: {fileID: 0}
-  _GreenChannelNormalTex: {fileID: 0}
-  _GreenChannelSmoothness: 0
-  _GreenChannelBias: 0
-  _BlueChannelTex: {fileID: 0}
-  _BlueChannelNormalTex: {fileID: 0}
-  _BlueChannelSmoothness: 0
-  _BlueChannelBias: 0
-  _EnableFlowmap: 0
-  _FlowTexture: {fileID: 0}
-  _FlowHeightmap: {fileID: 0}
-  _FlowHeightmapScale: {x: 0, y: 0}
-  _FlowHeightmapOffset: {x: 0, y: 0}
-  _FlowHeightRamp: {fileID: 0}
-  _FlowHeightRampScale: {x: 0, y: 0}
-  _FlowHeightRampOffset: {x: 0, y: 0}
-  _FlowHeightBias: 0
-  _FlowHeightPower: 0
-  _FlowEmissionStrength: 0
-  _FlowSpeed: 0
-  _MaskFlowStrength: 0
-  _NormalFlowStrength: 0
-  _FlowTextureScaleFactor: 0
-  _EnableLimbRemoval: 0
 --- !u!1 &6571806411953786179
 GameObject:
   m_ObjectHideFlags: 0
@@ -6596,6 +6506,10 @@ GameObject:
   - component: {fileID: 3442368870853653819}
   - component: {fileID: 2499034911029993473}
   - component: {fileID: 8893172808859394100}
+  - component: {fileID: 6411937443274981608}
+  - component: {fileID: 4103502273834711609}
+  - component: {fileID: 1692531477292696423}
+  - component: {fileID: 7869900307543236860}
   - component: {fileID: 6698110572592070800}
   - component: {fileID: 5522150064776178204}
   - component: {fileID: 6103774990273272602}
@@ -6604,7 +6518,6 @@ GameObject:
   - component: {fileID: 6933413603770117664}
   - component: {fileID: 440939502908970303}
   - component: {fileID: 8484994720621223639}
-  - component: {fileID: 6411937443274981608}
   - component: {fileID: 6877338495398521858}
   - component: {fileID: 1532147696697057293}
   - component: {fileID: 7545432214962506611}
@@ -6618,9 +6531,6 @@ GameObject:
   - component: {fileID: 6960178130369328615}
   - component: {fileID: 7747645866087897211}
   - component: {fileID: 1248458595041067450}
-  - component: {fileID: 4103502273834711609}
-  - component: {fileID: 1692531477292696423}
-  - component: {fileID: 7869900307543236860}
   - component: {fileID: 1297924947661177747}
   m_Layer: 0
   m_Name: ImpSorcererBody
@@ -6788,6 +6698,76 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveVector: {x: 0, y: 0, z: 0}
+--- !u!114 &6411937443274981608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6782708711184772368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 306635731, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  primary: {fileID: 0}
+  secondary: {fileID: 4103502273834711609}
+  utility: {fileID: 1692531477292696423}
+  special: {fileID: 7869900307543236860}
+  passiveSkill:
+    enabled: 0
+    skillNameToken: 
+    skillDescriptionToken: 
+    keywordToken: 
+    icon: {fileID: 0}
+--- !u!114 &4103502273834711609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6782708711184772368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 298587437, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skillFamily: {fileID: 11400000, guid: 9086310d7ffe3704b9d020a70ca86d2b, type: 2}
+  skillName: Void Cluster
+  hideInCharacterSelect: 0
+  hasExecutedSuccessfully: 0
+--- !u!114 &1692531477292696423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6782708711184772368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 298587437, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skillFamily: {fileID: 11400000, guid: a09b6407ca0b3e745a7148c517a6f20f, type: 2}
+  skillName: Blink
+  hideInCharacterSelect: 0
+  hasExecutedSuccessfully: 0
+--- !u!114 &7869900307543236860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6782708711184772368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 298587437, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skillFamily: {fileID: 11400000, guid: 2e05335dad004f445bd85b6348f3e60e, type: 2}
+  skillName: Crystals
+  hideInCharacterSelect: 0
+  hasExecutedSuccessfully: 0
 --- !u!114 &6698110572592070800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6940,28 +6920,6 @@ MonoBehaviour:
   outputVector: {x: 0, y: 0, z: 0}
   isAngle: 0
   gain: 0.5
---- !u!114 &6411937443274981608
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6782708711184772368}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 306635731, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  primary: {fileID: 0}
-  secondary: {fileID: 4103502273834711609}
-  utility: {fileID: 1692531477292696423}
-  special: {fileID: 7869900307543236860}
-  passiveSkill:
-    enabled: 0
-    skillNameToken: 
-    skillDescriptionToken: 
-    keywordToken: 
-    icon: {fileID: 0}
 --- !u!114 &6877338495398521858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7177,54 +7135,6 @@ MonoBehaviour:
     rightSpeedSmoothDamp: 1
     intoJumpTransitionTime: 0.1
     turnAngleSmoothDamp: 0.1
---- !u!114 &4103502273834711609
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6782708711184772368}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 298587437, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _skillFamily: {fileID: 11400000, guid: 9086310d7ffe3704b9d020a70ca86d2b, type: 2}
-  skillName: Void Cluster
-  hideInCharacterSelect: 0
-  hasExecutedSuccessfully: 0
---- !u!114 &1692531477292696423
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6782708711184772368}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 298587437, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _skillFamily: {fileID: 11400000, guid: a09b6407ca0b3e745a7148c517a6f20f, type: 2}
-  skillName: Blink
-  hideInCharacterSelect: 0
-  hasExecutedSuccessfully: 0
---- !u!114 &7869900307543236860
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6782708711184772368}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 298587437, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _skillFamily: {fileID: 11400000, guid: 2e05335dad004f445bd85b6348f3e60e, type: 2}
-  skillName: Crystals
-  hideInCharacterSelect: 0
-  hasExecutedSuccessfully: 0
 --- !u!114 &1297924947661177747
 MonoBehaviour:
   m_ObjectHideFlags: 0
