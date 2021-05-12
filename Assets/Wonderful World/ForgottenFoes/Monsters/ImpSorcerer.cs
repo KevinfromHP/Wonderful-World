@@ -361,6 +361,7 @@ namespace ForgottenFoes.EntityStates.ImpSorcerer
 
     }
 
+
     public class FireVoidClusterState : BaseSkillState
     {
         public static GameObject projectilePrefab;
@@ -374,7 +375,7 @@ namespace ForgottenFoes.EntityStates.ImpSorcerer
         {
             base.OnEnter();
             duration = baseDuration / characterBody.attackSpeed;
-            PlayAnimation("Gesture, Override", "FireVoidCluster", "FireVoidCluster.PlaybackRate", duration);
+            PlayAnimation("Gesture, Override", "FireVoidCluster", "FireVoidCluster.playbackRate", duration);
             ProjectileManager.instance.FireProjectile(projectilePrefab, inputBank.aimOrigin + inputBank.aimDirection * 1.8f, Quaternion.identity, gameObject, damageStat * damageCoefficient, 0f, Util.CheckRoll(critStat, characterBody.master), DamageColorIndex.Default, null, -1f);
         }
 
@@ -389,121 +390,150 @@ namespace ForgottenFoes.EntityStates.ImpSorcerer
     }
     public class BlinkState : BaseSkillState
     {
+        [SerializeField]
+        public GameObject blinkPrefab;
+        [SerializeField]
+        public Material destealthMaterial;
+        [SerializeField]
+        public float startDuration = 1.23f;
+        [SerializeField]
+        public float exitDuration = 3.2f;
+        [SerializeField]
+        public float offGridDuration = 0.5f;
+        [SerializeField]
+        public float blinkDistance = 45f;
+
         private Transform modelTransform;
-        public static GameObject blinkPrefab = Resources.Load<GameObject>("prefabs/effects/ImpBlinkEffect");
-        public static Material destealthMaterial;
-        private float stopwatch;
-        private Vector3 blinkDestination = Vector3.zero;
-        private Vector3 blinkStart = Vector3.zero;
-        public static float durationFirstAnim = 1.6167f;
-        public static float duration = 6.66f;
-        public static float waitTime = 1.15f;
-        public static float blinkDistance = 40f;
-        public static string beginSoundString;
-        public static string endSoundString;
         private Animator animator;
         private CharacterModel characterModel;
         private HurtBoxGroup hurtboxGroup;
+        private ChildLocator childLocator;
+        private Vector3 blinkStart;
+        private Vector3 blinkDestination;
 
         public override void OnEnter()
         {
-            OnEnter();
-            Util.PlaySound(beginSoundString, gameObject);
+            base.OnEnter();
             modelTransform = GetModelTransform();
             if (modelTransform)
             {
                 animator = modelTransform.GetComponent<Animator>();
                 characterModel = modelTransform.GetComponent<CharacterModel>();
                 hurtboxGroup = modelTransform.GetComponent<HurtBoxGroup>();
+                childLocator = modelTransform.GetComponent<ChildLocator>();
             }
-            if (characterModel)
+            if (rigidbodyMotor)
             {
-                characterModel.invisibilityCount++;
+                rigidbodyMotor.enabled = false;
+                rigidbody.Sleep();
             }
+            CreateBlinkEffect(Util.GetCorePosition(gameObject));
+            CalculateBlinkDestination();
+            PlayAnimation("Body", "TeleportIn", "Teleport.playbackRate", startDuration);
+        }
+        public override void FixedUpdate()
+        {
+            base.FixedUpdate();
+
+            if (fixedAge >= startDuration && !ranStart)
+                RunOffGrid();
+            if (fixedAge >= startDuration + offGridDuration && !ranGrid)
+                SNAPBACKTOREALITY();
+            if (fixedAge >= startDuration + offGridDuration + exitDuration)
+                outer.SetNextStateToMain();
+        }
+        private void RunOffGrid()
+        {
+            ranStart = true;
+            if (characterModel)
+                characterModel.invisibilityCount++;
             if (hurtboxGroup)
             {
                 HurtBoxGroup hurtBoxGroup = hurtboxGroup;
                 int hurtBoxesDeactivatorCounter = hurtBoxGroup.hurtBoxesDeactivatorCounter + 1;
                 hurtBoxGroup.hurtBoxesDeactivatorCounter = hurtBoxesDeactivatorCounter;
             }
-            if (rigidbodyMotor)
-                rigidbodyMotor.enabled = false;
-            Vector3 b = inputBank.moveVector * blinkDistance;
+            gameObject.layer = LayerIndex.fakeActor.intVal;
+            SetPosition(blinkDestination);
+        }
+
+        private void SNAPBACKTOREALITY()
+        {
+            ExitCleanup();
+            ranGrid = true;
+        }
+
+        private void CalculateBlinkDestination()
+        {
+            Vector3 vector = inputBank.moveVector.normalized * blinkDistance;
+            Ray aimRay = GetAimRay();
             blinkDestination = transform.position;
             blinkStart = transform.position;
             NodeGraph airNodes = SceneInfo.instance.airNodes;
-            NodeGraph.NodeIndex nodeIndex = airNodes.FindClosestNode(transform.position + b, characterBody.hullClassification);
+            NodeGraph.NodeIndex nodeIndex = airNodes.FindClosestNode(transform.position + vector, characterBody.hullClassification, float.PositiveInfinity);
             airNodes.GetNodePosition(nodeIndex, out blinkDestination);
-            blinkDestination += transform.position - characterBody.footPosition;
+            blinkDestination += transform.position;
+            rigidbodyDirection.aimDirection = aimRay.origin;
         }
-        public override InterruptPriority GetMinimumInterruptPriority()
-        {
-            return InterruptPriority.PrioritySkill;
-        }
-
         private void CreateBlinkEffect(Vector3 origin)
         {
-            EffectData effectData = new EffectData();
-            effectData.rotation = Util.QuaternionSafeLookRotation(blinkDestination - blinkStart);
-            effectData.origin = origin;
-            EffectManager.SpawnEffect(blinkPrefab, effectData, false);
-            PlayAnimation("Body", "Utility1");
+            if (blinkPrefab)
+            {
+                EffectData effectData = new EffectData();
+                effectData.rotation = Util.QuaternionSafeLookRotation(this.blinkDestination - this.blinkStart);
+                effectData.origin = origin;
+                EffectManager.SpawnEffect(blinkPrefab, effectData, false);
+            }
         }
-
         private void SetPosition(Vector3 newPosition)
         {
-            transform.position = newPosition;
+            if (rigidbody)
+                rigidbody.position = newPosition;
         }
-
-        public override void FixedUpdate()
+        private void ExitCleanup()
         {
-            FixedUpdate();
-            stopwatch += Time.fixedDeltaTime;
-            SetPosition(Vector3.Lerp(blinkStart, blinkDestination, stopwatch / duration));
-            if (fixedAge >= duration)
-            {
-                outer.SetNextStateToMain();
+            if (isExiting)
                 return;
-            }
-            else
+            isExiting = true;
+            gameObject.layer = LayerIndex.defaultLayer.intVal;
+            characterMotor.Motor.RebuildCollidableLayers();
+            //Util.PlaySound(endSoundString, gameObject);
+            CreateBlinkEffect(Util.GetCorePosition(gameObject));
+            modelTransform = GetModelTransform();
+            if (modelTransform && destealthMaterial)
             {
-                if (fixedAge >= waitTime + durationFirstAnim)
-                    CreateBlinkEffect(blinkDestination);
-                else
-                {
-                    if (fixedAge >= duration - waitTime && isAuthority)
-                    {
-
-                        Util.PlaySound(endSoundString, gameObject);
-                        CreateBlinkEffect(Util.GetCorePosition(gameObject));
-                        modelTransform = GetModelTransform();
-                        if (modelTransform && destealthMaterial)
-                        {
-                            TemporaryOverlay temporaryOverlay = animator.gameObject.AddComponent<TemporaryOverlay>();
-                            temporaryOverlay.duration = 1f;
-                            temporaryOverlay.destroyComponentOnEnd = true;
-                            temporaryOverlay.originalMaterial = destealthMaterial;
-                            temporaryOverlay.inspectorCharacterModel = animator.gameObject.GetComponent<CharacterModel>();
-                            temporaryOverlay.alphaCurve = AnimationCurve.EaseInOut(0f, 1f, 1f, 0f);
-                            temporaryOverlay.animateShaderAlpha = true;
-                        }
-                        if (characterModel)
-                            characterModel.invisibilityCount--;
-                        if (hurtboxGroup)
-                        {
-                            HurtBoxGroup hurtBoxGroup = hurtboxGroup;
-                            int hurtBoxesDeactivatorCounter = hurtBoxGroup.hurtBoxesDeactivatorCounter - 1;
-                            hurtBoxGroup.hurtBoxesDeactivatorCounter = hurtBoxesDeactivatorCounter;
-                        }
-                    }
-                }
+                TemporaryOverlay temporaryOverlay = animator.gameObject.AddComponent<TemporaryOverlay>();
+                temporaryOverlay.duration = 1f;
+                temporaryOverlay.destroyComponentOnEnd = true;
+                temporaryOverlay.originalMaterial = destealthMaterial;
+                temporaryOverlay.inspectorCharacterModel = animator.gameObject.GetComponent<CharacterModel>();
+                temporaryOverlay.alphaCurve = AnimationCurve.EaseInOut(0f, 1f, 1f, 0f);
+                temporaryOverlay.animateShaderAlpha = true;
             }
+            if (characterModel)
+                characterModel.invisibilityCount--;
+            if (hurtboxGroup)
+            {
+                HurtBoxGroup hurtBoxGroup = hurtboxGroup;
+                int hurtBoxesDeactivatorCounter = hurtBoxGroup.hurtBoxesDeactivatorCounter - 1;
+                hurtBoxGroup.hurtBoxesDeactivatorCounter = hurtBoxesDeactivatorCounter;
+            }
+            PlayAnimation("Body", "TeleportIn", "Teleport.playbackRate", exitDuration);
         }
 
         public override void OnExit()
         {
-            OnExit();
+            base.OnExit();
+            if (rigidbodyMotor)
+            {
+                rigidbodyMotor.enabled = true;
+                rigidbody.WakeUp();
+            }
         }
+
+        private bool isExiting = false;
+        private bool ranStart = false;
+        private bool ranGrid = false;
     }
 
 }
