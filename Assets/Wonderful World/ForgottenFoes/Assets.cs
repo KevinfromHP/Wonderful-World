@@ -66,8 +66,8 @@ namespace ForgottenFoes
                         material.CopyPropertiesFromMaterial(Resources.Load<GameObject>("Prefabs/ProjectileGhosts/ImpVoidspikeProjectileGhost").transform.Find("Mesh").GetComponent<MeshRenderer>().material);
                         break;
                     case "matPortalCrack":
-                        //material.shader = Resources.Load<Shader>("shaders/fx/hgcloudremap");
-                        //material.CopyPropertiesFromMaterial(Resources.Load<GameObject>("Prefabs/Projectileghosts/ImpVoidspikeProjectileGhost").transform.Find("Mesh").GetComponent<MeshRenderer>().material);
+                        material.shader = Resources.Load<Shader>("shaders/fx/hgcloudremap");
+                        material.CopyPropertiesFromMaterial(Resources.Load<GameObject>("Prefabs/Projectileghosts/ImpVoidspikeProjectileGhost").transform.Find("Mesh").GetComponent<MeshRenderer>().material);
                         break;
                     /*case "matPortal":
                         material.shader = Resources.Load<Shader>("shaders/fx/hgcloudremap");

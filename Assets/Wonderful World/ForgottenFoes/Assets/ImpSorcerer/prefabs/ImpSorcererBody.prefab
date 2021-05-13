@@ -4520,13 +4520,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6571806411953786177}
-  m_LocalRotation: {x: -0.70710677, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -0.005677753, z: 0}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6571806411953819941}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!137 &6571806411967381931
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -4659,8 +4659,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 6571806411953819973}
   m_AABB:
-    m_Center: {x: 0.0015207529, y: 4.599453, z: 0.04627703}
-    m_Extent: {x: 2.971466, y: 4.595481, z: 0.4845779}
+    m_Center: {x: -0.07, y: 2.15, z: 0}
+    m_Extent: {x: 1.28, y: 2.6, z: 1.04}
   m_DirtyAABB: 0
 --- !u!1 &6571806411953786179
 GameObject:
@@ -4730,7 +4730,7 @@ Transform:
   m_GameObject: {fileID: 6571806411953786181}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.175, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.99999, y: 0.99999, z: 0.99999}
   m_Children:
   - {fileID: 6571806411953819939}
   - {fileID: 6571806411953819895}
@@ -6998,7 +6998,7 @@ MonoBehaviour:
   dontReleaseModelOnDeath: 0
   autoUpdateModelTransform: 1
   dontDetatchFromParent: 0
-  noCorpse: 0
+  noCorpse: 1
   normalizeToFloor: 0
   preserveModel: 0
 --- !u!114 &5442851849085212005

@@ -179,25 +179,6 @@ namespace ForgottenFoes.Enemies
 
 
     }
-    public class VoidClusterBombIndicator : MonoBehaviour
-    {
-        GameObject indicator;
-        void Awake()
-        {
-            indicator = Instantiate(Assets.mainAssetBundle.LoadAsset<GameObject>("ImpSorcererHalo"), gameObject.transform.position, Quaternion.identity);
-            indicator.GetComponentInChildren<MeshRenderer>().material = Resources.Load<GameObject>("Prefabs/Projectiles/ImpVoidspikeProjectile").transform.Find("ImpactEffect").Find("AreaIndicator").GetComponent<MeshRenderer>().material;
-
-            //I have no clue why I didn't just do a Position Constraint earlier, that old shit was way worse.
-            var constraint = new ConstraintSource();
-            constraint.sourceTransform = transform;
-            indicator.GetComponent<PositionConstraint>().AddSource(constraint);
-        }
-
-        void OnDestroy()
-        {
-            Destroy(indicator);
-        }
-    }
 }
 
 
@@ -251,7 +232,7 @@ namespace ForgottenFoes.EntityStates.ImpSorcerer
         public override void FixedUpdate()
         {
             base.FixedUpdate();
-            SleepRigid();
+            //SleepRigid();
             if (!hasFoundEffect && childLocator && spawnPortalCenter.childCount > 0)
             {
                 spawnPortalCenter.GetChild(0).GetComponent<SpawnCrystalOnDeath>().locator = crystalLocator;

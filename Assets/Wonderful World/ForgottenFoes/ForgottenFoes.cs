@@ -64,8 +64,7 @@ namespace ForgottenFoes
                 var inputBank = PlayerCharacterMasterController.instances[0].master.GetBodyObject().GetComponent<InputBankTest>();
                 var position = inputBank.aimOrigin + inputBank.aimDirection * 5;
                 var rotation = inputBank.transform.eulerAngles;
-                rotation.Set(rotation.x, rotation.y + 180f, rotation.z);
-                var quaternion = Quaternion.Euler(rotation);
+                var quaternion = Quaternion.Euler(rotation.x, rotation.y + 180f, rotation.z);
                 var materialTester = Assets.mainAssetBundle.LoadAsset<GameObject>("MaterialTester");
                 Instantiate<GameObject>(materialTester, position, quaternion);
             }
@@ -74,8 +73,7 @@ namespace ForgottenFoes
                 var inputBank = PlayerCharacterMasterController.instances[0].master.GetBodyObject().GetComponent<InputBankTest>();
                 var position = inputBank.aimOrigin + inputBank.aimDirection * 5;
                 var rotation = inputBank.transform.eulerAngles;
-                rotation.Set(rotation.x, rotation.y + 180f, rotation.z);
-                var quaternion = Quaternion.Euler(rotation);
+                var quaternion = Quaternion.Euler(rotation.x, rotation.y + 180f, rotation.z);
                 var effectPrefab = Assets.mainAssetBundle.LoadAsset<GameObject>("ImpSorcererSpawnEffect");
                 EffectManager.SimpleEffect(effectPrefab, position, quaternion, false);
             }
