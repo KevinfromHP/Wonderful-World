@@ -65,21 +65,19 @@ namespace ForgottenFoes
                         material.shader = Resources.Load<Shader>("shaders/fx/hgcloudremap");
                         material.CopyPropertiesFromMaterial(Resources.Load<GameObject>("Prefabs/ProjectileGhosts/ImpVoidspikeProjectileGhost").transform.Find("Mesh").GetComponent<MeshRenderer>().material);
                         break;
-                    case "matPortal":
+                    case "matPortalCrack":
+                        //material.shader = Resources.Load<Shader>("shaders/fx/hgcloudremap");
+                        //material.CopyPropertiesFromMaterial(Resources.Load<GameObject>("Prefabs/Projectileghosts/ImpVoidspikeProjectileGhost").transform.Find("Mesh").GetComponent<MeshRenderer>().material);
+                        break;
+                    /*case "matPortal":
                         material.shader = Resources.Load<Shader>("shaders/fx/hgcloudremap");
                         material.CopyPropertiesFromMaterial(Resources.Load<GameObject>("Prefabs/effects/ImpBossDeathEffect").transform.Find("Ring").GetComponent<ParticleSystemRenderer>().material);
                         material.SetTexture("_MainTex", mainAssetBundle.LoadAsset<Texture2D>("texPortal"));
                         break;
-                    case "matPortalCrack":
-                        material.shader = Resources.Load<Shader>("shaders/fx/hgcloudremap");
-                        material.CopyPropertiesFromMaterial(Resources.Load<GameObject>("Prefabs/Projectileghosts/ImpVoidspikeProjectileGhost").transform.Find("Mesh").GetComponent<MeshRenderer>().material);
-                        foreach (string keyword in material.shaderKeywords)
-                            LogCore.LogE(keyword);
-                        break;
                     case "matCrystal":
                         material.shader = Resources.Load<Shader>("shaders/deferred/hgstandard");
                         material.CopyPropertiesFromMaterial(Resources.Load<GameObject>("Prefabs/pickupmodels/PickupDiamond").transform.Find("TonicCap").GetComponent<MeshRenderer>().material);
-                        break;
+                        break;*/
                     case "matPortalParticles":
                         material.shader = Resources.Load<Shader>("shaders/fx/hgcloudremap");
                         material.CopyPropertiesFromMaterial(Resources.Load<GameObject>("Prefabs/Effects/ImpBossBlink").transform.Find("Particles/LongLifeNoiseTrails").GetComponent<ParticleSystemRenderer>().trailMaterial);
@@ -98,10 +96,10 @@ namespace ForgottenFoes
                         material.CopyPropertiesFromMaterial(Resources.Load<GameObject>("Prefabs/Effects/ImpBossBlink").transform.Find("Particles/Sphere").GetComponent<ParticleSystemRenderer>().material);
                         break;
                 }
+                var remappers = mainAssetBundle.LoadAllAssets<ShaderRemapper>();
+                for (int i = 0; i < remappers.Length; i++)
+                    remappers[i].UpdateMaterial();
             }
-            var remappers = Assets.mainAssetBundle.LoadAllAssets<ShaderRemapper>();
-            for (int i = 0; i < remappers.Length; i++)
-                remappers[i].UpdateMaterial();
         }
         /// <summary>
         /// This is only here because EffectDefs can't be made through Unity due to Hopoo forgetting to make them scriptable/serializable. You can delete this retarded shit once it's patched.

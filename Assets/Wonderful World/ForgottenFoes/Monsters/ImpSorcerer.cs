@@ -36,10 +36,6 @@ namespace ForgottenFoes.Enemies
         };
         public override string monsterName => "ImpSorcerer";
 
-
-        public GameObject projectilePrefab;
-        public GameObject spikePrefab;
-
         public override void BuildConfig(ConfigFile config)
         {
             base.BuildConfig(config);
@@ -222,8 +218,11 @@ namespace ForgottenFoes.EntityStates.ImpSorcerer
 
     public class SpawnState : BaseState
     {
-        public static GameObject spawnEffect;
-        public static float duration = 3f;
+        [SerializeField]
+        public GameObject spawnEffect;
+        [SerializeField]
+        public float duration = 3f;
+
         private Animator animator;
         private CrystalLocator crystalLocator;
         private ChildLocator childLocator;
@@ -252,27 +251,34 @@ namespace ForgottenFoes.EntityStates.ImpSorcerer
         public override void FixedUpdate()
         {
             base.FixedUpdate();
+            SleepRigid();
             if (!hasFoundEffect && childLocator && spawnPortalCenter.childCount > 0)
             {
                 spawnPortalCenter.GetChild(0).GetComponent<SpawnCrystalOnDeath>().locator = crystalLocator;
                 hasFoundEffect = true;
             }
             if (fixedAge >= duration && isAuthority)
-            {
-                rigidbodyMotor.enabled = true;
                 outer.SetNextStateToMain();
-                return;
-            }
         }
 
         public override void OnExit()
         {
             base.OnExit();
+            rigidbodyMotor.enabled = true;
         }
 
         public override InterruptPriority GetMinimumInterruptPriority()
         {
             return InterruptPriority.Death;
+        }
+
+        private void SleepRigid()
+        {
+            if(rigidbodyMotor)
+            {
+                rigidbody.angularVelocity = Vector3.zero;
+                rigidbody.velocity = Vector3.zero;
+            }
         }
     }
     public class DeathState : GenericCharacterDeath
@@ -361,7 +367,6 @@ namespace ForgottenFoes.EntityStates.ImpSorcerer
 
     }
 
-
     public class FireVoidClusterState : BaseSkillState
     {
         public static GameObject projectilePrefab;
@@ -388,6 +393,7 @@ namespace ForgottenFoes.EntityStates.ImpSorcerer
 
 
     }
+
     public class BlinkState : BaseSkillState
     {
         [SerializeField]
@@ -423,43 +429,51 @@ namespace ForgottenFoes.EntityStates.ImpSorcerer
                 childLocator = modelTransform.GetComponent<ChildLocator>();
             }
             if (rigidbodyMotor)
-            {
                 rigidbodyMotor.enabled = false;
-                rigidbody.Sleep();
-            }
+            LogCore.LogM("Check");
             CreateBlinkEffect(Util.GetCorePosition(gameObject));
+            LogCore.LogM("Check");
             CalculateBlinkDestination();
             PlayAnimation("Body", "TeleportIn", "Teleport.playbackRate", startDuration);
         }
         public override void FixedUpdate()
         {
             base.FixedUpdate();
-
+            SleepRigid();
             if (fixedAge >= startDuration && !ranStart)
                 RunOffGrid();
             if (fixedAge >= startDuration + offGridDuration && !ranGrid)
                 SNAPBACKTOREALITY();
             if (fixedAge >= startDuration + offGridDuration + exitDuration)
+            { 
                 outer.SetNextStateToMain();
+                return;
+            }
         }
+
         private void RunOffGrid()
         {
+            LogCore.LogM("Check");
             ranStart = true;
             if (characterModel)
                 characterModel.invisibilityCount++;
+            LogCore.LogM("Check");
             if (hurtboxGroup)
             {
                 HurtBoxGroup hurtBoxGroup = hurtboxGroup;
                 int hurtBoxesDeactivatorCounter = hurtBoxGroup.hurtBoxesDeactivatorCounter + 1;
                 hurtBoxGroup.hurtBoxesDeactivatorCounter = hurtBoxesDeactivatorCounter;
             }
+            LogCore.LogM("Check");
             gameObject.layer = LayerIndex.fakeActor.intVal;
             SetPosition(blinkDestination);
         }
-
         private void SNAPBACKTOREALITY()
         {
             ExitCleanup();
+            LogCore.LogM("Check");
+            PlayAnimation("Body", "TeleportIn", "Teleport.playbackRate", exitDuration);
+            LogCore.LogM("Check");
             ranGrid = true;
         }
 
@@ -494,11 +508,14 @@ namespace ForgottenFoes.EntityStates.ImpSorcerer
         {
             if (isExiting)
                 return;
+            LogCore.LogM("Check");
             isExiting = true;
             gameObject.layer = LayerIndex.defaultLayer.intVal;
-            characterMotor.Motor.RebuildCollidableLayers();
+            LogCore.LogM("Check");
             //Util.PlaySound(endSoundString, gameObject);
+            LogCore.LogM("Check");
             CreateBlinkEffect(Util.GetCorePosition(gameObject));
+            LogCore.LogM("Check");
             modelTransform = GetModelTransform();
             if (modelTransform && destealthMaterial)
             {
@@ -510,15 +527,17 @@ namespace ForgottenFoes.EntityStates.ImpSorcerer
                 temporaryOverlay.alphaCurve = AnimationCurve.EaseInOut(0f, 1f, 1f, 0f);
                 temporaryOverlay.animateShaderAlpha = true;
             }
+            LogCore.LogM("Check");
             if (characterModel)
                 characterModel.invisibilityCount--;
+            LogCore.LogM("Check");
             if (hurtboxGroup)
             {
                 HurtBoxGroup hurtBoxGroup = hurtboxGroup;
                 int hurtBoxesDeactivatorCounter = hurtBoxGroup.hurtBoxesDeactivatorCounter - 1;
                 hurtBoxGroup.hurtBoxesDeactivatorCounter = hurtBoxesDeactivatorCounter;
             }
-            PlayAnimation("Body", "TeleportIn", "Teleport.playbackRate", exitDuration);
+            LogCore.LogM("Check");
         }
 
         public override void OnExit()
@@ -528,6 +547,15 @@ namespace ForgottenFoes.EntityStates.ImpSorcerer
             {
                 rigidbodyMotor.enabled = true;
                 rigidbody.WakeUp();
+            }
+        }
+
+        private void SleepRigid()
+        {
+            if (rigidbodyMotor)
+            {
+                rigidbody.angularVelocity = Vector3.zero;
+                rigidbody.velocity = Vector3.zero;
             }
         }
 

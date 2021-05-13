@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 89795172, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
+  m_Name: FireVoidClusterState
+  m_EditorClassIdentifier: 
+  targetType:
+    assemblyQualifiedName: ForgottenFoes.EntityStates.ImpSorcerer.FireVoidClusterState,
+      ForgottenFoes, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  serializedFieldsCollection:
+    serializedFields:
+    - fieldName: projectilePrefab
+      fieldValue:
+        stringValue: 
+        objectValue: {fileID: 8587392415074972039, guid: 222b8e20a2836334790077732a87b3d2,
+          type: 3}
+    - fieldName: baseDuration
+      fieldValue:
+        stringValue: 3.0
+        objectValue: {fileID: 0}
+    - fieldName: damageCoefficient
+      fieldValue:
+        stringValue: 4.0
+        objectValue: {fileID: 0}

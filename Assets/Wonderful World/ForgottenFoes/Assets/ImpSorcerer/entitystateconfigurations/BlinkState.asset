@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: BlinkState
   m_EditorClassIdentifier: 
   targetType:
-    assemblyQualifiedName: 
+    assemblyQualifiedName: ForgottenFoes.EntityStates.ImpSorcerer.BlinkState, ForgottenFoes,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   serializedFieldsCollection:
     serializedFields: []
