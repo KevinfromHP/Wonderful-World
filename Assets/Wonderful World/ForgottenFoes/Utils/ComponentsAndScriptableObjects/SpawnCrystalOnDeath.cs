@@ -24,7 +24,6 @@ namespace ForgottenFoes.Utils
                 {
                     if (stopwatch >= particleSystemToTrack.main.startLifetime.constant)
                     {
-                        LogCore.LogW("boutta spawn a crystal in this bitch " + cachedPositions[i] + " " + cachedRotations[i]);
                         locator.SpawnCrystal(cachedPositions[i], cachedRotations[i]);
                         disable = true;
                     }

@@ -388,7 +388,7 @@ namespace ForgottenFoes.EntityStates.ImpSorcerer
         [SerializeField]
         public float offGridDuration = 0.5f;
         [SerializeField]
-        public float blinkDistance = 45f;
+        public float blinkDistance = 30f;
 
         private Transform modelTransform;
         private Animator animator;
@@ -409,8 +409,11 @@ namespace ForgottenFoes.EntityStates.ImpSorcerer
                 hurtboxGroup = modelTransform.GetComponent<HurtBoxGroup>();
                 childLocator = modelTransform.GetComponent<ChildLocator>();
             }
-            if (rigidbodyMotor)
+            if (rigidbodyMotor && rigidbodyDirection)
+            {
+                rigidbodyDirection.enabled = false;
                 rigidbodyMotor.enabled = false;
+            }
             LogCore.LogM("Check");
             CreateBlinkEffect(Util.GetCorePosition(gameObject));
             LogCore.LogM("Check");
@@ -460,7 +463,7 @@ namespace ForgottenFoes.EntityStates.ImpSorcerer
 
         private void CalculateBlinkDestination()
         {
-            Vector3 vector = inputBank.moveVector.normalized * blinkDistance;
+            Vector3 vector = inputBank.moveVector * blinkDistance;
             Ray aimRay = GetAimRay();
             blinkDestination = transform.position;
             blinkStart = transform.position;
@@ -468,7 +471,6 @@ namespace ForgottenFoes.EntityStates.ImpSorcerer
             NodeGraph.NodeIndex nodeIndex = airNodes.FindClosestNode(transform.position + vector, characterBody.hullClassification, float.PositiveInfinity);
             airNodes.GetNodePosition(nodeIndex, out blinkDestination);
             blinkDestination += transform.position;
-            rigidbodyDirection.aimDirection = aimRay.origin;
         }
         private void CreateBlinkEffect(Vector3 origin)
         {
@@ -518,17 +520,12 @@ namespace ForgottenFoes.EntityStates.ImpSorcerer
                 int hurtBoxesDeactivatorCounter = hurtBoxGroup.hurtBoxesDeactivatorCounter - 1;
                 hurtBoxGroup.hurtBoxesDeactivatorCounter = hurtBoxesDeactivatorCounter;
             }
-            LogCore.LogM("Check");
-        }
-
-        public override void OnExit()
-        {
-            base.OnExit();
-            if (rigidbodyMotor)
+            if (rigidbodyMotor && rigidbodyDirection)
             {
                 rigidbodyMotor.enabled = true;
-                rigidbody.WakeUp();
+                rigidbodyDirection.enabled = true;
             }
+            LogCore.LogM("Check");
         }
 
         private void SleepRigid()
