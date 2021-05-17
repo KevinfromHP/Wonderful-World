@@ -394,13 +394,13 @@ namespace ForgottenFoes.EntityStates.ImpSorcerer
         [SerializeField]
         public Material destealthMaterial;
         [SerializeField]
-        public float startDuration = 1.23f;
+        public float startDuration;
         [SerializeField]
-        public float exitDuration = 3.2f;
+        public float exitDuration;
         [SerializeField]
-        public float offGridDuration = 0.5f;
+        public float offGridDuration;
         [SerializeField]
-        public float blinkDistance = 30f;
+        public float blinkDistance;
 
         private Transform modelTransform;
         private Animator animator;
@@ -482,7 +482,6 @@ namespace ForgottenFoes.EntityStates.ImpSorcerer
             NodeGraph airNodes = SceneInfo.instance.airNodes;
             NodeGraph.NodeIndex nodeIndex = airNodes.FindClosestNode(transform.position + vector, characterBody.hullClassification, float.PositiveInfinity);
             airNodes.GetNodePosition(nodeIndex, out blinkDestination);
-            blinkDestination += transform.position;
         }
         private void CreateBlinkEffect(Vector3 origin)
         {

@@ -16,4 +16,20 @@ MonoBehaviour:
     assemblyQualifiedName: ForgottenFoes.EntityStates.ImpSorcerer.BlinkState, ForgottenFoes,
       Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   serializedFieldsCollection:
-    serializedFields: []
+    serializedFields:
+    - fieldName: startDuration
+      fieldValue:
+        stringValue: 1.2
+        objectValue: {fileID: 0}
+    - fieldName: exitDuration
+      fieldValue:
+        stringValue: 3.2
+        objectValue: {fileID: 0}
+    - fieldName: offGridDuration
+      fieldValue:
+        stringValue: 0.2
+        objectValue: {fileID: 0}
+    - fieldName: blinkDistance
+      fieldValue:
+        stringValue: 55f
+        objectValue: {fileID: 0}
