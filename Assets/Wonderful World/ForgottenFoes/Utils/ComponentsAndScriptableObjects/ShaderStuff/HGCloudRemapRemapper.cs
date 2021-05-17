@@ -9,7 +9,6 @@ namespace ForgottenFoes.Utils
     public class HGCloudRemapRemapper : ShaderRemapper
     {
         public Color _Tint;
-        public bool _DisableRemapping;
         public Texture _MainTex;
         public Vector2 _MainTexScale;
         public Vector2 _MainTexOffset;
@@ -28,9 +27,6 @@ namespace ForgottenFoes.Utils
 
         [Range(0f, 1f)]
         public float _AlphaBias;
-
-        public bool _UseUV1;
-        public bool _FadeWhenNearCamera;
 
         [Range(0f, 1f)]
         public float _FadeCloseDistance;
@@ -60,9 +56,6 @@ namespace ForgottenFoes.Utils
         [Range(-10f, 10f)]
         public float _DepthOffset;
 
-        public bool _CloudRemapping;
-        public bool _DistortionClouds;
-
         [Range(-2f, 2f)]
         public float _DistortionStrength;
 
@@ -73,12 +66,6 @@ namespace ForgottenFoes.Utils
         public Vector2 _Cloud2TexScale;
         public Vector2 _Cloud2TexOffset;
         public Vector4 _CutoffScroll;
-        public bool _VertexColors;
-        public bool _LuminanceForVertexAlpha;
-        public bool _LuminanceForTextureAlpha;
-        public bool _VertexOffset;
-        public bool _FresnelFade;
-        public bool _SkyboxOnly;
 
         [Range(-20f, 20f)]
         public float _FresnelPower;
@@ -94,7 +81,6 @@ namespace ForgottenFoes.Utils
                 Material.shader = Resources.Load<Shader>("shaders/fx/hgcloudremap");
                 Material.shaderKeywords = shaderKeywords;
                 Material.SetColor("_TintColor", _Tint);
-                Material.SetFloat("_DisableRemapOn", Convert.ToSingle(_DisableRemapping));
 
                 if (_MainTex)
                 {
@@ -122,14 +108,10 @@ namespace ForgottenFoes.Utils
                 Material.SetFloat("_Boost", _BrightnessBoost);
                 Material.SetFloat("_AlphaBoost", _AlphaBoost);
                 Material.SetFloat("_AlphaBias", _AlphaBias);
-                Material.SetFloat("_UseUV1On", Convert.ToSingle(_UseUV1));
-                Material.SetFloat("_FadeCloseOn", Convert.ToSingle(_FadeWhenNearCamera));
                 Material.SetFloat("_FadeCloseDistance", _FadeCloseDistance);
                 Material.SetFloat("_Cull", Convert.ToSingle(_Cull_Mode));
                 Material.SetFloat("_ZTest", Convert.ToSingle(_ZTest_Mode));
                 Material.SetFloat("_DepthOffset", _DepthOffset);
-                Material.SetFloat("_CloudsOn", Convert.ToSingle(_CloudRemapping));
-                Material.SetFloat("_CloudOffsetOn", Convert.ToSingle(_DistortionClouds));
                 Material.SetFloat("_DistortionStrength", _DistortionStrength);
 
                 if (_Cloud1Tex)
@@ -155,12 +137,6 @@ namespace ForgottenFoes.Utils
                 }
 
                 Material.SetVector("_CutoffScroll", _CutoffScroll);
-                Material.SetFloat("_VertexColorOn", Convert.ToSingle(_VertexColors));
-                Material.SetFloat("_VertexAlphaOn", Convert.ToSingle(_LuminanceForVertexAlpha));
-                Material.SetFloat("_CalcTextureAlphaOn", Convert.ToSingle(_LuminanceForTextureAlpha));
-                Material.SetFloat("_VertexOffsetOn", Convert.ToSingle(_VertexOffset));
-                Material.SetFloat("_FresnelOn", Convert.ToSingle(_FresnelFade));
-                Material.SetFloat("_SkyboxOnly", Convert.ToSingle(_SkyboxOnly));
                 Material.SetFloat("_FresnelPower", _FresnelPower);
                 Material.SetFloat("_OffsetAmount", _VertexOffsetAmount);
             }

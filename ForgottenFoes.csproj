@@ -74,9 +74,9 @@
     <Compile Include="Assets\Wonderful World\ForgottenFoes\Utils\ComponentsAndScriptableObjects\CrystalMotionManager.cs" />
     <Compile Include="Assets\Wonderful World\ForgottenFoes\Utils\ComponentsAndScriptableObjects\ForgottenFoesDirectorCardHolder.cs" />
     <Compile Include="Assets\Wonderful World\ForgottenFoes\Utils\ComponentsAndScriptableObjects\ForgottenFoesEffectDefHolder.cs" />
+    <Compile Include="Assets\Wonderful World\ForgottenFoes\Utils\ComponentsAndScriptableObjects\ProjectileLogger.cs" />
     <Compile Include="Assets\Wonderful World\ForgottenFoes\Utils\ComponentsAndScriptableObjects\ProjectileSteerAboveTarget.cs" />
     <Compile Include="Assets\Wonderful World\ForgottenFoes\Utils\ComponentsAndScriptableObjects\ShaderStuff\AetheriumStuff\HGCloudRemapController.cs" />
-    <Compile Include="Assets\Wonderful World\ForgottenFoes\Utils\ComponentsAndScriptableObjects\ShaderStuff\AetheriumStuff\HGControllerFinder.cs" />
     <Compile Include="Assets\Wonderful World\ForgottenFoes\Utils\ComponentsAndScriptableObjects\ShaderStuff\AetheriumStuff\HGIntersectionController.cs" />
     <Compile Include="Assets\Wonderful World\ForgottenFoes\Utils\ComponentsAndScriptableObjects\ShaderStuff\AetheriumStuff\HGStandardController.cs" />
     <Compile Include="Assets\Wonderful World\ForgottenFoes\Utils\ComponentsAndScriptableObjects\ShaderStuff\HGCloudRemapRemapper.cs" />

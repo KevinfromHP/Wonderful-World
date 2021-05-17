@@ -83,8 +83,6 @@ namespace ForgottenFoes.Utils
         }
         public _CullEnum _Cull_Mode;
 
-        public bool _IgnoreVertexColors;
-        public bool _EnableTriplanarProjectionsForClouds;
 
         public override void UpdateMaterial()
         {
@@ -149,8 +147,6 @@ namespace ForgottenFoes.Utils
                 Material.SetFloat("_AlphaBoost", _AlphaBoost);
                 Material.SetFloat("_IntersectionStrength", _IntersectionStrength);
                 Material.SetFloat("_Cull", Convert.ToSingle(_Cull_Mode));
-                Material.SetFloat("_VertexColorsOn", Convert.ToSingle(_IgnoreVertexColors));
-                Material.SetFloat("_TriplanarOn", Convert.ToSingle(_EnableTriplanarProjectionsForClouds));
             }
         }
     }

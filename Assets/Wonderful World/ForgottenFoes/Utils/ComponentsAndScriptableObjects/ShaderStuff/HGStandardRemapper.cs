@@ -8,7 +8,6 @@ namespace ForgottenFoes.Utils
     [CreateAssetMenu(fileName = "HGStandardRemapper", menuName = "ForgottenFoes/HGStandardRemapper", order = 2)]
     public class HGStandardRemapper : ShaderRemapper
     {
-        public bool _EnableCutout;
         public Color _Color;
         public Texture _MainTex;
         public Vector2 _MainTexScale;
@@ -28,8 +27,6 @@ namespace ForgottenFoes.Utils
 
         [Range(0f, 1f)]
         public float _Smoothness;
-
-        public bool _IgnoreDiffuseAlphaForSpeculars;
 
         public enum _RampInfoEnum
         {
@@ -64,12 +61,9 @@ namespace ForgottenFoes.Utils
         }
         public _CullEnum _Cull_Mode;
 
-        public bool _EnableDither;
 
         [Range(0f, 1f)]
         public float _FadeBias;
-
-        public bool _EnableFresnelEmission;
 
         public Texture _FresnelRamp;
 
@@ -80,8 +74,6 @@ namespace ForgottenFoes.Utils
 
         [Range(0f, 20f)]
         public float _FresnelBoost;
-
-        public bool _EnablePrinting;
 
         [Range(-25f, 25f)]
         public float _SliceHeight;
@@ -121,9 +113,6 @@ namespace ForgottenFoes.Utils
         [Range(-10f, 10f)]
         public float _EliteBrightnessMax;
 
-        public bool _EnableSplatmap;
-        public bool _UseVertexColorsInstead;
-
         [Range(0f, 1f)]
         public float _BlendDepth;
 
@@ -152,7 +141,6 @@ namespace ForgottenFoes.Utils
         [Range(-2f, 5f)]
         public float _BlueChannelBias;
 
-        public bool _EnableFlowmap;
         public Texture _FlowTexture;
         public Texture _FlowHeightmap;
         public Vector2 _FlowHeightmapScale;
@@ -182,8 +170,6 @@ namespace ForgottenFoes.Utils
         [Range(0f, 10f)]
         public float _FlowTextureScaleFactor;
 
-        public bool _EnableLimbRemoval;
-
         public void PutMaterialIntoRenderer(Renderer meshRenderer)
         {
             if (Material && meshRenderer)
@@ -198,7 +184,6 @@ namespace ForgottenFoes.Utils
             {
                 Material.shader = Resources.Load<Shader>("shaders/deferred/hgstandard");
                 Material.shaderKeywords = shaderKeywords;
-                Material.SetFloat("_EnableCutout", Convert.ToSingle(_EnableCutout));
                 Material.SetColor("_Color", _Color);
 
                 if (_MainTex)
@@ -238,15 +223,12 @@ namespace ForgottenFoes.Utils
 
                 Material.SetFloat("_EmPower", _EmPower);
                 Material.SetFloat("_Smoothness", _Smoothness);
-                Material.SetFloat("_ForceSpecOn", Convert.ToSingle(_IgnoreDiffuseAlphaForSpeculars));
                 Material.SetFloat("_RampInfo", Convert.ToSingle(_RampChoice));
                 Material.SetFloat("_DecalLayer", Convert.ToSingle(_DecalLayer));
                 Material.SetFloat("_SpecularStrength", _SpecularStrength);
                 Material.SetFloat("_SpecularExponent", _SpecularExponent);
                 Material.SetFloat("_Cull", Convert.ToSingle(_Cull_Mode));
-                Material.SetFloat("_DitherOn", Convert.ToSingle(_EnableDither));
                 Material.SetFloat("_FadeBias", _FadeBias);
-                Material.SetFloat("_FEON", Convert.ToSingle(_EnableFresnelEmission));
 
                 if (_FresnelRamp)
                 {
@@ -269,7 +251,6 @@ namespace ForgottenFoes.Utils
                 }
 
                 Material.SetFloat("_FresnelBoost", _FresnelBoost);
-                Material.SetFloat("_PrintOn", Convert.ToSingle(_EnablePrinting));
                 Material.SetFloat("_SliceHeight", _SliceHeight);
                 Material.SetFloat("_SliceBandHeight", _PrintBandHeight);
                 Material.SetFloat("_SliceAlphaDepth", _PrintAlphaDepth);
@@ -301,8 +282,6 @@ namespace ForgottenFoes.Utils
 
                 Material.SetFloat("_EliteBrightnessMin", _EliteBrightnessMin);
                 Material.SetFloat("_EliteBrightnessMax", _EliteBrightnessMax);
-                Material.SetFloat("_SplatmapOn", Convert.ToSingle(_EnableSplatmap));
-                Material.SetFloat("_ColorsOn", Convert.ToSingle(_UseVertexColorsInstead));
                 Material.SetFloat("_Depth", _BlendDepth);
 
                 if (_SplatmapTex)
@@ -360,8 +339,6 @@ namespace ForgottenFoes.Utils
                 Material.SetFloat("_BlueChannelSmoothness", _BlueChannelSmoothness);
                 Material.SetFloat("_BlueChannelBias", _BlueChannelBias);
 
-                Material.SetFloat("_FlowmapOn", Convert.ToSingle(_EnableFlowmap));
-
                 if (_FlowTexture)
                 {
                     Material.SetTexture("_FlowTex", _FlowTexture);
@@ -400,7 +377,6 @@ namespace ForgottenFoes.Utils
                 Material.SetFloat("_FlowMaskStrength", _MaskFlowStrength);
                 Material.SetFloat("_FlowNormalStrength", _NormalFlowStrength);
                 Material.SetFloat("_FlowTextureScaleFactor", _FlowTextureScaleFactor);
-                Material.SetFloat("_LimbRemovalOn", Convert.ToSingle(_EnableLimbRemoval));
             }
         }
 

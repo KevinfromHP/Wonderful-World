@@ -33,7 +33,7 @@
         },
         "convertToPrefabSettingsSerialize": {
             "exportFormat": 1,
-            "animatedSkinnedMesh": true,
+            "animatedSkinnedMesh": false,
             "mayaCompatibleNaming": false
         }
     }

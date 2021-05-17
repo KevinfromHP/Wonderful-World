@@ -1,14 +1,11 @@
 ﻿using BepInEx.Configuration;
+using EntityStates;
+using MonoMod.Cil;
 using R2API;
 using RoR2;
-using RoR2.Skills;
+using RoR2.Projectile;
 using System;
-using UnityEngine;
 using System.Collections.Generic;
-using EntityStates;
-using EntityStates;
-using JetBrains.Annotations;
-using System;
 using UnityEngine;
 
 namespace ForgottenFoes.Utils
@@ -92,9 +89,14 @@ namespace ForgottenFoes.Utils
 
         public abstract void ModifyDirectorCardOrHolder();
 
+        public static bool addedStaticHooks = false;
         public virtual void Hook()
         {
-
+            if (!addedStaticHooks)
+            {
+                addedStaticHooks = true;
+                //Add any hooks that you only want to call a single time here
+            }
         }
 
         public virtual void CreateDirectorCard()

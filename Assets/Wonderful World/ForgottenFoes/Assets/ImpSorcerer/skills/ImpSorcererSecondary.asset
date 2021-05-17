@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 1391837873, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
   m_Name: ImpSorcererSecondary
   m_EditorClassIdentifier: 
-  skillName: ImpSorcererVoidCluster
-  skillNameToken: Void Cluster
+  skillName: ImpSorcererCrystals
+  skillNameToken: Crystals
   skillDescriptionToken: 
   keywordTokens: []
   icon: {fileID: 0}
   activationStateMachineName: Body
   activationState:
-    _typeName: ersion=0.0.0.0, Culture=neutral, PublicKeyToken=nullerState, ForgottenFoes,
+    _typeName: ForgottenFoes.EntityStates.ImpSorcerer.CrystalAttackState, ForgottenFoes,
       Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   interruptPriority: 1
   baseRechargeInterval: 1

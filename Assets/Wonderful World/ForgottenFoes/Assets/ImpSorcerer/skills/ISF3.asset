@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ISF3
   m_EditorClassIdentifier: 
   variants:
-  - skillDef: {fileID: 11400000, guid: 4b55de0b9ed2dd54cb1ae68ec66ecb43, type: 2}
+  - skillDef: {fileID: 11400000, guid: d149c267cf4d7a54b8d8dc1f0d76aacf, type: 2}
     unlockableName: 
     unlockableDef: {fileID: 0}
   defaultVariantIndex: 0

@@ -32,7 +32,7 @@ namespace ForgottenFoes.Enemies
             typeof(SpawnState),
             typeof(DeathState),
             typeof(BlinkState),
-            typeof(FireVoidClusterState)
+            typeof(FireVoidLanceState)
         };
         public override string monsterName => "ImpSorcerer";
 
@@ -43,12 +43,11 @@ namespace ForgottenFoes.Enemies
         public override void Hook()
         {
             base.Hook();
-            IL.RoR2.Projectile.ProjectileExplosion.FireChild += IL_ProjectileImpactChildFix;
         }
 
         //nice summary, bro.
         ///<summary>Because the FireChild stuff was designed in a completely **FUCKING STUPID** WAY AND TAKES THE Z OFFETS FOR BOTH Y AND Z OF THE VECTOR... This injects some code to make it take the y offset</summary>
-        private void IL_ProjectileImpactChildFix(ILContext il)
+        /*private void IL_ProjectileImpactChildFix(ILContext il)
         {
             ILCursor c = new ILCursor(il);
             c.TryGotoNext(
@@ -66,7 +65,7 @@ namespace ForgottenFoes.Enemies
                 return vector;
             });
             c.Emit(OpCodes.Stloc_0);
-        }
+        }*/
 
         //I FUCKING HATE CHICAGO
         //FUCK YOU CHICAGO
@@ -232,7 +231,7 @@ namespace ForgottenFoes.EntityStates.ImpSorcerer
         public override void FixedUpdate()
         {
             base.FixedUpdate();
-            //SleepRigid();
+            SleepRigid();
             if (!hasFoundEffect && childLocator && spawnPortalCenter.childCount > 0)
             {
                 spawnPortalCenter.GetChild(0).GetComponent<SpawnCrystalOnDeath>().locator = crystalLocator;
@@ -245,7 +244,8 @@ namespace ForgottenFoes.EntityStates.ImpSorcerer
         public override void OnExit()
         {
             base.OnExit();
-            rigidbodyMotor.enabled = true;
+            if (rigidbodyMotor)
+                rigidbodyMotor.enabled = true;
         }
 
         public override InterruptPriority GetMinimumInterruptPriority()
@@ -255,7 +255,7 @@ namespace ForgottenFoes.EntityStates.ImpSorcerer
 
         private void SleepRigid()
         {
-            if(rigidbodyMotor)
+            if (rigidbodyMotor)
             {
                 rigidbody.angularVelocity = Vector3.zero;
                 rigidbody.velocity = Vector3.zero;
@@ -266,113 +266,125 @@ namespace ForgottenFoes.EntityStates.ImpSorcerer
     {
         public static GameObject initialEffect;
         public static GameObject deathEffect;
-        private static float duration = 3.3166666f;
+
+        private static float duration = 2f;
         private float stopwatch;
         private Animator animator;
         private bool hasPlayedDeathEffect;
-        private bool attemptedDeathBehavior;
-        public override void OnEnter()
-        {
-            OnEnter();
-            animator = GetModelAnimator();
-            if (characterMotor)
-            {
-                characterMotor.enabled = false;
-            }
-            if (modelLocator)
-            {
-                Transform modelTransform = modelLocator.modelTransform;
-                ChildLocator component = modelTransform.GetComponent<ChildLocator>();
-                CharacterModel component2 = modelTransform.GetComponent<CharacterModel>();
-                if (component)
-                {
-                    component.FindChild("DustCenter").gameObject.SetActive(false);
-                    if (initialEffect)
-                    {
-                        EffectManager.SimpleMuzzleFlash(initialEffect, gameObject, "DeathCenter", false);
-                    }
-                }
-                if (component2)
-                {
-                    for (int i = 0; i < component2.baseRendererInfos.Length; i++)
-                    {
-                        component2.baseRendererInfos[i].ignoreOverlays = true;
-                    }
-                }
-            }
-            PlayAnimation("Body", "Death");
-        }
-
-        public override void FixedUpdate()
-        {
-            if (animator)
-            {
-                stopwatch += Time.fixedDeltaTime;
-                if (!hasPlayedDeathEffect && animator.GetFloat("DeathEffect") > 0.5f)
-                {
-                    hasPlayedDeathEffect = true;
-                    EffectManager.SimpleMuzzleFlash(deathEffect, gameObject, "DeathCenter", false);
-                }
-                if (stopwatch >= duration)
-                {
-                    AttemptDeathBehavior();
-                }
-            }
-        }
-
-        private void AttemptDeathBehavior()
-        {
-            if (attemptedDeathBehavior)
-            {
-                return;
-            }
-            attemptedDeathBehavior = true;
-            if (modelLocator.modelBaseTransform)
-            {
-                EntityState.Destroy(modelLocator.modelBaseTransform.gameObject);
-            }
-            if (NetworkServer.active)
-            {
-                EntityState.Destroy(gameObject);
-            }
-        }
-
-        public override void OnExit()
-        {
-            if (!outer.destroying)
-            {
-                AttemptDeathBehavior();
-            }
-            OnExit();
-        }
-
-    }
-
-    public class FireVoidClusterState : BaseSkillState
-    {
-        public static GameObject projectilePrefab;
-        public static float baseDuration = 3f;
-        public static float damageCoefficient = 4f;
-        private Animator modelAnimator;
-        private float duration;
-        private Ray aimRay;
 
         public override void OnEnter()
         {
             base.OnEnter();
-            duration = baseDuration / characterBody.attackSpeed;
-            PlayAnimation("Gesture, Override", "FireVoidCluster", "FireVoidCluster.playbackRate", duration);
-            ProjectileManager.instance.FireProjectile(projectilePrefab, inputBank.aimOrigin + inputBank.aimDirection * 1.8f, Quaternion.identity, gameObject, damageStat * damageCoefficient, 0f, Util.CheckRoll(critStat, characterBody.master), DamageColorIndex.Default, null, -1f);
+            animator = GetModelAnimator();
+            if (rigidbodyMotor)
+                rigidbodyMotor.enabled = false;
+            if(modelLocator && modelLocator.modelTransform.GetComponent<ChildLocator>() && initialEffect)
+            EffectManager.SimpleMuzzleFlash(initialEffect, gameObject, "Base", false);
         }
 
         public override void FixedUpdate()
         {
             base.FixedUpdate();
-            if (fixedAge >= duration)
+            if (animator)
+            {
+                stopwatch += Time.fixedDeltaTime;
+                if (!hasPlayedDeathEffect && animator.GetFloat("DeathEffect") > 0.5f && deathEffect)
+                {
+                    hasPlayedDeathEffect = true;
+                    EffectManager.SimpleMuzzleFlash(deathEffect, gameObject, "Center", false);
+                }
+                if (stopwatch >= duration)
+                    Destroy(gameObject);
+            }
+        }
+    }
+
+    public class FireVoidLanceState : BaseSkillState
+    {
+        [SerializeField]
+        public static GameObject projectilePrefab;
+        [SerializeField]
+        public static float baseDuration = 1.5f;
+        [SerializeField]
+        public static GameObject effectPrefab;
+        [SerializeField]
+        public static float damageCoefficient = 2.5f;
+        [SerializeField]
+        public static float procCoefficient = 1f;
+        [SerializeField]
+        public static string enterSoundString;
+        [SerializeField]
+        public static string attackSoundString;
+        [SerializeField]
+        public static float dragPenalty;
+
+        public float minSpread = 0.5f;
+        public float maxSpread = 2.5f;
+
+        private ChildLocator childLocator;
+        private Transform voidLanceCenter;
+        private HealthComponent target;
+        private BullseyeSearch bullseyeSearch;
+        private float duration;
+
+        public override void OnEnter()
+        {
+            base.OnEnter();
+            duration = baseDuration / characterBody.attackSpeed;
+            if (modelLocator && characterBody && rigidbody)
+            {
+                childLocator = modelLocator.modelTransform.GetComponent<ChildLocator>();
+                if (childLocator)
+                    voidLanceCenter = childLocator.FindChild("VoidLanceCenter");
+
+                var aimRay = GetAimRay();
+                bullseyeSearch = new BullseyeSearch();
+                bullseyeSearch.viewer = characterBody;
+                bullseyeSearch.sortMode = BullseyeSearch.SortMode.DistanceAndAngle;
+                bullseyeSearch.filterByDistinctEntity = true;
+                bullseyeSearch.filterByLoS = true;
+                bullseyeSearch.teamMaskFilter = TeamMask.allButNeutral;
+                bullseyeSearch.teamMaskFilter.RemoveTeam(TeamComponent.GetObjectTeam(gameObject));
+                bullseyeSearch.minDistanceFilter = 3f;
+                bullseyeSearch.maxDistanceFilter = 50f;
+                bullseyeSearch.searchOrigin = aimRay.origin;
+                bullseyeSearch.searchDirection = aimRay.direction;
+                bullseyeSearch.maxAngleFilter = 30f;
+
+                if (dragPenalty != 0f)
+                    rigidbody.drag += dragPenalty;
+            }
+        }
+
+        public override void FixedUpdate()
+        {
+            base.FixedUpdate();
+            if (fixedAge >= duration / 3f)
                 outer.SetNextStateToMain();
         }
 
+        public override void OnExit()
+        {
+            base.OnExit();
+            if (voidLanceCenter)
+            {
+                bullseyeSearch.RefreshCandidates();
+                var hurtBox = bullseyeSearch.GetResults().FirstOrDefault();
 
+                Quaternion forward;
+                if (hurtBox)
+                {
+                    var target = hurtBox.healthComponent.body.corePosition;
+                    var aimDirection = target - voidLanceCenter.position;
+                    forward = Util.QuaternionSafeLookRotation(aimDirection.normalized);
+                }
+                else
+                    forward = Util.QuaternionSafeLookRotation(GetAimRay().direction);
+                ProjectileManager.instance.FireProjectile(projectilePrefab, voidLanceCenter.position, forward, gameObject, damageStat * damageCoefficient, 0f, Util.CheckRoll(critStat, characterBody.master), DamageColorIndex.Bleed, null);
+                if (dragPenalty != 0)
+                    rigidbody.drag -= dragPenalty;
+            }
+        }
     }
 
     public class BlinkState : BaseSkillState
@@ -429,7 +441,7 @@ namespace ForgottenFoes.EntityStates.ImpSorcerer
             if (fixedAge >= startDuration + offGridDuration && !ranGrid)
                 SNAPBACKTOREALITY();
             if (fixedAge >= startDuration + offGridDuration + exitDuration)
-            { 
+            {
                 outer.SetNextStateToMain();
                 return;
             }
@@ -541,5 +553,31 @@ namespace ForgottenFoes.EntityStates.ImpSorcerer
         private bool ranStart = false;
         private bool ranGrid = false;
     }
+    /*public class FireVoidClusterState : BaseSkillState
+    {
+        public static GameObject projectilePrefab;
+        public static float baseDuration = 3f;
+        public static float damageCoefficient = 4f;
+        private Animator modelAnimator;
+        private float duration;
+        private Ray aimRay;
+
+        public override void OnEnter()
+        {
+            base.OnEnter();
+            duration = baseDuration / characterBody.attackSpeed;
+            PlayAnimation("Gesture, Override", "FireVoidCluster", "FireVoidCluster.playbackRate", duration);
+            ProjectileManager.instance.FireProjectile(projectilePrefab, inputBank.aimOrigin + inputBank.aimDirection * 1.8f, Quaternion.identity, gameObject, damageStat * damageCoefficient, 0f, Util.CheckRoll(critStat, characterBody.master), DamageColorIndex.Default, null, -1f);
+        }
+
+        public override void FixedUpdate()
+        {
+            base.FixedUpdate();
+            if (fixedAge >= duration)
+                outer.SetNextStateToMain();
+        }
+
+
+    }*/
 
 }

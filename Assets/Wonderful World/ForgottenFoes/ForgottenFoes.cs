@@ -18,6 +18,7 @@ using System.Security;
 using System.Security.Permissions;
 using UnityEngine;
 using Path = System.IO.Path;
+using RoR2.Projectile;
 
 
 [module: UnverifiableCode]
@@ -58,24 +59,29 @@ namespace ForgottenFoes
         {
             var input0 = Input.GetKeyDown(KeyCode.F2);
             var input1 = Input.GetKeyDown(KeyCode.F3);
+            var input2 = Input.GetKeyDown(KeyCode.F4);
             //add more if necessary
             if (input0)
             {
                 var inputBank = PlayerCharacterMasterController.instances[0].master.GetBodyObject().GetComponent<InputBankTest>();
                 var position = inputBank.aimOrigin + inputBank.aimDirection * 5;
-                var rotation = inputBank.transform.eulerAngles;
-                var quaternion = Quaternion.Euler(rotation.x, rotation.y + 180f, rotation.z);
+                var quaternion = Quaternion.LookRotation(inputBank.GetAimRay().direction, Vector3.up);
                 var materialTester = Assets.mainAssetBundle.LoadAsset<GameObject>("MaterialTester");
-                Instantiate<GameObject>(materialTester, position, quaternion);
+                Instantiate(materialTester, position, quaternion);
             }
             if (input1)
             {
                 var inputBank = PlayerCharacterMasterController.instances[0].master.GetBodyObject().GetComponent<InputBankTest>();
                 var position = inputBank.aimOrigin + inputBank.aimDirection * 5;
-                var rotation = inputBank.transform.eulerAngles;
-                var quaternion = Quaternion.Euler(rotation.x, rotation.y + 180f, rotation.z);
+                var quaternion = Quaternion.LookRotation(-inputBank.GetAimRay().direction, Vector3.up);
                 var effectPrefab = Assets.mainAssetBundle.LoadAsset<GameObject>("ImpSorcererSpawnEffect");
                 EffectManager.SimpleEffect(effectPrefab, position, quaternion, false);
+            }
+            if (input2)
+            {
+                var inputBank = PlayerCharacterMasterController.instances[0].master.GetBodyObject().GetComponent<InputBankTest>();
+                var quaternion = Quaternion.LookRotation(inputBank.GetAimRay().direction);
+                ProjectileManager.instance.FireProjectile(Assets.mainAssetBundle.LoadAsset<GameObject>("ImpVoidLanceProjectile"), inputBank.aimOrigin, quaternion, inputBank.gameObject, 1, 0f, false, DamageColorIndex.Bleed);
             }
         }
 #endif

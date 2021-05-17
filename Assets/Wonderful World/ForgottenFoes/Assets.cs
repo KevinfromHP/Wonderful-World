@@ -61,7 +61,7 @@ namespace ForgottenFoes
                     case "matIndicatorFriendly":
                         material.CopyPropertiesFromMaterial(Resources.Load<GameObject>("Prefabs/Projectiles/TitanPreFistProjectile").transform.Find("ImpactEffect/TeamAreaIndicator, GroundOnly").GetComponent<TeamAreaIndicator>().teamMaterialPairs[1].sharedMaterial);
                         break;*/
-                    case "matVoidCluster":
+                    case "matVoidLance":
                         material.shader = Resources.Load<Shader>("shaders/fx/hgcloudremap");
                         material.CopyPropertiesFromMaterial(Resources.Load<GameObject>("Prefabs/ProjectileGhosts/ImpVoidspikeProjectileGhost").transform.Find("Mesh").GetComponent<MeshRenderer>().material);
                         break;

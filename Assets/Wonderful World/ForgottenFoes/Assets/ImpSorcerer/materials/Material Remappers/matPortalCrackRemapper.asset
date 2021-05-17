@@ -21,7 +21,7 @@ MonoBehaviour:
   _MainTex: {fileID: 0}
   _MainTexScale: {x: 1, y: 1}
   _MainTexOffset: {x: 0, y: 0}
-  _RemapTex: {fileID: 2800000, guid: 56c31711fcc4a1d47b6a3241bbef0c3d, type: 3}
+  _RemapTex: {fileID: 2800000, guid: bb050f6227738fe429b2a9d33bdd313b, type: 3}
   _RemapTexScale: {x: 1, y: 1}
   _RemapTexOffset: {x: 0, y: 0}
   _SoftFactor: 2
