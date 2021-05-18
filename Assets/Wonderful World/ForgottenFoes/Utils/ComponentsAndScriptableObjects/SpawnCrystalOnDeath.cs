@@ -8,7 +8,7 @@ namespace ForgottenFoes.Utils
     [Serializable]
     public class SpawnCrystalOnDeath : MonoBehaviour
     {
-        public CrystalLocator locator;
+        public CrystalManager locator;
         public ParticleSystem particleSystemToTrack;
         public void Start()
         {

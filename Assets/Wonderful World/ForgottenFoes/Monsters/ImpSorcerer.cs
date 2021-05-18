@@ -32,6 +32,7 @@ namespace ForgottenFoes.Enemies
             typeof(SpawnState),
             typeof(DeathState),
             typeof(BlinkState),
+            typeof(MineState),
             typeof(FireVoidLanceState)
         };
         public override string monsterName => "ImpSorcerer";
@@ -75,7 +76,6 @@ namespace ForgottenFoes.Enemies
             //Adds the surfaceDef's impact prefab
             var surfaceDef = Assets.mainAssetBundle.LoadAsset<SurfaceDef>("sdImpSorcerer");
             surfaceDef.impactEffectPrefab = Resources.Load<SurfaceDef>("surfacedefs/sdImp").impactEffectPrefab;
-            CrystalLocator.crystalPrefab = Assets.mainAssetBundle.LoadAsset<GameObject>("ImpSorcererCrystal");
         }
 
         public override void ModifyPrefabs()
@@ -204,7 +204,7 @@ namespace ForgottenFoes.EntityStates.ImpSorcerer
         public float duration = 3f;
 
         private Animator animator;
-        private CrystalLocator crystalLocator;
+        private CrystalManager crystalManager;
         private ChildLocator childLocator;
         private Transform spawnPortalCenter;
         private bool hasFoundEffect = false;
@@ -218,8 +218,8 @@ namespace ForgottenFoes.EntityStates.ImpSorcerer
             {
                 Transform modelTransform = modelLocator.modelTransform;
                 childLocator = modelTransform.GetComponent<ChildLocator>();
-                crystalLocator = modelTransform.GetComponent<CrystalLocator>();
-                if (childLocator && crystalLocator && spawnEffect)
+                crystalManager = modelTransform.GetComponent<CrystalManager>();
+                if (childLocator && crystalManager && spawnEffect)
                 {
                     EffectManager.SimpleMuzzleFlash(spawnEffect, gameObject, "SpawnPortalCenter", false);
                     spawnPortalCenter = childLocator.FindChild("SpawnPortalCenter");
@@ -234,7 +234,7 @@ namespace ForgottenFoes.EntityStates.ImpSorcerer
             SleepRigid();
             if (!hasFoundEffect && childLocator && spawnPortalCenter.childCount > 0)
             {
-                spawnPortalCenter.GetChild(0).GetComponent<SpawnCrystalOnDeath>().locator = crystalLocator;
+                spawnPortalCenter.GetChild(0).GetComponent<SpawnCrystalOnDeath>().locator = crystalManager;
                 hasFoundEffect = true;
             }
             if (fixedAge >= duration && isAuthority)
@@ -278,8 +278,8 @@ namespace ForgottenFoes.EntityStates.ImpSorcerer
             animator = GetModelAnimator();
             if (rigidbodyMotor)
                 rigidbodyMotor.enabled = false;
-            if(modelLocator && modelLocator.modelTransform.GetComponent<ChildLocator>() && initialEffect)
-            EffectManager.SimpleMuzzleFlash(initialEffect, gameObject, "Base", false);
+            if (modelLocator && modelLocator.modelTransform.GetComponent<ChildLocator>() && initialEffect)
+                EffectManager.SimpleMuzzleFlash(initialEffect, gameObject, "Base", false);
         }
 
         public override void FixedUpdate()
@@ -386,7 +386,6 @@ namespace ForgottenFoes.EntityStates.ImpSorcerer
             }
         }
     }
-
     public class BlinkState : BaseSkillState
     {
         [SerializeField]
@@ -551,6 +550,73 @@ namespace ForgottenFoes.EntityStates.ImpSorcerer
         private bool isExiting = false;
         private bool ranStart = false;
         private bool ranGrid = false;
+    }
+
+    public class MineState : BaseSkillState
+    {
+        public static float duration = 1f;
+        private CrystalManager crystalManager;
+        private RaycastHit rayCast;
+        private Vector3 closestNodePosition;
+        private bool couldPlaceMine = false;
+
+        public override void OnEnter()
+        {
+            base.OnEnter();
+            if (modelLocator)
+                crystalManager = modelLocator.modelTransform.GetComponent<CrystalManager>();
+            if (crystalManager && FindMinePosition() != Vector3.zero)
+                couldPlaceMine = true;
+
+            if (!couldPlaceMine)
+                outer.SetNextStateToMain();
+        }
+
+        public override void FixedUpdate()
+        {
+            base.FixedUpdate();
+            if (fixedAge > duration)
+                outer.SetNextStateToMain();
+        }
+
+        private Vector3 FindMinePosition()
+        {
+            var aimRay = GetAimRay();
+            Vector3 minePosition = Vector3.zero;
+            NodeGraph groundNodes = SceneInfo.instance.groundNodes;
+            Vector3 aimDirectionNoPitch = new Vector3(aimRay.direction.x, 0, aimRay.direction.z);
+            NodeGraph.NodeIndex closestNodeToImpAim = groundNodes.FindClosestNode(aimRay.origin + aimDirectionNoPitch * 3f, HullClassification.Human);
+            groundNodes.GetNodePosition(closestNodeToImpAim, out closestNodePosition);
+            float sqrMagnitude = new Vector2(closestNodePosition.x - transform.position.x, closestNodePosition.z - transform.position.z).sqrMagnitude;
+            if (sqrMagnitude < 400f) // if the horizontal distance to the node is less than 20 meters
+            {
+                var possibleMineNodes = groundNodes.FindNodesInRange(closestNodePosition, 0f, 10f, HullMask.None);
+                float dot = 0f;
+                foreach (NodeGraph.NodeIndex node in possibleMineNodes)
+                {
+                    Vector3 tempVector;
+                    groundNodes.GetNodePosition(node, out tempVector);
+                    tempVector -= aimRay.origin;
+                    tempVector.y = 0f;
+                    var tempDot = Vector3.Dot(aimDirectionNoPitch.normalized, tempVector);
+                    if (tempDot >= dot)
+                    {
+                        dot = tempDot;
+                        groundNodes.GetNodePosition(node, out minePosition);
+                    }
+                }
+            }
+            return minePosition;
+        }
+
+        public override void OnExit()
+        {
+            base.OnExit();
+            var minePosition = FindMinePosition();
+            if (couldPlaceMine && minePosition != Vector3.zero)
+                crystalManager.GetCrystal().GetComponent<CrystalMotionManager>().DeployAsMine(minePosition);
+        }
+
     }
     /*public class FireVoidClusterState : BaseSkillState
     {

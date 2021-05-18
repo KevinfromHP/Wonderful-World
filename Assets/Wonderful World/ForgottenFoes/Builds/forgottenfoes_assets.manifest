@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 1872303169
+CRC: 2558365767
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 1b268cb3de0bdfed09501e75fd8a7205
+    Hash: 22670556f80a31ee8341149cbaa4ad24
   TypeTreeHash:
     serializedVersion: 2
-    Hash: f5b6883a00dc0a7d4b35ef540bf6fb41
+    Hash: f9f7d02a68db36f6c10c7c93c59033f5
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -108,6 +108,8 @@ ClassTypes:
 - Class: 114
   Script: {fileID: -365436499, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
 - Class: 114
+  Script: {fileID: 2093231408, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
+- Class: 114
   Script: {fileID: -202159943, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
 - Class: 114
   Script: {fileID: -1792105662, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
@@ -124,11 +126,15 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 296141222, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
 - Class: 114
+  Script: {fileID: 707171152, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
+- Class: 114
   Script: {fileID: -1578512655, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
 - Class: 114
   Script: {fileID: -1699741063, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
 - Class: 114
   Script: {fileID: 1918207524, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
+- Class: 114
+  Script: {fileID: 128221791, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
 - Class: 114
   Script: {fileID: -1848696948, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
 - Class: 114
@@ -298,6 +304,7 @@ Assets:
 - Assets/Wonderful World/ForgottenFoes/Assets/ImpSorcerer/skills/ImpSorcererPrimary.asset
 - Assets/Wonderful World/ForgottenFoes/Assets/ImpSorcerer/materials/matPortalParticlesBright.mat
 - Assets/Wonderful World/ForgottenFoes/Assets/ImpSorcerer/textures/texRampCrystals.png
+- Assets/Wonderful World/ForgottenFoes/Assets/ImpSorcerer/prefabs/projectiles/ImpSorcererCrystalGhost.prefab
 - Assets/Wonderful World/ForgottenFoes/Assets/general/SurfaceDefs/sdBellBoss.asset
 - Assets/Wonderful World/ForgottenFoes/Assets/ImpSorcerer/materials/Material Remappers/matPortalCrackRemapper.asset
 - Assets/Wonderful World/ForgottenFoes/Assets/ImpSorcerer/materials/matCrystal.mat
@@ -320,7 +327,7 @@ Assets:
 - Assets/Wonderful World/ForgottenFoes/Assets/ImpSorcerer/entitystateconfigurations/BlinkState.asset
 - Assets/Wonderful World/ForgottenFoes/Assets/BellBoss/meshes/BellBallMesh.mesh
 - Assets/Wonderful World/ForgottenFoes/Assets/BellBoss/animations/Secondary1.anim
-- Assets/Wonderful World/ForgottenFoes/Assets/ImpSorcerer/prefabs/ImpSorcererCrystal.prefab
+- Assets/Wonderful World/ForgottenFoes/Assets/ImpSorcerer/prefabs/projectiles/ImpSorcererCrystalProjectile.prefab
 - Assets/Wonderful World/ForgottenFoes/Assets/ImpSorcerer/spawncards/ImpSorcererDirectorCardHolder.asset
 - Assets/Wonderful World/ForgottenFoes/Assets/ImpSorcerer/skills/ISF1.asset
 - Assets/Wonderful World/ForgottenFoes/Assets/BellBoss/animations/Utility.anim

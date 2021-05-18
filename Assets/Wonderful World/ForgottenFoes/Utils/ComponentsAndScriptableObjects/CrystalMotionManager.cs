@@ -26,46 +26,111 @@ namespace ForgottenFoes.Utils
 {
     public class CrystalMotionManager : MonoBehaviour
     {
-        public GameObject crystalPrefab;
         public Transform referenceObject;
         public float smoothTime = .1f;
-        public float maxVelocityDividend = 5;
+        public float maxVelocityFactor = 5;
+
+
+        private CrystalManager crystalManager;
         private Vector3 velocity = Vector3.zero;
+        private Vector3 desiredPosition;
+        private Transform proximityTransform;
+        public State state = State.FollowImp;
+        private float scaleStopwatch;
+        private Vector3 radius;
+        private SphereCollider sphereCollider;
+        private bool destroyedGhost;
+
+        public enum State
+        {
+            FollowImp,
+            IsPlanting,
+            HasPlanted
+        }
+
+        //I am feral and cannot be stopped
+        private void Start()
+        {
+            var owner = GetComponent<ProjectileController>().owner;
+            if (owner)
+            {
+                crystalManager = owner.GetComponent<ModelLocator>().modelTransform.GetComponent<CrystalManager>();
+                crystalManager.RequestReference(this);
+                proximityTransform = gameObject.transform.Find("ProximityTrigger");
+            }
+            else
+                Destroy(gameObject);
+        }
 
         private void Update()
         {
             if (!referenceObject)
                 Destroy(gameObject);
             else
+                UpdateMovement();
+        }
+        private void UpdateMovement()
+        {
+            float lhs;
+
+            //The state just decides which of these it does. if it's planted, scale up the proximity trigger. If it's planting, go to the plant site. If not, just follow the Imp.
+            switch (state)
             {
-                UpdateMotion();
-                UpdateRotation();
+                case State.HasPlanted:
+                    scaleStopwatch += Time.deltaTime;
+                    proximityTransform.localScale = Vector3.Lerp(proximityTransform.localScale, radius, Time.deltaTime * 3f);
+                    break;
+                case State.IsPlanting:
+                    lhs = Vector3.Distance(transform.position, desiredPosition);
+                    if (lhs < 0.05f && 1 - transform.up.y < 0.0015f)
+                    {
+                        LogCore.LogW("Crystal has arrived at desiredPosition.");
+                        velocity = Vector3.zero;
+
+                        sphereCollider = proximityTransform.gameObject.GetComponent<SphereCollider>();
+                        radius = proximityTransform.localScale;
+                        proximityTransform.localScale = Vector3.zero;
+                        sphereCollider.enabled = true;
+                        proximityTransform.GetComponent<MeshRenderer>().enabled = true;
+                        proximityTransform.localPosition = Vector3.zero;
+                        state = State.HasPlanted;
+                    }
+                    transform.position = Vector3.SmoothDamp(transform.position, desiredPosition, ref velocity, smoothTime, 6f);
+                    transform.up = Vector3.RotateTowards(transform.up, Vector3.up, 70f * Mathf.Deg2Rad * Time.deltaTime, 0f);
+                    break;
+                default:
+                    desiredPosition = referenceObject.position;
+                    transform.forward = Vector3.RotateTowards(transform.forward, referenceObject.forward, 90f * Mathf.Deg2Rad * Time.deltaTime, 0f);
+                    lhs = Vector3.Distance(transform.position, desiredPosition);
+                    transform.position = Vector3.SmoothDamp(transform.position, desiredPosition, ref velocity, smoothTime, Mathf.Max(lhs * maxVelocityFactor, 10f));
+                    break;
             }
         }
-        private void UpdateMotion()
+
+        public void DeployAsMine(Vector3 plantPosition)
         {
-            Vector3 desiredPosition = referenceObject.position;
-            var lhs = Vector3.Distance(transform.position, desiredPosition);
-            //smoothTime = 1f / (Mathf.Pow(1.1f, lhs / 4f) - .9f);
-                transform.position = Vector3.SmoothDamp(transform.position, desiredPosition, ref velocity, smoothTime, Mathf.Max(lhs / maxVelocityDividend, 8f));
+            state = State.IsPlanting;
+            desiredPosition = plantPosition;
+            //the 0.055 give it a bit more clearance to stick out of the ground
+            desiredPosition.y += 0.055f;
+            smoothTime = 0.3f;
+            crystalManager.RemoveThisCrystal(gameObject);
         }
 
-        /*private void UpdateMotion()
+        public void JoeRogan()
         {
-            var desiredPosition = (originalCrystalsObject.transform.position - gameObject.transform.position) / 1.2f + gameObject.transform.position;
-            transform.position = Vector3.SmoothDamp(transform.position, desiredPosition, ref velocity, damping, 14f);
-            for (int i = 0; i < 3; i++)
-            {
-                //crystals[i].localPosition = Vector3.SmoothDamp(crystals[i].localPosition, originalCrystalsObject.transform.Find("Offset" + i).localPosition, ref velocityOffsets[i], damping, 14f);
-                var position = (originalCrystals[i].position - rigidBodies[i].position) / 1.2f + rigidBodies[i].position;
-                rigidBodies[i].MovePosition(position);
-            }
-        }*/
+            LogCore.LogD("jamie pull that one up");
+            var ghost = gameObject.GetComponent<ProjectileController>().ghost;
+            Destroy(ghost.gameObject);
+        }
 
-        private void UpdateRotation()
+        //moves up the y by 3.1 meters go fuck yourself
+        public void KissMyAss()
         {
-            transform.forward = Vector3.RotateTowards(transform.forward, referenceObject.forward, 90f * Mathf.Deg2Rad * Time.deltaTime, 0f);
-            //rigidBody.MoveRotation(referenceObject.rotation);
+            Vector3 eatShit = transform.localPosition;
+            eatShit.y += 3.1f;
+            transform.localPosition = eatShit;
+            //gameObject.GetComponent<ProjectileImpactExplosion>().SetAlive(false);
         }
 
     }

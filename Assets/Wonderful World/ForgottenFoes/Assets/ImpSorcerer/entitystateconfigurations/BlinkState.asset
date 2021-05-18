@@ -31,5 +31,5 @@ MonoBehaviour:
         objectValue: {fileID: 0}
     - fieldName: blinkDistance
       fieldValue:
-        stringValue: 55f
+        stringValue: 55.0
         objectValue: {fileID: 0}

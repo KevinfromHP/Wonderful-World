@@ -4673,6 +4673,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92ffbec3c23e35b438e208f792cd77a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageCoefficient: 4.5
 --- !u!1 &6571806411953786183
 GameObject:
   m_ObjectHideFlags: 0
@@ -6110,6 +6111,7 @@ GameObject:
   - component: {fileID: 6960178130369328615}
   - component: {fileID: 7747645866087897211}
   - component: {fileID: 1248458595041067450}
+  - component: {fileID: 6234925593221143220}
   m_Layer: 0
   m_Name: ImpSorcererBody
   m_TagString: Untagged
@@ -6390,7 +6392,7 @@ Rigidbody:
   m_GameObject: {fileID: 6782708711184772368}
   serializedVersion: 2
   m_Mass: 250
-  m_Drag: 1
+  m_Drag: 0.05
   m_AngularDrag: 0.05
   m_UseGravity: 0
   m_IsKinematic: 0
@@ -6713,6 +6715,21 @@ MonoBehaviour:
     rightSpeedSmoothDamp: 1
     intoJumpTransitionTime: 0.1
     turnAngleSmoothDamp: 0.1
+--- !u!114 &6234925593221143220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6782708711184772368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 2093231408, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxTrackingDistance: 30
+  maxTrackingAngle: 15
+  trackerUpdateFrequency: 6
 --- !u!1 &6788510324192448135
 GameObject:
   m_ObjectHideFlags: 0

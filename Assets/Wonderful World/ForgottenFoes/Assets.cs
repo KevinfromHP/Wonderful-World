@@ -55,11 +55,13 @@ namespace ForgottenFoes
                         material.SetTexture("_EmTex", mainAssetBundle.LoadAsset<Texture2D>("texImpSorcererEmission"));
                         material.SetTexture("_NormalTex", mainAssetBundle.LoadAsset<Texture2D>("texImpSorcererNormal"));
                         break;
-                    /*case "matIndicatorEnemy":
-                        material.CopyPropertiesFromMaterial(Resources.Load<GameObject>("Prefabs/Projectiles/TitanPreFistProjectile").transform.Find("ImpactEffect/TeamAreaIndicator, GroundOnly").GetComponent<TeamAreaIndicator>().teamMaterialPairs[0].sharedMaterial);
+                    case "matIndicatorEnemy":
+                        material.shader = Resources.Load<Shader>("shaders/fx/hgintersectioncloudremap");
+                        material.CopyPropertiesFromMaterial(Resources.Load<GameObject>("Prefabs/Projectiles/TitanPreFistProjectile").transform.Find("TeamAreaIndicator, GroundOnly").GetComponent<TeamAreaIndicator>().teamMaterialPairs[0].sharedMaterial);
                         break;
-                    case "matIndicatorFriendly":
-                        material.CopyPropertiesFromMaterial(Resources.Load<GameObject>("Prefabs/Projectiles/TitanPreFistProjectile").transform.Find("ImpactEffect/TeamAreaIndicator, GroundOnly").GetComponent<TeamAreaIndicator>().teamMaterialPairs[1].sharedMaterial);
+                    /*case "matIndicatorFriendly":
+                        material.shader = Resources.Load<Shader>("shaders/fx/hgintersectioncloudremap");
+                        material.CopyPropertiesFromMaterial(Resources.Load<GameObject>("Prefabs/Projectiles/TitanPreFistProjectile").transform.Find("TeamAreaIndicator, GroundOnly").GetComponent<TeamAreaIndicator>().teamMaterialPairs[1].sharedMaterial);
                         break;*/
                     case "matVoidLance":
                         material.shader = Resources.Load<Shader>("shaders/fx/hgcloudremap");

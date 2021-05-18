@@ -70,7 +70,7 @@
     <Compile Include="Assets\Wonderful World\ForgottenFoes\Monsters\ImpSorcerer.cs" />
     <Compile Include="Assets\Wonderful World\ForgottenFoes\Utils\CloudUtils.cs" />
     <Compile Include="Assets\Wonderful World\ForgottenFoes\Utils\ComponentHelpers.cs" />
-    <Compile Include="Assets\Wonderful World\ForgottenFoes\Utils\ComponentsAndScriptableObjects\CrystalLocator.cs" />
+    <Compile Include="Assets\Wonderful World\ForgottenFoes\Utils\ComponentsAndScriptableObjects\CrystalManager.cs" />
     <Compile Include="Assets\Wonderful World\ForgottenFoes\Utils\ComponentsAndScriptableObjects\CrystalMotionManager.cs" />
     <Compile Include="Assets\Wonderful World\ForgottenFoes\Utils\ComponentsAndScriptableObjects\ForgottenFoesDirectorCardHolder.cs" />
     <Compile Include="Assets\Wonderful World\ForgottenFoes\Utils\ComponentsAndScriptableObjects\ForgottenFoesEffectDefHolder.cs" />
