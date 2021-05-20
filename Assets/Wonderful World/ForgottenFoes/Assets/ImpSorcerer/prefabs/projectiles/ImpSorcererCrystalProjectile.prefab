@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1898783919645595292}
   - component: {fileID: 5154567670682739721}
   - component: {fileID: 8820151486276705356}
+  - component: {fileID: 7710227620923506115}
   m_Layer: 14
   m_Name: ProximityTrigger
   m_TagString: Untagged
@@ -138,7 +139,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 66363959d821b97439777941ec8345a0, type: 2}
+  - {fileID: 2100000, guid: d289379e758fc484cb835a9f13166d1f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -158,6 +159,27 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &7710227620923506115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5304731102844210324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -306948816, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  teamComponent: {fileID: 0}
+  teamFilter: {fileID: 2990934153156021751}
+  teamMaterialPairs:
+  - teamIndex: 2
+    sharedMaterial: {fileID: 2100000, guid: 1a6c76e0f93230e40b379cbe3f195cdb, type: 2}
+  - teamIndex: 1
+    sharedMaterial: {fileID: 2100000, guid: 012b66ff1786b3f4eb38176a58d59ff8, type: 2}
+  areaIndicatorRenderers:
+  - {fileID: 8820151486276705356}
 --- !u!1 &8251680047820569326
 GameObject:
   m_ObjectHideFlags: 0

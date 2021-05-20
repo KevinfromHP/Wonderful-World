@@ -15,8 +15,9 @@ GameObject:
   - component: {fileID: 9210306322610758262}
   - component: {fileID: 1964746875625739905}
   - component: {fileID: 5809443574929329323}
-  - component: {fileID: 4082811866682306057}
   - component: {fileID: 114962611707829188}
+  - component: {fileID: 4082811866682306057}
+  - component: {fileID: 6393115903058551692}
   - component: {fileID: 114938835714258760}
   m_Layer: 0
   m_Name: ImpSorcererMaster
@@ -141,7 +142,7 @@ MonoBehaviour:
   isHealer: 0
   enemyAttention: 0
   aimVectorDampTime: 0.2
-  aimVectorMaxSpeed: 180
+  aimVectorMaxSpeed: 150
   selectedSkilldriverName: 
   debugEnemyHurtBox: {fileID: 0}
 --- !u!114 &5809443574929329323
@@ -161,48 +162,6 @@ MonoBehaviour:
     _typeName: EntityStates.AI.Walker.Wander
   mainStateType:
     _typeName: EntityStates.AI.Walker.Wander
---- !u!114 &4082811866682306057
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4851339271197181466}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1811796171, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  customName: BlinkBecauseTooClose
-  skillSlot: 2
-  requiredSkill: {fileID: 0}
-  requireSkillReady: 1
-  requireEquipmentReady: 0
-  minUserHealthFraction: -Infinity
-  maxUserHealthFraction: Infinity
-  minTargetHealthFraction: -Infinity
-  maxTargetHealthFraction: Infinity
-  minDistance: 0
-  maxDistance: 25
-  selectionRequiresTargetLoS: 1
-  selectionRequiresOnGround: 0
-  selectionRequiresAimTarget: 0
-  moveTargetType: 0
-  activationRequiresTargetLoS: 1
-  activationRequiresAimTargetLoS: 0
-  activationRequiresAimConfirmation: 0
-  movementType: 3
-  moveInputScale: 1
-  aimType: 1
-  ignoreNodeGraph: 1
-  shouldSprint: 0
-  shouldFireEquipment: 0
-  shouldTapButton: 0
-  buttonPressType: 0
-  driverUpdateTimerOverride: 2
-  resetCurrentEnemyOnNextDriverSelection: 0
-  noRepeat: 1
-  nextHighPriorityOverride: {fileID: 0}
 --- !u!114 &114962611707829188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -224,7 +183,7 @@ MonoBehaviour:
   maxUserHealthFraction: Infinity
   minTargetHealthFraction: -Infinity
   maxTargetHealthFraction: Infinity
-  minDistance: 80
+  minDistance: 20
   maxDistance: Infinity
   selectionRequiresTargetLoS: 1
   selectionRequiresOnGround: 0
@@ -245,6 +204,90 @@ MonoBehaviour:
   resetCurrentEnemyOnNextDriverSelection: 0
   noRepeat: 0
   nextHighPriorityOverride: {fileID: 0}
+--- !u!114 &4082811866682306057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4851339271197181466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1811796171, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  customName: BlinkBecauseTooClose
+  skillSlot: 2
+  requiredSkill: {fileID: 11400000, guid: d149c267cf4d7a54b8d8dc1f0d76aacf, type: 2}
+  requireSkillReady: 1
+  requireEquipmentReady: 0
+  minUserHealthFraction: -Infinity
+  maxUserHealthFraction: Infinity
+  minTargetHealthFraction: -Infinity
+  maxTargetHealthFraction: Infinity
+  minDistance: 0
+  maxDistance: 15
+  selectionRequiresTargetLoS: 1
+  selectionRequiresOnGround: 0
+  selectionRequiresAimTarget: 0
+  moveTargetType: 0
+  activationRequiresTargetLoS: 1
+  activationRequiresAimTargetLoS: 0
+  activationRequiresAimConfirmation: 0
+  movementType: 3
+  moveInputScale: 1
+  aimType: 1
+  ignoreNodeGraph: 1
+  shouldSprint: 0
+  shouldFireEquipment: 0
+  shouldTapButton: 0
+  buttonPressType: 2
+  driverUpdateTimerOverride: 2
+  resetCurrentEnemyOnNextDriverSelection: 0
+  noRepeat: 1
+  nextHighPriorityOverride: {fileID: 0}
+--- !u!114 &6393115903058551692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4851339271197181466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1811796171, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  customName: BlinkToTravel
+  skillSlot: 2
+  requiredSkill: {fileID: 11400000, guid: d149c267cf4d7a54b8d8dc1f0d76aacf, type: 2}
+  requireSkillReady: 1
+  requireEquipmentReady: 0
+  minUserHealthFraction: -Infinity
+  maxUserHealthFraction: Infinity
+  minTargetHealthFraction: -Infinity
+  maxTargetHealthFraction: Infinity
+  minDistance: 40
+  maxDistance: Infinity
+  selectionRequiresTargetLoS: 0
+  selectionRequiresOnGround: 0
+  selectionRequiresAimTarget: 1
+  moveTargetType: 0
+  activationRequiresTargetLoS: 0
+  activationRequiresAimTargetLoS: 1
+  activationRequiresAimConfirmation: 0
+  movementType: 1
+  moveInputScale: 1
+  aimType: 1
+  ignoreNodeGraph: 1
+  shouldSprint: 0
+  shouldFireEquipment: 0
+  shouldTapButton: 0
+  buttonPressType: 0
+  driverUpdateTimerOverride: -1
+  resetCurrentEnemyOnNextDriverSelection: 0
+  noRepeat: 0
+  nextHighPriorityOverride: {fileID: 0}
 --- !u!114 &114938835714258760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257,17 +300,17 @@ MonoBehaviour:
   m_Script: {fileID: -1811796171, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  customName: FireVoidCluster
+  customName: FireVoidLance
   skillSlot: 0
-  requiredSkill: {fileID: 0}
+  requiredSkill: {fileID: 11400000, guid: 9bbbed2a91a6a8e43bb077b086368b2e, type: 2}
   requireSkillReady: 1
   requireEquipmentReady: 0
   minUserHealthFraction: -Infinity
   maxUserHealthFraction: Infinity
   minTargetHealthFraction: -Infinity
   maxTargetHealthFraction: Infinity
-  minDistance: 35
-  maxDistance: 100
+  minDistance: 5
+  maxDistance: 50
   selectionRequiresTargetLoS: 1
   selectionRequiresOnGround: 0
   selectionRequiresAimTarget: 1
@@ -275,8 +318,8 @@ MonoBehaviour:
   activationRequiresTargetLoS: 1
   activationRequiresAimTargetLoS: 0
   activationRequiresAimConfirmation: 0
-  movementType: 0
-  moveInputScale: 0
+  movementType: 2
+  moveInputScale: 1
   aimType: 1
   ignoreNodeGraph: 0
   shouldSprint: 0

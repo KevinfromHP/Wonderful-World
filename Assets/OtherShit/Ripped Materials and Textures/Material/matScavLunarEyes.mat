@@ -1,0 +1,112 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: matScavLunarEyes
+  m_Shader: {fileID: 4800000, guid: 05fa7cc5ec5f5d444a7554b65ec13000, type: 3}
+  m_ShaderKeywords: DITHER FLOWMAP FORCE_SPEC FRESNEL_EMISSION
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _EmissionTex:
+        m_Texture: {fileID: 2800000, guid: 3fc2d4f6ec539b24ab9e695716bd7e68, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Height1:
+        m_Texture: {fileID: 2800000, guid: 49128da673ccfd3428246abcde54abe7, type: 3}
+        m_Scale: {x: 0.1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Height2:
+        m_Texture: {fileID: 2800000, guid: 967171a5e9b71494e81da343046951ab, type: 3}
+        m_Scale: {x: 0.2, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 7fe20116b03a9444d900bc6cfa9557f8, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Normal:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _BlueChannelBias: 0
+    - _BlueChannelSmoothness: 0
+    - _BumpScale: 1
+    - _ClipOn: 0
+    - _ColorsOn: 0
+    - _Cull: 2
+    - _Cutoff: 0.5
+    - _DecalLayer: 0
+    - _Depth: 0.2
+    - _DetailNormalMapScale: 1
+    - _DitherOn: 1
+    - _DstBlend: 0
+    - _EliteBrightnessMax: 1
+    - _EliteBrightnessMin: 0
+    - _EliteIndex: 0
+    - _EmPower: 0
+    - _EmissionPower: 3.11
+    - _EnableCutout: 0
+    - _FEON: 1
+    - _Fade: 1
+    - _FadeBias: 0
+    - _FlowEmissionStrength: 1
+    - _FlowHeightBias: 0
+    - _FlowHeightPower: 0.36
+    - _FlowMaskStrength: 0
+    - _FlowNormalStrength: 1.45
+    - _FlowSpeed: 2.05
+    - _FlowTextureScaleFactor: 0.5
+    - _FlowmapOn: 1
+    - _ForceSpecOn: 1
+    - _FresnelBoost: 1
+    - _FresnelPower: 5.68
+    - _GlossMapScale: 1
+    - _Glossiness: 0.5
+    - _GlossyReflections: 1
+    - _GreenChannelBias: 0
+    - _GreenChannelSmoothness: 0
+    - _HeightBias: 0
+    - _HeightStrength: 7.53
+    - _LimbPrimeMask: 1
+    - _LimbRemovalOn: 0
+    - _Metallic: 0
+    - _Mode: 0
+    - _NormalStrength: 0.62
+    - _OcclusionStrength: 1
+    - _Parallax: -0.93
+    - _PrintBias: 0
+    - _PrintBoost: 1
+    - _PrintDirection: 0
+    - _PrintEmissionToAlbedoLerp: 0
+    - _PrintOn: 0
+    - _RampInfo: 4
+    - _SliceAlphaDepth: 0.1
+    - _SliceBandHeight: 1
+    - _SliceHeight: 5
+    - _Smoothness: 0
+    - _SmoothnessTextureChannel: 0
+    - _SpecularExponent: 4.05
+    - _SpecularHighlights: 1
+    - _SpecularStrength: 0.564
+    - _SplatmapOn: 0
+    - _SplatmapTileScale: 1
+    - _SrcBlend: 1
+    - _UVSec: 0
+    - _ZWrite: 1
+    m_Colors:
+    - _Color: {r: 0, g: 1.235973, b: 7.377211, a: 1}
+    - _EmColor: {r: 1, g: 1, b: 1, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _FlashColor: {r: 0, g: 0, b: 0, a: 1}
+    - _ScrollSpeed: {r: 0.1, g: 0.2, b: 4, a: 0}

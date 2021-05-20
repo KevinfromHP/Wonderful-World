@@ -1,0 +1,148 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: matMSCrystal
+  m_Shader: {fileID: 4800000, guid: 78208ed603ed5c24e93d3768d16f08f0, type: 3}
+  m_ShaderKeywords: FORCE_SPEC SPLATMAP USE_VERTEX_COLORS
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 1
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 2005
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BlueChannelNormalTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BlueChannelTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmTex:
+        m_Texture: {fileID: 2800000, guid: cd09cf3bf50311e42ac9622cac087b49, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _FlowHeightRamp:
+        m_Texture: {fileID: 2800000, guid: 54b9d9188138d0b4bb169344f3d6ec61, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _FlowHeightmap:
+        m_Texture: {fileID: 2800000, guid: 1bc56aedfb0d64f448f7be960d9c9380, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _FlowTex:
+        m_Texture: {fileID: 2800000, guid: 49128da673ccfd3428246abcde54abe7, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _FresnelMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _FresnelRamp:
+        m_Texture: {fileID: 2800000, guid: 3010e37f399e1394b871a9ea8cb28c61, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _GreenChannelNormalTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _GreenChannelTex:
+        m_Texture: {fileID: 2800000, guid: cd09cf3bf50311e42ac9622cac087b49, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 3, y: 3}
+        m_Offset: {x: 0, y: 0}
+    - _NormalTex:
+        m_Texture: {fileID: 2800000, guid: e11ee196c8eec9340b215dfde258b82b, type: 3}
+        m_Scale: {x: 2, y: 2}
+        m_Offset: {x: 0, y: 0}
+    - _PrintRamp:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SliceAlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 2, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SplatmapTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 3, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _BlueChannelBias: -2
+    - _BlueChannelSmoothness: 0
+    - _BumpScale: 1
+    - _ColorsOn: 1
+    - _Cull: 2
+    - _Cutoff: 0.5
+    - _DecalLayer: 0
+    - _Depth: 0.356
+    - _DetailNormalMapScale: 1
+    - _DitherOn: 0
+    - _DstBlend: 0
+    - _EliteBrightnessMax: 1
+    - _EliteBrightnessMin: 0
+    - _EliteIndex: 0
+    - _EmPower: 0.05
+    - _EnableCutout: 0
+    - _FEON: 0
+    - _Fade: 1
+    - _FadeBias: 0
+    - _FlowDiffuseStrength: 1
+    - _FlowEmissionStrength: 1
+    - _FlowHeightBias: -0.256
+    - _FlowHeightPower: 1
+    - _FlowMaskStrength: 0
+    - _FlowNormalStrength: 0.18
+    - _FlowSpeed: 1
+    - _FlowTextureScaleFactor: 0.65
+    - _FlowmapOn: 0
+    - _ForceSpecOn: 1
+    - _FresnelBoost: 2.96
+    - _FresnelPower: 3.84
+    - _GlossMapScale: 1
+    - _Glossiness: 0.5
+    - _GlossyReflections: 1
+    - _GreenChannelBias: 0.31
+    - _GreenChannelSmoothness: 0
+    - _LimbPrimeMask: 1
+    - _LimbRemovalOn: 0
+    - _Metallic: 0
+    - _Mode: 0
+    - _NormalStrength: 0.15
+    - _OcclusionStrength: 1
+    - _Parallax: 0.02
+    - _PrintBias: 1.03
+    - _PrintBoost: 3.47
+    - _PrintDirection: 3
+    - _PrintEmissionToAlbedoLerp: 0
+    - _PrintOn: 0
+    - _RampInfo: 4
+    - _SliceAlphaDepth: 0.266
+    - _SliceBandHeight: 1
+    - _SliceHeight: -25
+    - _Smoothness: 0
+    - _SmoothnessTextureChannel: 0
+    - _SpecularExponent: 1.46
+    - _SpecularHighlights: 1
+    - _SpecularStrength: 0.487
+    - _SplatmapOn: 1
+    - _SplatmapTileScale: 1.1
+    - _SrcBlend: 1
+    - _UVSec: 0
+    - _ZWrite: 1
+    m_Colors:
+    - _Color: {r: 0.9198113, g: 1, b: 0.9939559, a: 1}
+    - _EmColor: {r: 0.7028747, g: 0.7488319, b: 0.764151, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _FlashColor: {r: 0, g: 0, b: 0, a: 1}

@@ -1,0 +1,94 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: matBazaarWater
+  m_Shader: {fileID: 4800000, guid: 57f0e921e15bb784e8ce153a8e9ce5dc, type: 3}
+  m_ShaderKeywords: _DEPTHFOG_ON _DISPLACEMENTMODE_OFF _DISPLACEMENT_ON _DISTORTIONQUALITY_HIGH _EMISSION _FOAM_ON _NORMALMAP _REFLECTIONTYPE_CUBEMAP
+  m_LightmapFlags: 1
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 2800000, guid: 22ec8170a567fcd47a52a1b690808d36, type: 3}
+        m_Scale: {x: 3, y: 3}
+        m_Offset: {x: 0, y: 0}
+    - _BumpMapLarge:
+        m_Texture: {fileID: 2800000, guid: 978e51eb679c7d94c86ef6a9d1f3b8da, type: 3}
+        m_Scale: {x: 5, y: 5}
+        m_Offset: {x: 0, y: 0}
+    - _Cube:
+        m_Texture: {fileID: 8900000, guid: 690ac971e7cfc004884d70effe4f8401, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _FoamTex:
+        m_Texture: {fileID: 2800000, guid: 50498ac99df01584aac9d79653eaa409, type: 3}
+        m_Scale: {x: 2, y: 2}
+        m_Offset: {x: 0, y: 0}
+    - _ReflectionTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _Amplitude: 2
+    - _BumpLargeStrength: 0.356
+    - _BumpScale: 1
+    - _BumpStrength: 0.448
+    - _Cutoff: 0.5
+    - _DISPLACEMENT: 1
+    - _Depth: 8.78
+    - _DetailNormalMapScale: 1
+    - _DisplacementMode: 0
+    - _Distortion: 100
+    - _DistortionQuality: 0
+    - _DstBlend: 0
+    - _EdgeFade: 1.42
+    - _EnableFog: 1
+    - _EnableLargeBump: 0
+    - _FOAM: 1
+    - _FoamSize: 0.54
+    - _Frequency: 0.97
+    - _GlossMapScale: 1
+    - _Glossiness: 0.5
+    - _GlossyReflections: 1
+    - _Metallic: 0
+    - _Mode: 0
+    - _OcclusionStrength: 1
+    - _Parallax: 0.02
+    - _Reflection: 1
+    - _ReflectionType: 3
+    - _RimPower: 1
+    - _Smoothing: 0
+    - _Smoothness: 2.6
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
+    - _Speed: 1
+    - _SpeedX: 0.5
+    - _SpeedY: 0.5
+    - _SrcBlend: 1
+    - _Steepness: 0.54
+    - _Tess: 1
+    - _UVSec: 0
+    - _WorldSpace: 0
+    - _ZWrite: 1
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _CubeColor: {r: 1, g: 1, b: 1, a: 1}
+    - _DepthColor: {r: 0, g: 0, b: 0, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _FoamColor: {r: 0.1792453, g: 0.1741487, b: 0.09046815, a: 1}
+    - _SpecColor: {r: 0.3517711, g: 0.4096204, b: 0.4811321, a: 1}
+    - _Speeds: {r: 0.1, g: 0.1, b: 0.25, a: 0.25}
+    - _SpeedsLarge: {r: -0.1, g: 0.25, b: 0, a: 0}
+    - _WDirectionAB: {r: -0.17, g: 0.55, b: -0.62, a: -0.25}
+    - _WDirectionCD: {r: 0.44, g: 0.71, b: 0.41, a: 0.5}
+    - _WSpeed: {r: 0.35, g: 0.5, b: 0.35, a: 0.5}

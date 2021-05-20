@@ -1,0 +1,107 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: matEclipseMoon
+  m_Shader: {fileID: 4800000, guid: 94b430a555f139e4f8475ca13ccce810, type: 3}
+  m_ShaderKeywords: FRESNEL SKYBOX_ONLY USE_CLOUDS
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 2995
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AtmosphereRamp:
+        m_Texture: {fileID: 2800000, guid: 25aceeca5e3d00d4593c29a58392c0cc, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DiffuseDetailTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DiffuseTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionRamp:
+        m_Texture: {fileID: 2800000, guid: 800526591188cd54b8d2b4c74b3e5df0, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionTex:
+        m_Texture: {fileID: 2800000, guid: 959cf1444b89bde4c98ee4d1f3725b9c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _LightWarpRamp:
+        m_Texture: {fileID: 2800000, guid: 3e70618f8a02d4b448e218bebba6d9b1, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NormalDetailTex:
+        m_Texture: {fileID: 2800000, guid: e0a87e6f51cee3f44bc3df77b3dff022, type: 3}
+        m_Scale: {x: 6, y: 6}
+        m_Offset: {x: 0, y: 0}
+    - _NormalTex:
+        m_Texture: {fileID: 2800000, guid: c07b1ac0d0d3f9b40b1d4ead45d005ea, type: 3}
+        m_Scale: {x: 3, y: 3}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _AlphaBias: 0
+    - _AlphaBoost: 3.9
+    - _AtmosphereStrength: 2
+    - _Boost: 8.7
+    - _BumpScale: 1
+    - _CalcTextureAlphaOn: 0
+    - _CloudOffsetOn: 0
+    - _CloudsOn: 1
+    - _Cull: 2
+    - _Cutoff: 0.5
+    - _DetailNormalMapScale: 1
+    - _DetailStrength: 0
+    - _DisableRemapOn: 0
+    - _DistortionStrength: -0.2
+    - _DoubleSampleFactor: 4.85
+    - _DstBlend: 10
+    - _DstBlendFloat: 10
+    - _EmissionStrength: 0
+    - _ExternalAlpha: 1
+    - _Fade: 1
+    - _FadeCloseDistance: 0.5
+    - _FadeCloseOn: 0
+    - _FresnelOn: 1
+    - _FresnelPower: 2.7
+    - _GlossMapScale: 1
+    - _Glossiness: 0.5
+    - _GlossyReflections: 1
+    - _InternalSimpleBlendMode: 1
+    - _InvFade: 0
+    - _Metallic: 0
+    - _Mode: 0
+    - _NormalStrength: 5
+    - _OcclusionStrength: 1
+    - _OffsetAmount: 0
+    - _Parallax: 0.02
+    - _RotationSpeed: 0
+    - _SkyboxOnly: 1
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
+    - _SpecularPower: 573
+    - _SrcBlend: 5
+    - _SrcBlendFloat: 5
+    - _UVSec: 0
+    - _UseUV1On: 0
+    - _VertexAlphaOn: 0
+    - _VertexColorOn: 0
+    - _VertexOffsetOn: 0
+    - _ZWrite: 1
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _CutoffScroll: {r: 0.05, g: 0.01, b: 0, a: 0}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _SpecColor: {r: 0, g: 0, b: 0, a: 1}
+    - _TintColor: {r: 0.3275738, g: 0.2786579, b: 0.5849056, a: 1}

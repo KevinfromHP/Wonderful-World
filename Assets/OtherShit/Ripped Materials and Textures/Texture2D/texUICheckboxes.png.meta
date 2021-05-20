@@ -1,0 +1,175 @@
+fileFormatVersion: 2
+guid: d750547e544be0748800de293c91d5fc
+timeCreated: 1618152778
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: texUICheckboxes_0
+    21300002: texUICheckboxes_1
+  externalObjects: {}
+  serializedVersion: 9
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 12
+  maxTextureSize: 1024
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: texUICheckboxes_0
+      rect:
+        serializedVersion: 2
+        x: 137.0761
+        y: 138.0761
+        width: 235.8478
+        height: 235.8478
+      alignment: 9
+      pivot: {x: -0.581206, y: 1.585446}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -118, y: -118}
+        - {x: -118, y: 110}
+        - {x: -116, y: 114}
+        - {x: -111, y: 118}
+        - {x: 117, y: 118}
+        - {x: 118, y: 117}
+        - {x: 118, y: -118}
+      physicsShape:
+      - - {x: -104, y: 103}
+        - {x: -104, y: -104}
+        - {x: 104, y: -104}
+        - {x: 104, y: 102}
+        - {x: 102, y: 104}
+        - {x: -102, y: 104}
+      - - {x: -72, y: 72.00002}
+        - {x: 72, y: 72.00002}
+        - {x: 72, y: -72}
+        - {x: -72, y: -72}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 683fc1c375e4400aac31558b25c97dd4
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: texUICheckboxes_1
+      rect:
+        serializedVersion: 2
+        x: 649.0761
+        y: 138.0761
+        width: 318.8478
+        height: 299.9109
+      alignment: 9
+      pivot: {x: -0.4299108, y: 1.246783}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -81.49998, y: 26.96841}
+        - {x: -44.5, y: -9.031586}
+        - {x: -43.5, y: -10.03157}
+        - {x: -6.5, y: 26.96841}
+      physicsShape:
+      - - {x: 31.5, y: -16.03157}
+        - {x: 41.5, y: 68.96841}
+        - {x: 40.5, y: 71.96841}
+        - {x: -143.5, y: 71.96841}
+        - {x: -145.5, y: 70.96841}
+        - {x: -145.5, y: -136.0316}
+        - {x: 62.5, y: -136.0316}
+        - {x: 62.5, y: 10.96843}
+        - {x: 58.5, y: 12.96843}
+      - - {x: 121.5, y: 135.9684}
+        - {x: 111.5, y: 126.9684}
+        - {x: 66.5, y: 80.96841}
+        - {x: -44.5, y: -30.03159}
+        - {x: -100.5, y: 25.96843}
+        - {x: -102.5, y: 25.96843}
+        - {x: -124.5, y: 3.968414}
+        - {x: -124.5, y: 1.968414}
+        - {x: -45.5, y: -77.03159}
+        - {x: -44.5, y: -77.03159}
+        - {x: 145.5, y: 112.9684}
+        - {x: 145.5, y: 114.9684}
+        - {x: 124.5, y: 135.9684}
+      tessellationDetail: 0
+      bones: []
+      spriteID: c39bd62d45af42bc994cc4708a2df532
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID:
+    vertices: []
+    indices:
+    edges: []
+    weights: []
+  spritePackingTag:
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData:
+  assetBundleName:
+  assetBundleVariant:

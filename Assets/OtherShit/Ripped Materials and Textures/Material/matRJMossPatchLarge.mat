@@ -1,0 +1,140 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: matRJMossPatchLarge
+  m_Shader: {fileID: 4800000, guid: c56730e0887ecc349b00bd7a922b8efe, type: 3}
+  m_ShaderKeywords: BINARYBLEND DOUBLESAMPLE TRIPLANAR USE_ALPHA_AS_MASK USE_VERTEX_COLORS
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 1
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BlueChannelTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _GreenChannelTex:
+        m_Texture: {fileID: 2800000, guid: 37e60a009c740684d809309342c4d206, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NormalTex:
+        m_Texture: {fileID: 2800000, guid: 43311c3d9735c2d44b2f60f2b0829de7, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _RedChannelSideTex:
+        m_Texture: {fileID: 2800000, guid: 632df4278e4031c43968bb7af8a62d03, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _RedChannelTopTex:
+        m_Texture: {fileID: 2800000, guid: 632df4278e4031c43968bb7af8a62d03, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SplatmapTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _BinaryBlendOn: 1
+    - _BlueChannelBias: -2
+    - _BlueChannelSmoothness: 0
+    - _BlueChannelSpecularExponent: 0
+    - _BlueChannelSpecularStrength: 0
+    - _BumpScale: 1
+    - _ColorsOn: 1
+    - _Cull: 2
+    - _Cutoff: 0.5
+    - _DecalLayer: 0
+    - _Depth: 0.483
+    - _DetailNormalMapScale: 1
+    - _DirtBias: 0
+    - _DirtOn: 0
+    - _DirtSmoothness: 0
+    - _DirtSpecularExponent: 1
+    - _DirtSpecularStrength: 0
+    - _DitherOn: 0
+    - _DoublesampleOn: 1
+    - _DstBlend: 0
+    - _EliteBrightnessMax: 1
+    - _EliteBrightnessMin: 0
+    - _EliteIndex: 0
+    - _EmPower: 1
+    - _EnableCutout: 0
+    - _FEON: 0
+    - _Fade: 1
+    - _FadeBias: 0
+    - _FlowDiffuseStrength: 1
+    - _FlowEmissionStrength: 1
+    - _FlowHeightBias: 0
+    - _FlowHeightPower: 1
+    - _FlowNormalStrength: 1
+    - _FlowSpeed: 1
+    - _FlowTextureScaleFactor: 1
+    - _FlowmapOn: 0
+    - _ForceSpecOn: 0
+    - _FresnelBoost: 1
+    - _FresnelPower: 1
+    - _GlossMapScale: 1
+    - _Glossiness: 0.5
+    - _GlossyReflections: 1
+    - _GradientBiasOn: 0
+    - _GreenChannelBias: 0.42
+    - _GreenChannelSmoothness: 1
+    - _GreenChannelSpecularExponent: 15.46
+    - _GreenChannelSpecularStrength: 0.808
+    - _IgnoreBiasOn: 0
+    - _LimbPrimeMask: 1
+    - _LimbRemovalOn: 0
+    - _MaskOn: 1
+    - _Metallic: 0
+    - _MixColorsOn: 0
+    - _Mode: 0
+    - _NormalStrength: 0.217
+    - _OcclusionStrength: 1
+    - _Parallax: 0.02
+    - _PrintBias: 0
+    - _PrintBoost: 1
+    - _PrintDirection: 0
+    - _PrintEmissionToAlbedoLerp: 0
+    - _PrintOn: 0
+    - _RampInfo: 1
+    - _RedChannelBias: 0
+    - _RedChannelSmoothness: 0
+    - _RedChannelSpecularExponent: 0.18
+    - _RedChannelSpecularStrength: 0
+    - _SliceAlphaDepth: 0.1
+    - _SliceBandHeight: 1
+    - _SliceHeight: 5
+    - _Smoothness: 0
+    - _SmoothnessTextureChannel: 0
+    - _SnowBias: -0.25
+    - _SnowOn: 0
+    - _SnowSmoothness: 0
+    - _SnowSpecularExponent: 0
+    - _SnowSpecularStrength: 0
+    - _SpecularExponent: 0
+    - _SpecularHighlights: 1
+    - _SpecularStrength: 0
+    - _SplatmapOn: 0
+    - _SplatmapTileScale: 1
+    - _SrcBlend: 1
+    - _TextureFactor: 0.1
+    - _TriplanarOn: 1
+    - _TriplanarTextureFactor: 0.055
+    - _UVSec: 0
+    - _VerticalBiasOn: 0
+    - _ZWrite: 1
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _EmColor: {r: 0, g: 0, b: 0, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _FlashColor: {r: 0, g: 0, b: 0, a: 1}
+    - _GradientBiasVector: {r: 0, g: 0, b: 0, a: 0}

@@ -45,9 +45,10 @@ namespace ForgottenFoes
 
             foreach (Material material in materials)
             {
+                LogCore.LogM(material.shader.name);
                 switch (material.name)
                 {
-                    case "matImpSorcerer":
+                    /*case "matImpSorcerer":
                         material.shader = Resources.Load<Shader>("shaders/deferred/hgstandard");
                         Material impMat = Resources.Load<GameObject>("Prefabs/CharacterBodies/ImpBody").transform.Find("ModelBase/mdlImp/ImpMesh").GetComponent<SkinnedMeshRenderer>().material;
                         material.CopyPropertiesFromMaterial(impMat);
@@ -59,10 +60,10 @@ namespace ForgottenFoes
                         material.shader = Resources.Load<Shader>("shaders/fx/hgintersectioncloudremap");
                         material.CopyPropertiesFromMaterial(Resources.Load<GameObject>("Prefabs/Projectiles/TitanPreFistProjectile").transform.Find("TeamAreaIndicator, GroundOnly").GetComponent<TeamAreaIndicator>().teamMaterialPairs[0].sharedMaterial);
                         break;
-                    /*case "matIndicatorFriendly":
+                    case "matIndicatorFriendly":
                         material.shader = Resources.Load<Shader>("shaders/fx/hgintersectioncloudremap");
                         material.CopyPropertiesFromMaterial(Resources.Load<GameObject>("Prefabs/Projectiles/TitanPreFistProjectile").transform.Find("TeamAreaIndicator, GroundOnly").GetComponent<TeamAreaIndicator>().teamMaterialPairs[1].sharedMaterial);
-                        break;*/
+                        break;
                     case "matVoidLance":
                         material.shader = Resources.Load<Shader>("shaders/fx/hgcloudremap");
                         material.CopyPropertiesFromMaterial(Resources.Load<GameObject>("Prefabs/ProjectileGhosts/ImpVoidspikeProjectileGhost").transform.Find("Mesh").GetComponent<MeshRenderer>().material);
@@ -71,7 +72,7 @@ namespace ForgottenFoes
                         material.shader = Resources.Load<Shader>("shaders/fx/hgcloudremap");
                         material.CopyPropertiesFromMaterial(Resources.Load<GameObject>("Prefabs/Projectileghosts/ImpVoidspikeProjectileGhost").transform.Find("Mesh").GetComponent<MeshRenderer>().material);
                         break;
-                    /*case "matPortal":
+                    case "matPortal":
                         material.shader = Resources.Load<Shader>("shaders/fx/hgcloudremap");
                         material.CopyPropertiesFromMaterial(Resources.Load<GameObject>("Prefabs/effects/ImpBossDeathEffect").transform.Find("Ring").GetComponent<ParticleSystemRenderer>().material);
                         material.SetTexture("_MainTex", mainAssetBundle.LoadAsset<Texture2D>("texPortal"));
@@ -79,7 +80,7 @@ namespace ForgottenFoes
                     case "matCrystal":
                         material.shader = Resources.Load<Shader>("shaders/deferred/hgstandard");
                         material.CopyPropertiesFromMaterial(Resources.Load<GameObject>("Prefabs/pickupmodels/PickupDiamond").transform.Find("TonicCap").GetComponent<MeshRenderer>().material);
-                        break;*/
+                        break;
                     case "matPortalParticles":
                         material.shader = Resources.Load<Shader>("shaders/fx/hgcloudremap");
                         material.CopyPropertiesFromMaterial(Resources.Load<GameObject>("Prefabs/Effects/ImpBossBlink").transform.Find("Particles/LongLifeNoiseTrails").GetComponent<ParticleSystemRenderer>().trailMaterial);
@@ -96,12 +97,19 @@ namespace ForgottenFoes
                     case "matPortalExplosion":
                         material.shader = Resources.Load<Shader>("shaders/fx/hgintersectioncloudremap");
                         material.CopyPropertiesFromMaterial(Resources.Load<GameObject>("Prefabs/Effects/ImpBossBlink").transform.Find("Particles/Sphere").GetComponent<ParticleSystemRenderer>().material);
+                        break;*/
+                    default:
+                        if(material.shader.name.StartsWith("WonderfulWorld"))
+                        {
+                            string path = material.shader.name.Substring(14);
+                            material.shader = Resources.Load<Shader>("shaders" + path);
+                        }
                         break;
                 }
-                var remappers = mainAssetBundle.LoadAllAssets<ShaderRemapper>();
-                for (int i = 0; i < remappers.Length; i++)
-                    remappers[i].UpdateMaterial();
             }
+                /*var remappers = mainAssetBundle.LoadAllAssets<ShaderRemapper>();
+                for (int i = 0; i < remappers.Length; i++)
+                    remappers[i].UpdateMaterial();*/
         }
         /// <summary>
         /// This is only here because EffectDefs can't be made through Unity due to Hopoo forgetting to make them scriptable/serializable. You can delete this retarded shit once it's patched.

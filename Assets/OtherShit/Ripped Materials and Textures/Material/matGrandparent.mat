@@ -1,0 +1,165 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: matGrandparent
+  m_Shader: {fileID: 4800000, guid: 78208ed603ed5c24e93d3768d16f08f0, type: 3}
+  m_ShaderKeywords: BINARYBLEND CUTOUT DITHER FLOWMAP FORCE_SPEC PRINT_CUTOFF SPLATMAP TRIPLANAR USE_VERTEX_COLORS
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BlueChannelNormalTex:
+        m_Texture: {fileID: 2800000, guid: 38f15f2de2adabd46a4b26c245df6db9, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BlueChannelTex:
+        m_Texture: {fileID: 2800000, guid: 017d7151102795e4eafc1840d1d2f517, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmTex:
+        m_Texture: {fileID: 2800000, guid: 56dd462603dd713479711d3125784ee8, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _FlowHeightRamp:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _FlowHeightmap:
+        m_Texture: {fileID: 2800000, guid: 49128da673ccfd3428246abcde54abe7, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _FlowTex:
+        m_Texture: {fileID: 2800000, guid: 43311c3d9735c2d44b2f60f2b0829de7, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _FresnelMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _FresnelRamp:
+        m_Texture: {fileID: 2800000, guid: 7884e8b9ad269fb499b18fa7c87472e1, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _GreenChannelNormalTex:
+        m_Texture: {fileID: 2800000, guid: 01fe701db9981e74c8dcbc4a68bad924, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _GreenChannelTex:
+        m_Texture: {fileID: 2800000, guid: 40244e6f8fadb914799915b181f5891c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 0e35552cb2bf69c4494053bf94a817fe, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NormalTex:
+        m_Texture: {fileID: 2800000, guid: a14d8de0359ff4b4daf912a812615a20, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _PrintRamp:
+        m_Texture: {fileID: 2800000, guid: d245f86c8a4845847b51903d67ffe976, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SliceAlphaTex:
+        m_Texture: {fileID: 2800000, guid: 40705f9d2b4ca6f4098f5a5cbdc0e942, type: 3}
+        m_Scale: {x: 4, y: 4}
+        m_Offset: {x: 0, y: 0}
+    - _SplatmapTex:
+        m_Texture: {fileID: 2800000, guid: 48e831a86c10bed40b11938de5f9c96d, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _BinaryBlendOn: 1
+    - _Blend: 0
+    - _BlueChannelBias: -0.35
+    - _BlueChannelSmoothness: 0
+    - _BumpScale: 1
+    - _ColorsOn: 1
+    - _Cull: 2
+    - _Cutoff: 0.5
+    - _DecalLayer: 0
+    - _Depth: 0.626
+    - _DetailNormalMapScale: 1
+    - _DirtBias: 0
+    - _DirtOn: 0
+    - _DirtSmoothness: 0
+    - _DirtSpecularExponent: 1
+    - _DirtSpecularStrength: 0
+    - _DitherOn: 1
+    - _DstBlend: 0
+    - _EliteBrightnessMax: 1.2
+    - _EliteBrightnessMin: -1.4
+    - _EliteIndex: 0
+    - _EmPower: 0
+    - _EnableCutout: 1
+    - _FEON: 0
+    - _Fade: 1
+    - _FadeBias: 0
+    - _FlowDiffuseStrength: 1
+    - _FlowEmissionStrength: 0.56
+    - _FlowHeightBias: 0.401
+    - _FlowHeightPower: 2.99
+    - _FlowMaskStrength: 0
+    - _FlowNormalStrength: 0.05
+    - _FlowSpeed: 0.8
+    - _FlowTextureScaleFactor: 10
+    - _FlowmapOn: 1
+    - _ForceSpecOn: 1
+    - _FresnelBoost: 10.86
+    - _FresnelPower: 0.48
+    - _GlossMapScale: 1
+    - _Glossiness: 0.5
+    - _GlossyReflections: 1
+    - _GradientBiasOn: 0
+    - _GreenChannelBias: -0.34
+    - _GreenChannelSmoothness: 0
+    - _IgnoreBiasOn: 0
+    - _LimbPrimeMask: 1
+    - _LimbRemovalOn: 0
+    - _Metallic: 0
+    - _Mode: 0
+    - _NormalStrength: 3
+    - _OcclusionStrength: 1
+    - _Parallax: 0.02
+    - _PrintBias: 1.07
+    - _PrintBoost: 2.43
+    - _PrintDirection: 3
+    - _PrintEmissionToAlbedoLerp: 0
+    - _PrintOn: 1
+    - _RampInfo: 5
+    - _SliceAlphaDepth: 1
+    - _SliceBandHeight: 6
+    - _SliceHeight: -25
+    - _Smoothness: 0
+    - _SmoothnessTextureChannel: 0
+    - _SnowBias: -0.07
+    - _SnowOn: 0
+    - _SnowSmoothness: 0
+    - _SnowSpecularExponent: 1
+    - _SnowSpecularStrength: 0
+    - _SpecularExponent: 0.1
+    - _SpecularHighlights: 1
+    - _SpecularStrength: 0
+    - _SplatmapOn: 1
+    - _SplatmapTileScale: 10.3
+    - _SrcBlend: 1
+    - _TriplanarOn: 1
+    - _TriplanarTextureFactor: 0.123
+    - _UVSec: 0
+    - _ZWrite: 1
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _EmColor: {r: 1, g: 1, b: 1, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _FlashColor: {r: 0, g: 0, b: 0, a: 1}
+    - _GradientBiasVector: {r: 0, g: 0, b: 0, a: 0}
